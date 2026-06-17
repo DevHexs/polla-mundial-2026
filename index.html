@@ -108,6 +108,37 @@
         <div class="participants-selector" id="participants-selector-container">
           <!-- Participant pills rendered by JS -->
         </div>
+
+        <!-- FILTROS -->
+        <div class="predictions-filters" style="display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; background: var(--card-bg); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <div class="filter-group" style="display: flex; align-items: center; gap: 8px;">
+            <label for="filter-group-select" style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Grupo:</label>
+            <select id="filter-group-select" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
+              <option value="ALL">Todos los grupos</option>
+              <option value="A">Grupo A</option>
+              <option value="B">Grupo B</option>
+              <option value="C">Grupo C</option>
+              <option value="D">Grupo D</option>
+              <option value="E">Grupo E</option>
+              <option value="F">Grupo F</option>
+              <option value="G">Grupo G</option>
+              <option value="H">Grupo H</option>
+              <option value="I">Grupo I</option>
+              <option value="J">Grupo J</option>
+              <option value="K">Grupo K</option>
+              <option value="L">Grupo L</option>
+            </select>
+          </div>
+          <div class="filter-group" style="display: flex; align-items: center; gap: 8px;">
+            <label for="filter-status-select" style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Estado:</label>
+            <select id="filter-status-select" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
+              <option value="ALL">Todos los partidos</option>
+              <option value="finished">Jugados / Finalizados</option>
+              <option value="pending">Pendientes</option>
+            </select>
+          </div>
+        </div>
+
         <div class="predictions-grid" id="predictions-grid-container">
           <!-- Prediction cards rendered by JS -->
         </div>

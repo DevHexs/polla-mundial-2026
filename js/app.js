@@ -379,6 +379,24 @@ function renderPredictionsTab(standings) {
     container.appendChild(btn);
   });
 
+  // Agregar event listeners a los filtros (una sola vez)
+  const groupSelect = document.getElementById('filter-group-select');
+  const statusSelect = document.getElementById('filter-status-select');
+  
+  if (groupSelect && !groupSelect.dataset.listener) {
+    groupSelect.dataset.listener = 'true';
+    groupSelect.addEventListener('change', () => {
+      renderParticipantPredictions(selectedParticipantName);
+    });
+  }
+  
+  if (statusSelect && !statusSelect.dataset.listener) {
+    statusSelect.dataset.listener = 'true';
+    statusSelect.addEventListener('change', () => {
+      renderParticipantPredictions(selectedParticipantName);
+    });
+  }
+
   renderParticipantPredictions(selectedParticipantName);
 }
 
@@ -391,8 +409,30 @@ function renderParticipantPredictions(name) {
   const participant = predictionsData.find(p => p.name === name);
   if (!participant) return;
 
+  const groupFilter = document.getElementById('filter-group-select')?.value || 'ALL';
+  const statusFilter = document.getElementById('filter-status-select')?.value || 'ALL';
+
+  // Filtrar partidos
+  let filteredMatches = [...matchesData];
+  if (groupFilter !== 'ALL') {
+    filteredMatches = filteredMatches.filter(m => m.group === groupFilter);
+  }
+  if (statusFilter !== 'ALL') {
+    filteredMatches = filteredMatches.filter(m => m.status === statusFilter);
+  }
+
+  if (filteredMatches.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state" style="grid-column: 1 / -1; padding: 48px; text-align: center; color: var(--text-muted);">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 8px;">🔍</span>
+        <p>No se encontraron partidos para los filtros seleccionados.</p>
+      </div>
+    `;
+    return;
+  }
+
   // Ordenar partidos por grupo y luego por ID
-  const sortedMatches = [...matchesData].sort((a, b) => {
+  const sortedMatches = filteredMatches.sort((a, b) => {
     if (a.group !== b.group) return a.group.localeCompare(b.group);
     return a.id.localeCompare(b.id);
   });
