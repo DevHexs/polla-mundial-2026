@@ -1,0 +1,434 @@
+[
+  {
+    "id": "A1", "group": "A", "matchday": 1,
+    "home": "México", "homeFlag": "🇲🇽",
+    "away": "Sudáfrica", "awayFlag": "🇿🇦",
+    "date": "2026-06-11", "homeScore": 2, "awayScore": 0, "status": "finished"
+  },
+  {
+    "id": "A2", "group": "A", "matchday": 1,
+    "home": "Corea del Sur", "homeFlag": "🇰🇷",
+    "away": "Chequia", "awayFlag": "🇨🇿",
+    "date": "2026-06-11", "homeScore": 2, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "A3", "group": "A", "matchday": 2,
+    "home": "México", "homeFlag": "🇲🇽",
+    "away": "Corea del Sur", "awayFlag": "🇰🇷",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "A4", "group": "A", "matchday": 2,
+    "home": "Sudáfrica", "homeFlag": "🇿🇦",
+    "away": "Chequia", "awayFlag": "🇨🇿",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "A5", "group": "A", "matchday": 3,
+    "home": "México", "homeFlag": "🇲🇽",
+    "away": "Chequia", "awayFlag": "🇨🇿",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "A6", "group": "A", "matchday": 3,
+    "home": "Sudáfrica", "homeFlag": "🇿🇦",
+    "away": "Corea del Sur", "awayFlag": "🇰🇷",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "B1", "group": "B", "matchday": 1,
+    "home": "Canadá", "homeFlag": "🇨🇦",
+    "away": "Bosnia y Herzegovina", "awayFlag": "🇧🇦",
+    "date": "2026-06-12", "homeScore": 1, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "B2", "group": "B", "matchday": 1,
+    "home": "Qatar", "homeFlag": "🇶🇦",
+    "away": "Suiza", "awayFlag": "🇨🇭",
+    "date": "2026-06-13", "homeScore": 1, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "B3", "group": "B", "matchday": 2,
+    "home": "Canadá", "homeFlag": "🇨🇦",
+    "away": "Qatar", "awayFlag": "🇶🇦",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "B4", "group": "B", "matchday": 2,
+    "home": "Bosnia y Herzegovina", "homeFlag": "🇧🇦",
+    "away": "Suiza", "awayFlag": "🇨🇭",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "B5", "group": "B", "matchday": 3,
+    "home": "Canadá", "homeFlag": "🇨🇦",
+    "away": "Suiza", "awayFlag": "🇨🇭",
+    "date": "2026-06-22", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "B6", "group": "B", "matchday": 3,
+    "home": "Bosnia y Herzegovina", "homeFlag": "🇧🇦",
+    "away": "Qatar", "awayFlag": "🇶🇦",
+    "date": "2026-06-22", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "C1", "group": "C", "matchday": 1,
+    "home": "Brasil", "homeFlag": "🇧🇷",
+    "away": "Marruecos", "awayFlag": "🇲🇦",
+    "date": "2026-06-13", "homeScore": 1, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "C2", "group": "C", "matchday": 1,
+    "home": "Escocia", "homeFlag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "away": "Haití", "awayFlag": "🇭🇹",
+    "date": "2026-06-13", "homeScore": 1, "awayScore": 0, "status": "finished"
+  },
+  {
+    "id": "C3", "group": "C", "matchday": 2,
+    "home": "Brasil", "homeFlag": "🇧🇷",
+    "away": "Escocia", "awayFlag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "C4", "group": "C", "matchday": 2,
+    "home": "Marruecos", "homeFlag": "🇲🇦",
+    "away": "Haití", "awayFlag": "🇭🇹",
+    "date": "2026-06-18", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "C5", "group": "C", "matchday": 3,
+    "home": "Brasil", "homeFlag": "🇧🇷",
+    "away": "Haití", "awayFlag": "🇭🇹",
+    "date": "2026-06-22", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "C6", "group": "C", "matchday": 3,
+    "home": "Marruecos", "homeFlag": "🇲🇦",
+    "away": "Escocia", "awayFlag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "date": "2026-06-22", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "D1", "group": "D", "matchday": 1,
+    "home": "Estados Unidos", "homeFlag": "🇺🇸",
+    "away": "Paraguay", "awayFlag": "🇵🇾",
+    "date": "2026-06-12", "homeScore": 4, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "D2", "group": "D", "matchday": 1,
+    "home": "Australia", "homeFlag": "🇦🇺",
+    "away": "Türkiye", "awayFlag": "🇹🇷",
+    "date": "2026-06-13", "homeScore": 2, "awayScore": 0, "status": "finished"
+  },
+  {
+    "id": "D3", "group": "D", "matchday": 2,
+    "home": "Estados Unidos", "homeFlag": "🇺🇸",
+    "away": "Australia", "awayFlag": "🇦🇺",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "D4", "group": "D", "matchday": 2,
+    "home": "Paraguay", "homeFlag": "🇵🇾",
+    "away": "Türkiye", "awayFlag": "🇹🇷",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "D5", "group": "D", "matchday": 3,
+    "home": "Estados Unidos", "homeFlag": "🇺🇸",
+    "away": "Türkiye", "awayFlag": "🇹🇷",
+    "date": "2026-06-22", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "D6", "group": "D", "matchday": 3,
+    "home": "Australia", "homeFlag": "🇦🇺",
+    "away": "Paraguay", "awayFlag": "🇵🇾",
+    "date": "2026-06-22", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "E1", "group": "E", "matchday": 1,
+    "home": "Alemania", "homeFlag": "🇩🇪",
+    "away": "Curaçao", "awayFlag": "🇨🇼",
+    "date": "2026-06-14", "homeScore": 7, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "E2", "group": "E", "matchday": 1,
+    "home": "Costa de Marfil", "homeFlag": "🇨🇮",
+    "away": "Ecuador", "awayFlag": "🇪🇨",
+    "date": "2026-06-14", "homeScore": 1, "awayScore": 0, "status": "finished"
+  },
+  {
+    "id": "E3", "group": "E", "matchday": 2,
+    "home": "Alemania", "homeFlag": "🇩🇪",
+    "away": "Costa de Marfil", "awayFlag": "🇨🇮",
+    "date": "2026-06-18", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "E4", "group": "E", "matchday": 2,
+    "home": "Curaçao", "homeFlag": "🇨🇼",
+    "away": "Ecuador", "awayFlag": "🇪🇨",
+    "date": "2026-06-18", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "E5", "group": "E", "matchday": 3,
+    "home": "Alemania", "homeFlag": "🇩🇪",
+    "away": "Ecuador", "awayFlag": "🇪🇨",
+    "date": "2026-06-23", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "E6", "group": "E", "matchday": 3,
+    "home": "Costa de Marfil", "homeFlag": "🇨🇮",
+    "away": "Curaçao", "awayFlag": "🇨🇼",
+    "date": "2026-06-23", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "F1", "group": "F", "matchday": 1,
+    "home": "Países Bajos", "homeFlag": "🇳🇱",
+    "away": "Japón", "awayFlag": "🇯🇵",
+    "date": "2026-06-14", "homeScore": 2, "awayScore": 2, "status": "finished"
+  },
+  {
+    "id": "F2", "group": "F", "matchday": 1,
+    "home": "Suecia", "homeFlag": "🇸🇪",
+    "away": "Túnez", "awayFlag": "🇹🇳",
+    "date": "2026-06-14", "homeScore": 5, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "F3", "group": "F", "matchday": 2,
+    "home": "Países Bajos", "homeFlag": "🇳🇱",
+    "away": "Suecia", "awayFlag": "🇸🇪",
+    "date": "2026-06-18", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "F4", "group": "F", "matchday": 2,
+    "home": "Japón", "homeFlag": "🇯🇵",
+    "away": "Túnez", "awayFlag": "🇹🇳",
+    "date": "2026-06-19", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "F5", "group": "F", "matchday": 3,
+    "home": "Países Bajos", "homeFlag": "🇳🇱",
+    "away": "Túnez", "awayFlag": "🇹🇳",
+    "date": "2026-06-23", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "F6", "group": "F", "matchday": 3,
+    "home": "Japón", "homeFlag": "🇯🇵",
+    "away": "Suecia", "awayFlag": "🇸🇪",
+    "date": "2026-06-23", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "G1", "group": "G", "matchday": 1,
+    "home": "Bélgica", "homeFlag": "🇧🇪",
+    "away": "Egipto", "awayFlag": "🇪🇬",
+    "date": "2026-06-15", "homeScore": 1, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "G2", "group": "G", "matchday": 1,
+    "home": "Irán", "homeFlag": "🇮🇷",
+    "away": "Nueva Zelanda", "awayFlag": "🇳🇿",
+    "date": "2026-06-15", "homeScore": 2, "awayScore": 2, "status": "finished"
+  },
+  {
+    "id": "G3", "group": "G", "matchday": 2,
+    "home": "Bélgica", "homeFlag": "🇧🇪",
+    "away": "Irán", "awayFlag": "🇮🇷",
+    "date": "2026-06-19", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "G4", "group": "G", "matchday": 2,
+    "home": "Egipto", "homeFlag": "🇪🇬",
+    "away": "Nueva Zelanda", "awayFlag": "🇳🇿",
+    "date": "2026-06-19", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "G5", "group": "G", "matchday": 3,
+    "home": "Bélgica", "homeFlag": "🇧🇪",
+    "away": "Nueva Zelanda", "awayFlag": "🇳🇿",
+    "date": "2026-06-24", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "G6", "group": "G", "matchday": 3,
+    "home": "Irán", "homeFlag": "🇮🇷",
+    "away": "Egipto", "awayFlag": "🇪🇬",
+    "date": "2026-06-24", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "H1", "group": "H", "matchday": 1,
+    "home": "España", "homeFlag": "🇪🇸",
+    "away": "Cabo Verde", "awayFlag": "🇨🇻",
+    "date": "2026-06-15", "homeScore": 0, "awayScore": 0, "status": "finished"
+  },
+  {
+    "id": "H2", "group": "H", "matchday": 1,
+    "home": "Arabia Saudita", "homeFlag": "🇸🇦",
+    "away": "Uruguay", "awayFlag": "🇺🇾",
+    "date": "2026-06-15", "homeScore": 1, "awayScore": 1, "status": "finished"
+  },
+  {
+    "id": "H3", "group": "H", "matchday": 2,
+    "home": "España", "homeFlag": "🇪🇸",
+    "away": "Arabia Saudita", "awayFlag": "🇸🇦",
+    "date": "2026-06-19", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "H4", "group": "H", "matchday": 2,
+    "home": "Cabo Verde", "homeFlag": "🇨🇻",
+    "away": "Uruguay", "awayFlag": "🇺🇾",
+    "date": "2026-06-20", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "H5", "group": "H", "matchday": 3,
+    "home": "España", "homeFlag": "🇪🇸",
+    "away": "Uruguay", "awayFlag": "🇺🇾",
+    "date": "2026-06-24", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "H6", "group": "H", "matchday": 3,
+    "home": "Cabo Verde", "homeFlag": "🇨🇻",
+    "away": "Arabia Saudita", "awayFlag": "🇸🇦",
+    "date": "2026-06-24", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "I1", "group": "I", "matchday": 1,
+    "home": "Francia", "homeFlag": "🇫🇷",
+    "away": "Senegal", "awayFlag": "🇸🇳",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "I2", "group": "I", "matchday": 1,
+    "home": "Irak", "homeFlag": "🇮🇶",
+    "away": "Noruega", "awayFlag": "🇳🇴",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "I3", "group": "I", "matchday": 2,
+    "home": "Francia", "homeFlag": "🇫🇷",
+    "away": "Irak", "awayFlag": "🇮🇶",
+    "date": "2026-06-20", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "I4", "group": "I", "matchday": 2,
+    "home": "Senegal", "homeFlag": "🇸🇳",
+    "away": "Noruega", "awayFlag": "🇳🇴",
+    "date": "2026-06-20", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "I5", "group": "I", "matchday": 3,
+    "home": "Francia", "homeFlag": "🇫🇷",
+    "away": "Noruega", "awayFlag": "🇳🇴",
+    "date": "2026-06-25", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "I6", "group": "I", "matchday": 3,
+    "home": "Senegal", "homeFlag": "🇸🇳",
+    "away": "Irak", "awayFlag": "🇮🇶",
+    "date": "2026-06-25", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "J1", "group": "J", "matchday": 1,
+    "home": "Argentina", "homeFlag": "🇦🇷",
+    "away": "Argelia", "awayFlag": "🇩🇿",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "J2", "group": "J", "matchday": 1,
+    "home": "Austria", "homeFlag": "🇦🇹",
+    "away": "Jordania", "awayFlag": "🇯🇴",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "J3", "group": "J", "matchday": 2,
+    "home": "Argentina", "homeFlag": "🇦🇷",
+    "away": "Austria", "awayFlag": "🇦🇹",
+    "date": "2026-06-20", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "J4", "group": "J", "matchday": 2,
+    "home": "Argelia", "homeFlag": "🇩🇿",
+    "away": "Jordania", "awayFlag": "🇯🇴",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "J5", "group": "J", "matchday": 3,
+    "home": "Argentina", "homeFlag": "🇦🇷",
+    "away": "Jordania", "awayFlag": "🇯🇴",
+    "date": "2026-06-25", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "J6", "group": "J", "matchday": 3,
+    "home": "Argelia", "homeFlag": "🇩🇿",
+    "away": "Austria", "awayFlag": "🇦🇹",
+    "date": "2026-06-25", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "K1", "group": "K", "matchday": 1,
+    "home": "Portugal", "homeFlag": "🇵🇹",
+    "away": "Uzbekistán", "awayFlag": "🇺🇿",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "K2", "group": "K", "matchday": 1,
+    "home": "Colombia", "homeFlag": "🇨🇴",
+    "away": "Jamaica", "awayFlag": "🇯🇲",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "K3", "group": "K", "matchday": 2,
+    "home": "Portugal", "homeFlag": "🇵🇹",
+    "away": "Colombia", "awayFlag": "🇨🇴",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "K4", "group": "K", "matchday": 2,
+    "home": "Uzbekistán", "homeFlag": "🇺🇿",
+    "away": "Jamaica", "awayFlag": "🇯🇲",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "K5", "group": "K", "matchday": 3,
+    "home": "Portugal", "homeFlag": "🇵🇹",
+    "away": "Jamaica", "awayFlag": "🇯🇲",
+    "date": "2026-06-26", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "K6", "group": "K", "matchday": 3,
+    "home": "Colombia", "homeFlag": "🇨🇴",
+    "away": "Uzbekistán", "awayFlag": "🇺🇿",
+    "date": "2026-06-26", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "L1", "group": "L", "matchday": 1,
+    "home": "Inglaterra", "homeFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "away": "Croacia", "awayFlag": "🇭🇷",
+    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "L2", "group": "L", "matchday": 1,
+    "home": "Ghana", "homeFlag": "🇬🇭",
+    "away": "Panamá", "awayFlag": "🇵🇦",
+    "date": "2026-06-17", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "L3", "group": "L", "matchday": 2,
+    "home": "Inglaterra", "homeFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "away": "Ghana", "awayFlag": "🇬🇭",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "L4", "group": "L", "matchday": 2,
+    "home": "Croacia", "homeFlag": "🇭🇷",
+    "away": "Panamá", "awayFlag": "🇵🇦",
+    "date": "2026-06-21", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "L5", "group": "L", "matchday": 3,
+    "home": "Inglaterra", "homeFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "away": "Panamá", "awayFlag": "🇵🇦",
+    "date": "2026-06-26", "homeScore": null, "awayScore": null, "status": "pending"
+  },
+  {
+    "id": "L6", "group": "L", "matchday": 3,
+    "home": "Ghana", "homeFlag": "🇬🇭",
+    "away": "Croacia", "awayFlag": "🇭🇷",
+    "date": "2026-06-26", "homeScore": null, "awayScore": null, "status": "pending"
+  }
+]

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polla Mundial 2026 — UR Deliveries</title>
+  <meta name="description" content="Dashboard de la polla del Mundial 2026 de UR Deliveries. Sigue las predicciones y el ranking de puntos en tiempo real." />
+  <meta name="theme-color" content="#1a237e" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Polla Mundial 2026 — UR Deliveries" />
+  <meta property="og:description" content="Rankings, predicciones y resultados de la polla del Mundial 2026." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <img
+        src="assets/logo.png"
+        alt="Logo UR Deliveries"
+        class="header-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        id="header-logo-img"
+      />
+      <div class="header-logo-placeholder" style="display:none;" id="header-logo-placeholder">⚽</div>
+      <div class="header-titles">
+        <h1>Polla Mundial 2026</h1>
+        <p>UR Deliveries · Fase de Grupos</p>
+      </div>
+      <span class="header-badge">FIFA 2026</span>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main" role="main">
+
+    <p id="loading-msg" style="text-align:center; color: #90a4ae; padding: 40px 0;">Cargando datos...</p>
+
+    <!-- STATS -->
+    <div class="stats-grid" id="stats-section" style="display:none;">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-finished">—</div>
+        <div class="stat-label">Partidos jugados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-pending">—</div>
+        <div class="stat-label">Partidos pendientes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-total">—</div>
+        <div class="stat-label">Total partidos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-participants">—</div>
+        <div class="stat-label">Participantes</div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs" id="tabs-section" style="display:none;" role="tablist">
+      <button class="tab-btn active" data-tab="tab-ranking" id="tab-btn-ranking" role="tab" aria-selected="true">
+        🏆 Posiciones
+      </button>
+      <button class="tab-btn" data-tab="tab-matches" id="tab-btn-matches" role="tab" aria-selected="false">
+        ⚽ Partidos
+      </button>
+    </div>
+
+    <!-- TAB: RANKING -->
+    <div class="tab-content active" id="tab-ranking" role="tabpanel">
+
+      <div class="section-title">🏆 Top 3</div>
+      <div class="podium" id="podium-container">
+        <!-- Podium cards rendered by JS -->
+      </div>
+
+      <div class="section-title">📊 Tabla completa</div>
+      <div class="ranking-table" id="ranking-table">
+        <div class="ranking-row header-row">
+          <div class="col-rank col-header">#</div>
+          <div class="col-name col-header">Participante</div>
+          <div class="col-pts col-header">Pts</div>
+          <div class="col-exact col-header">🎯</div>
+          <div class="col-winner col-header">✅</div>
+          <div class="col-total col-header">Preds</div>
+        </div>
+        <div id="ranking-body">
+          <!-- Rows rendered by JS -->
+        </div>
+      </div>
+
+      <p style="font-size: 0.72rem; color: #90a4ae; text-align: center; margin-top: 12px;">
+        🎯 Exacto = 3 pts &nbsp;·&nbsp; ✅ Ganador/Empate = 1 pt &nbsp;·&nbsp; Click en un participante para ver sus predicciones
+      </p>
+    </div>
+
+    <!-- TAB: PARTIDOS -->
+    <div class="tab-content" id="tab-matches" role="tabpanel">
+      <div id="matches-container">
+        <!-- Match cards rendered by JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== MODAL: DETALLE PARTICIPANTE ===== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-participant-name">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <div class="modal-avatar" id="modal-avatar-txt">AB</div>
+          <div>
+            <div class="modal-name" id="modal-participant-name">Nombre</div>
+            <div class="modal-pts" id="modal-participant-pts">0 pts</div>
+          </div>
+        </div>
+        <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Prediction rows rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Show sections once JS loads
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new MutationObserver(() => {
+        const podium = document.getElementById('podium-container');
+        if (podium && podium.children.length > 0) {
+          document.getElementById('loading-msg').style.display = 'none';
+          document.getElementById('stats-section').style.display = 'grid';
+          document.getElementById('tabs-section').style.display  = 'flex';
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.getElementById('podium-container'), { childList: true });
+    });
+  </script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
