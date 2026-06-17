@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Polla Mundial 2026 — UR Deliveries</title>
-  <meta name="description" content="Dashboard de la polla del Mundial 2026 de UR Deliveries. Sigue las predicciones y el ranking de puntos en tiempo real." />
+  <meta name="description"
+    content="Dashboard de la polla del Mundial 2026 de UR Deliveries. Sigue las predicciones y el ranking de puntos en tiempo real." />
   <meta name="theme-color" content="#1a237e" />
 
   <!-- Open Graph -->
@@ -13,20 +15,17 @@
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
   <header class="header" role="banner">
     <div class="header-inner">
-      <img
-        src="assets/logo.png"
-        alt="Logo UR Deliveries"
-        class="header-logo"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        id="header-logo-img"
-      />
+      <img src="assets/logo.png" alt="Logo UR Deliveries" class="header-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" id="header-logo-img" />
       <div class="header-logo-placeholder" style="display:none;" id="header-logo-placeholder">⚽</div>
       <div class="header-titles">
         <h1>Polla Mundial 2026</h1>
@@ -101,7 +100,8 @@
       </div>
 
       <p style="font-size: 0.72rem; color: #90a4ae; text-align: center; margin-top: 12px;">
-        🎯 Exacto = 3 pts &nbsp;·&nbsp; ✅ Ganador/Empate = 1 pt &nbsp;·&nbsp; Click en un participante para ver sus predicciones
+        🎯 Exacto = 3 pts &nbsp;·&nbsp; ✅ Ganador/Empate = 1 pt &nbsp;·&nbsp; Click en un participante para ver sus
+        predicciones
       </p>
     </div>
 
@@ -113,10 +113,13 @@
         </div>
 
         <!-- FILTROS -->
-        <div class="predictions-filters" style="display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; background: var(--card-bg); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+        <div class="predictions-filters"
+          style="display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; background: var(--card-bg); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
           <div class="filter-group" style="display: flex; align-items: center; gap: 8px;">
-            <label for="filter-group-select" style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Grupo:</label>
-            <select id="filter-group-select" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
+            <label for="filter-group-select"
+              style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Grupo:</label>
+            <select id="filter-group-select"
+              style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
               <option value="ALL">Todos los grupos</option>
               <option value="A">Grupo A</option>
               <option value="B">Grupo B</option>
@@ -133,21 +136,27 @@
             </select>
           </div>
           <div class="filter-group" style="display: flex; align-items: center; gap: 8px;">
-            <label for="filter-status-select" style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Estado:</label>
-            <select id="filter-status-select" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
+            <label for="filter-status-select"
+              style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Estado:</label>
+            <select id="filter-status-select"
+              style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
               <option value="ALL">Todos los partidos</option>
               <option value="finished">Jugados / Finalizados</option>
               <option value="pending">Pendientes</option>
             </select>
           </div>
-          <div class="edit-controls-group" style="display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap;">
-            <button id="btn-toggle-edit" class="selector-btn" style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+          <div class="edit-controls-group"
+            style="display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap;">
+            <button id="btn-toggle-edit" class="selector-btn"
+              style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
               ⚙️ Activar Edición
             </button>
-            <button id="btn-export-json" class="selector-btn" style="display: none; background: var(--success); border-color: var(--success); color: white; border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+            <button id="btn-export-json" class="selector-btn"
+              style="display: none; background: var(--success); border-color: var(--success); color: white; border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
               📥 Exportar JSON
             </button>
-            <button id="btn-reset-predictions" class="selector-btn" style="display: none; background: var(--danger-light); border-color: var(--danger); color: var(--danger); border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+            <button id="btn-reset-predictions" class="selector-btn"
+              style="display: none; background: var(--danger-light); border-color: var(--danger); color: var(--danger); border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
               🔄 Restaurar Original
             </button>
           </div>
@@ -162,9 +171,13 @@
     <!-- TAB: FECHAS -->
     <div class="tab-content" id="tab-dates" role="tabpanel">
       <div class="dates-layout">
-        <div class="date-selector-container" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; background: var(--card-bg); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
-          <label for="date-select" style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Seleccionar Fecha:</label>
-          <select id="date-select" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
+        <div class="date-selector-container"
+          style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; background: var(--card-bg); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <label for="date-select"
+            style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Seleccionar
+            Fecha:</label>
+          <select id="date-select"
+            style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
             <!-- Options populated by JS -->
           </select>
         </div>
@@ -184,7 +197,8 @@
   </main>
 
   <!-- ===== MODAL: DETALLE PARTICIPANTE ===== -->
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-participant-name">
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="modal-participant-name">
     <div class="modal">
       <div class="modal-header">
         <div class="modal-header-info">
@@ -210,7 +224,7 @@
         if (podium && podium.children.length > 0) {
           document.getElementById('loading-msg').style.display = 'none';
           document.getElementById('stats-section').style.display = 'grid';
-          document.getElementById('tabs-section').style.display  = 'flex';
+          document.getElementById('tabs-section').style.display = 'flex';
           observer.disconnect();
         }
       });
@@ -220,4 +234,5 @@
 
   <script src="js/app.js"></script>
 </body>
+
 </html>
