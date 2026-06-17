@@ -193,7 +193,7 @@ const GROUPS_NAMES = {
   H: 'Grupo H — España, Cabo Verde, Arabia Saudita, Uruguay',
   I: 'Grupo I — Francia, Senegal, Irak, Noruega',
   J: 'Grupo J — Argentina, Argelia, Austria, Jordania',
-  K: 'Grupo K — Portugal, Uzbekistán, Colombia, Jamaica',
+  K: 'Grupo K — Portugal, Uzbekistán, Colombia, RD Congo',
   L: 'Grupo L — Inglaterra, Croacia, Ghana, Panamá'
 };
 
