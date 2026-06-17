@@ -1812,16 +1812,16 @@
         "awayScore": 2
       },
       "B6": {
-        "homeScore": 2,
-        "awayScore": 0
+        "homeScore": 1,
+        "awayScore": 1
       },
       "C1": {
         "homeScore": 2,
         "awayScore": 1
       },
       "C2": {
-        "homeScore": 2,
-        "awayScore": 0
+        "homeScore": 1,
+        "awayScore": 1
       },
       "C6": {
         "homeScore": 2,
@@ -1957,7 +1957,7 @@
       },
       "H5": {
         "homeScore": 1,
-        "awayScore": 0
+        "awayScore": 1
       },
       "I1": {
         "homeScore": 2,
