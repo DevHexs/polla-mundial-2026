@@ -636,12 +636,31 @@ function initDatesTab() {
     dateSelect.appendChild(opt);
   });
 
-  // Intentar preseleccionar el día de hoy (16 de junio de 2026), o la fecha actual más cercana en la lista
-  const defaultDate = "2026-06-16";
-  if (uniqueDates.includes(defaultDate)) {
-    selectedDateStr = defaultDate;
+  // Preseleccionar la fecha actual del sistema, o la más cercana disponible
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  if (uniqueDates.includes(todayStr)) {
+    selectedDateStr = todayStr;
   } else if (uniqueDates.length > 0) {
-    selectedDateStr = uniqueDates[0];
+    // Buscar la fecha más cercana disponible en el calendario de partidos
+    const todayMs = new Date(yyyy, today.getMonth(), today.getDate()).getTime();
+    let closestDate = uniqueDates[0];
+    let minDiff = Infinity;
+    
+    uniqueDates.forEach(dStr => {
+      const [y, m, d] = dStr.split('-').map(Number);
+      const dateMs = new Date(y, m - 1, d).getTime();
+      const diff = Math.abs(dateMs - todayMs);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestDate = dStr;
+      }
+    });
+    selectedDateStr = closestDate;
   }
   
   dateSelect.value = selectedDateStr;
