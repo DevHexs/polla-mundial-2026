@@ -866,9 +866,9 @@
     "away": "Croacia",
     "awayFlag": "🇭🇷",
     "date": "2026-06-17",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 4,
+    "awayScore": 2,
+    "status": "finished"
   },
   {
     "id": "L2",
