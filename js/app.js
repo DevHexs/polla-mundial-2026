@@ -123,7 +123,7 @@ function renderPodium(standings) {
     card.className = `podium-card ${rankClasses[i]}`;
     card.innerHTML = `
       <span class="podium-medal">${medals[i]}</span>
-      <div class="podium-name">${p.name}</div>
+      <div class="podium-name">${p.avatar} ${p.name}</div>
       <div class="podium-pts">${p.totalPoints}</div>
       <div class="podium-pts-label">puntos</div>
       <div class="podium-breakdown">
@@ -149,14 +149,12 @@ function renderRankingTable(standings) {
     else if (rank === 3) rankHtml = `<span class="rank-badge r3">🥉</span>`;
     else rankHtml = `<span class="rank-badge rn">${rank}</span>`;
 
-    const initials = p.name.substring(0, 2).toUpperCase();
-
     const row = document.createElement('div');
     row.className = 'ranking-row';
     row.innerHTML = `
       <div class="col-rank">${rankHtml}</div>
       <div class="col-name">
-        <span class="avatar-circle">${initials}</span>
+        <span class="avatar-circle" style="background: rgba(0,0,0,0.04); font-size:1.1rem;">${p.avatar}</span>
         ${p.name}
       </div>
       <div class="col-pts">${p.totalPoints}</div>
@@ -253,10 +251,12 @@ function renderMatches() {
 // ===== MODAL DETALLE PARTICIPANTE =====
 function openModal(participant) {
   const overlay = document.getElementById('modal-overlay');
-  const initials = participant.name.substring(0, 2).toUpperCase();
   const ptsTxt = `${participant.totalPoints} pts · 🎯 ${participant.exactCount} exactos · ✅ ${participant.winnerCount} ganador`;
 
-  document.getElementById('modal-avatar-txt').textContent  = initials;
+  const avatarEl = document.getElementById('modal-avatar-txt');
+  avatarEl.textContent = participant.avatar;
+  avatarEl.style.fontSize = '1.4rem';
+  avatarEl.style.background = 'rgba(255,255,255,0.2)';
   document.getElementById('modal-participant-name').textContent = participant.name;
   document.getElementById('modal-participant-pts').textContent  = ptsTxt;
 
@@ -369,8 +369,7 @@ function renderPredictionsTab(standings) {
   standings.forEach(p => {
     const btn = document.createElement('button');
     btn.className = `selector-btn ${p.name === selectedParticipantName ? 'active' : ''}`;
-    const initials = p.name.substring(0, 2).toUpperCase();
-    btn.innerHTML = `<span class="avatar-circle" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex; margin-right:4px;">${initials}</span> ${p.name}`;
+    btn.innerHTML = `<span class="avatar-circle" style="width:22px; height:22px; font-size:0.9rem; display:inline-flex; margin-right:6px; background:rgba(0,0,0,0.04);">${p.avatar}</span> ${p.name}`;
     btn.addEventListener('click', () => {
       selectedParticipantName = p.name;
       document.querySelectorAll('.selector-btn').forEach(b => b.classList.remove('active'));
