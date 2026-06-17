@@ -299,10 +299,10 @@
     "predictions": {
       "A1": {
         "homeScore": 2,
-        "awayScore": 0
+        "awayScore": 1
       },
       "A2": {
-        "homeScore": 3,
+        "homeScore": 0,
         "awayScore": 2
       },
       "A4": {
@@ -322,7 +322,7 @@
         "awayScore": 3
       },
       "B1": {
-        "homeScore": 1,
+        "homeScore": 2,
         "awayScore": 1
       },
       "B2": {
@@ -346,12 +346,12 @@
         "awayScore": 2
       },
       "C1": {
-        "homeScore": 2,
-        "awayScore": 0
+        "homeScore": 3,
+        "awayScore": 1
       },
       "C2": {
-        "homeScore": 1,
-        "awayScore": 0
+        "homeScore": 5,
+        "awayScore": 1
       },
       "C6": {
         "homeScore": 3,
@@ -374,8 +374,8 @@
         "awayScore": 1
       },
       "D2": {
-        "homeScore": 2,
-        "awayScore": 2
+        "homeScore": 0,
+        "awayScore": 0
       },
       "D3": {
         "homeScore": 2,
@@ -410,12 +410,12 @@
         "awayScore": 3
       },
       "E5": {
-        "homeScore": 2,
-        "awayScore": 1
-      },
-      "E6": {
         "homeScore": 3,
         "awayScore": 2
+      },
+      "E6": {
+        "homeScore": 2,
+        "awayScore": 1
       },
       "F1": {
         "homeScore": 3,
