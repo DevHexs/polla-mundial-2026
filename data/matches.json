@@ -723,9 +723,9 @@
     "away": "Jordania",
     "awayFlag": "🇯🇴",
     "date": "2026-06-16",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "finished"
   },
   {
     "id": "J3",
