@@ -140,6 +140,17 @@
               <option value="pending">Pendientes</option>
             </select>
           </div>
+          <div class="edit-controls-group" style="display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap;">
+            <button id="btn-toggle-edit" class="selector-btn" style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+              ⚙️ Activar Edición
+            </button>
+            <button id="btn-export-json" class="selector-btn" style="display: none; background: var(--success); border-color: var(--success); color: white; border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+              📥 Exportar JSON
+            </button>
+            <button id="btn-reset-predictions" class="selector-btn" style="display: none; background: var(--danger-light); border-color: var(--danger); color: var(--danger); border-radius: var(--radius-sm); font-size: 0.75rem; padding: 6px 12px; font-weight: 600; height: 32px; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+              🔄 Restaurar Original
+            </button>
+          </div>
         </div>
 
         <div class="predictions-grid" id="predictions-grid-container">
