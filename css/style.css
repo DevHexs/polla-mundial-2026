@@ -588,6 +588,162 @@ body {
 .empty-state .empty-icon { font-size: 2.5rem; margin-bottom: 12px; display: block; }
 .empty-state p { font-size: 0.9rem; }
 
+/* ===== PREDICTIONS TAB ===== */
+.predictions-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.participants-selector {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 4px 8px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.participants-selector::-webkit-scrollbar {
+  height: 4px;
+}
+.participants-selector::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.selector-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.selector-btn:hover {
+  background: var(--bg);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.selector-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.pred-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pred-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.pred-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: center;
+}
+
+.pred-card-team {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pred-card-team.home {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.pred-card-team.away {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.pred-card-prediction-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.pred-score-val {
+  background: #eef2f7;
+  border: 1px solid #cfd8dc;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+}
+
+.pred-score-label {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+
+.real-score-footer {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.real-score-footer strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.pred-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
   .header-inner { padding: 12px 16px; }

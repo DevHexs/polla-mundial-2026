@@ -66,6 +66,9 @@
       <button class="tab-btn active" data-tab="tab-ranking" id="tab-btn-ranking" role="tab" aria-selected="true">
         🏆 Posiciones
       </button>
+      <button class="tab-btn" data-tab="tab-predictions" id="tab-btn-predictions" role="tab" aria-selected="false">
+        📝 Predicciones
+      </button>
       <button class="tab-btn" data-tab="tab-matches" id="tab-btn-matches" role="tab" aria-selected="false">
         ⚽ Partidos
       </button>
@@ -97,6 +100,18 @@
       <p style="font-size: 0.72rem; color: #90a4ae; text-align: center; margin-top: 12px;">
         🎯 Exacto = 3 pts &nbsp;·&nbsp; ✅ Ganador/Empate = 1 pt &nbsp;·&nbsp; Click en un participante para ver sus predicciones
       </p>
+    </div>
+
+    <!-- TAB: PREDICCIONES -->
+    <div class="tab-content" id="tab-predictions" role="tabpanel">
+      <div class="predictions-layout">
+        <div class="participants-selector" id="participants-selector-container">
+          <!-- Participant pills rendered by JS -->
+        </div>
+        <div class="predictions-grid" id="predictions-grid-container">
+          <!-- Prediction cards rendered by JS -->
+        </div>
+      </div>
     </div>
 
     <!-- TAB: PARTIDOS -->

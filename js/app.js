@@ -31,6 +31,7 @@ function init() {
   renderPodium(standings);
   renderRankingTable(standings);
   renderMatches();
+  renderPredictionsTab(standings);
   setupTabs();
   setupModal();
 }
@@ -348,3 +349,121 @@ function setupTabs() {
     });
   });
 }
+
+// ===== VISTA DE PREDICCIONES POR PARTICIPANTE =====
+let selectedParticipantName = "";
+
+function renderPredictionsTab(standings) {
+  const container = document.getElementById('participants-selector-container');
+  if (!container) return;
+
+  container.innerHTML = '';
+  
+  if (standings.length === 0) return;
+  
+  // Seleccionar por defecto al primero de la tabla
+  if (!selectedParticipantName || !standings.some(s => s.name === selectedParticipantName)) {
+    selectedParticipantName = standings[0].name;
+  }
+
+  standings.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = `selector-btn ${p.name === selectedParticipantName ? 'active' : ''}`;
+    const initials = p.name.substring(0, 2).toUpperCase();
+    btn.innerHTML = `<span class="avatar-circle" style="width:20px; height:20px; font-size:0.6rem; display:inline-flex; margin-right:4px;">${initials}</span> ${p.name}`;
+    btn.addEventListener('click', () => {
+      selectedParticipantName = p.name;
+      document.querySelectorAll('.selector-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderParticipantPredictions(p.name);
+    });
+    container.appendChild(btn);
+  });
+
+  renderParticipantPredictions(selectedParticipantName);
+}
+
+function renderParticipantPredictions(name) {
+  const grid = document.getElementById('predictions-grid-container');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+  
+  const participant = predictionsData.find(p => p.name === name);
+  if (!participant) return;
+
+  // Ordenar partidos por grupo y luego por ID
+  const sortedMatches = [...matchesData].sort((a, b) => {
+    if (a.group !== b.group) return a.group.localeCompare(b.group);
+    return a.id.localeCompare(b.id);
+  });
+
+  sortedMatches.forEach(match => {
+    const pred = participant.predictions[match.id];
+    const result = scorePredict(pred, match);
+
+    const isFinished = match.status === 'finished';
+    const isLive     = match.status === 'live';
+
+    const card = document.createElement('div');
+    card.className = 'pred-card';
+
+    let resultHtml = '';
+    let borderStyle = '';
+    if (!pred) {
+      resultHtml = `<span class="pred-result no-pred">Sin pred.</span>`;
+      borderStyle = 'border-left: 4px solid var(--border);';
+    } else if (result.type === 'pending') {
+      resultHtml = `<span class="pred-result pending">Pendiente</span>`;
+      borderStyle = 'border-left: 4px solid var(--border);';
+    } else if (result.type === 'exact') {
+      resultHtml = `<span class="pred-result exact">🎯 +${POINTS_EXACT}pts</span>`;
+      borderStyle = 'border-left: 4px solid var(--success);';
+    } else if (result.type === 'winner') {
+      resultHtml = `<span class="pred-result winner">✅ +${POINTS_WINNER}pt</span>`;
+      borderStyle = 'border-left: 4px solid var(--warning);';
+    } else {
+      resultHtml = `<span class="pred-result wrong">❌ 0pts</span>`;
+      borderStyle = 'border-left: 4px solid var(--danger);';
+    }
+
+    card.style = borderStyle;
+
+    const predScoreStr = pred ? `${pred.homeScore} – ${pred.awayScore}` : '—';
+    const realScoreHtml = isFinished || isLive
+      ? `<span class="real-score-footer">Real: <strong>${match.homeScore} – ${match.awayScore}</strong></span>`
+      : '';
+
+    card.innerHTML = `
+      <div class="pred-card-header">
+        <span>Grupo ${match.group}</span>
+        <span>ID: ${match.id}</span>
+      </div>
+      <div class="pred-card-body">
+        <div class="pred-card-team home">
+          <span class="team-flag">${match.homeFlag}</span>
+          <span class="team-name" style="font-size:0.8rem;">${match.home.split(' ')[0]}</span>
+        </div>
+        <div class="pred-card-prediction-score">
+          <div class="pred-score-val">${predScoreStr}</div>
+          <div class="pred-score-label">Predicción</div>
+        </div>
+        <div class="pred-card-team away">
+          <span class="team-flag">${match.awayFlag}</span>
+          <span class="team-name" style="font-size:0.8rem;">${match.away.split(' ')[0]}</span>
+        </div>
+      </div>
+      <div class="pred-card-footer">
+        <div style="display:flex; flex-direction:column; gap:2px; align-items:flex-start;">
+          <span class="status-date" style="font-size:0.65rem; color: var(--text-muted); font-weight:500;">
+            ${isFinished ? 'Finalizado' : isLive ? '🔴 En vivo' : formatDate(match.date)}
+          </span>
+          ${realScoreHtml}
+        </div>
+        ${resultHtml}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+

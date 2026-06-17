@@ -291,13 +291,13 @@
     "id": "I1", "group": "I", "matchday": 1,
     "home": "Francia", "homeFlag": "🇫🇷",
     "away": "Senegal", "awayFlag": "🇸🇳",
-    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+    "date": "2026-06-16", "homeScore": 3, "awayScore": 1, "status": "finished"
   },
   {
     "id": "I2", "group": "I", "matchday": 1,
     "home": "Irak", "homeFlag": "🇮🇶",
     "away": "Noruega", "awayFlag": "🇳🇴",
-    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+    "date": "2026-06-16", "homeScore": 1, "awayScore": 4, "status": "finished"
   },
   {
     "id": "I3", "group": "I", "matchday": 2,
@@ -327,7 +327,8 @@
     "id": "J1", "group": "J", "matchday": 1,
     "home": "Argentina", "homeFlag": "🇦🇷",
     "away": "Argelia", "awayFlag": "🇩🇿",
-    "date": "2026-06-16", "homeScore": null, "awayScore": null, "status": "pending"
+    "date": "2026-06-16", "homeScore": 1, "awayScore": 0, "status": "finished"
+
   },
   {
     "id": "J2", "group": "J", "matchday": 1,
