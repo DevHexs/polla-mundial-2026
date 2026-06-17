@@ -767,11 +767,20 @@ function renderDateMatches() {
 
 // ===== EDITOR DE PREDICCIONES (CONTROLES) =====
 function setupEditControls() {
+  const container = document.querySelector('.edit-controls-group');
   const btnToggle = document.getElementById('btn-toggle-edit');
   const btnExport = document.getElementById('btn-export-json');
   const btnReset = document.getElementById('btn-reset-predictions');
 
   if (!btnToggle) return;
+
+  // Detectar si estamos en modo local (localhost, 127.0.0.1, ::1 o ejecutando desde archivo local)
+  const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname) || window.location.protocol === 'file:';
+  
+  if (!isLocal) {
+    if (container) container.style.setProperty('display', 'none', 'important');
+    return;
+  }
 
   // Actualizar visibilidad inicial del botón de reset
   btnReset.style.display = localStorage.getItem('ur_predictions_data') ? 'inline-flex' : 'none';
