@@ -32,6 +32,7 @@ function init() {
   renderRankingTable(standings);
   renderMatches();
   renderPredictionsTab(standings);
+  initDatesTab();
   setupTabs();
   setupModal();
 }
@@ -503,6 +504,159 @@ function renderParticipantPredictions(name) {
       </div>
     `;
     grid.appendChild(card);
+  });
+}
+
+// ===== TAB: FECHAS (PARTIDOS DEL DÍA Y SUS PRONÓSTICOS) =====
+let selectedDateStr = "";
+
+function initDatesTab() {
+  const dateSelect = document.getElementById('date-select');
+  if (!dateSelect) return;
+
+  // Extraer fechas únicas y ordenarlas cronológicamente
+  const uniqueDates = [...new Set(matchesData.map(m => m.date))].sort();
+  
+  dateSelect.innerHTML = '';
+  uniqueDates.forEach(dateVal => {
+    const opt = document.createElement('option');
+    opt.value = dateVal;
+    
+    // Formatear fecha para el usuario
+    const [y, m, d] = dateVal.split('-').map(Number);
+    const dateObj = new Date(y, m - 1, d);
+    const formatted = dateObj.toLocaleDateString('es', { weekday: 'long', day: 'numeric', month: 'long' });
+    opt.textContent = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    
+    dateSelect.appendChild(opt);
+  });
+
+  // Intentar preseleccionar el día de hoy (16 de junio de 2026), o la fecha actual más cercana en la lista
+  const defaultDate = "2026-06-16";
+  if (uniqueDates.includes(defaultDate)) {
+    selectedDateStr = defaultDate;
+  } else if (uniqueDates.length > 0) {
+    selectedDateStr = uniqueDates[0];
+  }
+  
+  dateSelect.value = selectedDateStr;
+
+  // Event listener
+  if (!dateSelect.dataset.listener) {
+    dateSelect.dataset.listener = 'true';
+    dateSelect.addEventListener('change', (e) => {
+      selectedDateStr = e.target.value;
+      renderDateMatches();
+    });
+  }
+
+  renderDateMatches();
+}
+
+function renderDateMatches() {
+  const container = document.getElementById('date-matches-container');
+  if (!container) return;
+
+  container.innerHTML = '';
+  
+  if (!selectedDateStr) return;
+
+  const matches = matchesData.filter(m => m.date === selectedDateStr);
+  
+  if (matches.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state" style="padding: 40px; background: var(--card-bg); border-radius: var(--radius-md); border:1px solid var(--border);">
+        <span class="empty-icon">📅</span>
+        <p>No hay partidos programados para esta fecha.</p>
+      </div>
+    `;
+    return;
+  }
+
+  matches.forEach(match => {
+    const matchBlock = document.createElement('div');
+    matchBlock.className = 'date-match-block';
+    matchBlock.style = 'background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 16px;';
+
+    const isFinished = match.status === 'finished';
+    const isLive     = match.status === 'live';
+
+    const scoreHtml = isFinished || isLive
+      ? `<div class="score-box">${match.homeScore}</div>
+         <span class="score-separator">–</span>
+         <div class="score-box">${match.awayScore}</div>`
+      : `<div class="score-pending">vs</div>`;
+
+    const statusLabel = isFinished ? 'Finalizado' : isLive ? '🔴 En vivo' : formatDate(match.date);
+    const statusClass = isFinished ? 'finished' : isLive ? 'live' : 'pending';
+
+    // 1. HTML del partido (encabezado)
+    let matchHeaderHtml = `
+      <div class="match-card" style="box-shadow: none; border: none; padding: 0; pointer-events: none; border-left: none;">
+        <div class="match-team home">
+          <span class="team-flag">${match.homeFlag}</span>
+          <span class="team-name">${match.home}</span>
+        </div>
+        <div class="match-score">${scoreHtml}</div>
+        <div class="match-team away">
+          <span class="team-flag">${match.awayFlag}</span>
+          <span class="team-name">${match.away}</span>
+        </div>
+        <div class="match-date-col">
+          <span class="match-date">Grupo ${match.group} · ID: ${match.id}</span>
+          <span class="status-pill ${statusClass}">${statusLabel}</span>
+        </div>
+      </div>
+    `;
+
+    // 2. Pronósticos de los participantes
+    let predGridHtml = `
+      <div style="font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 4px;">
+        Pronósticos de los participantes
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin-top: 10px;">
+    `;
+
+    // Ordenar participantes según la tabla de posiciones actual
+    const standings = computeStandings();
+    
+    standings.forEach(p => {
+      const pred = p.predictions[match.id];
+      const result = scorePredict(pred, match);
+      
+      const predScoreStr = pred ? `${pred.homeScore} – ${pred.awayScore}` : '—';
+      
+      let pointsBadgeHtml = '';
+      if (pred) {
+        if (result.type === 'exact') {
+          pointsBadgeHtml = `<span style="font-size: 0.65rem; font-weight: 700; color: var(--success); background: var(--success-light); padding: 1px 6px; border-radius: 10px;">🎯 +3</span>`;
+        } else if (result.type === 'winner') {
+          pointsBadgeHtml = `<span style="font-size: 0.65rem; font-weight: 700; color: var(--warning); background: var(--warning-light); padding: 1px 6px; border-radius: 10px;">✅ +1</span>`;
+        } else if (result.type === 'wrong') {
+          pointsBadgeHtml = `<span style="font-size: 0.65rem; font-weight: 700; color: var(--danger); background: var(--danger-light); padding: 1px 6px; border-radius: 10px;">❌ 0</span>`;
+        }
+      } else {
+        pointsBadgeHtml = `<span style="font-size: 0.65rem; font-style: italic; color: var(--text-muted);">Sin pred.</span>`;
+      }
+
+      predGridHtml += `
+        <div style="display: flex; align-items: center; justify-content: space-between; background: var(--bg); border: 1px solid var(--border); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.8rem;">
+          <div style="display: flex; align-items: center; gap: 6px; font-weight: 600; color: var(--text-primary);">
+            <span style="font-size: 1rem;">${p.avatar}</span>
+            <span>${p.name}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+            <strong style="color: var(--primary); font-size: 0.85rem;">${predScoreStr}</strong>
+            ${pointsBadgeHtml}
+          </div>
+        </div>
+      `;
+    });
+
+    predGridHtml += `</div>`;
+    
+    matchBlock.innerHTML = matchHeaderHtml + predGridHtml;
+    container.appendChild(matchBlock);
   });
 }
 

@@ -69,6 +69,9 @@
       <button class="tab-btn" data-tab="tab-predictions" id="tab-btn-predictions" role="tab" aria-selected="false">
         📝 Predicciones
       </button>
+      <button class="tab-btn" data-tab="tab-dates" id="tab-btn-dates" role="tab" aria-selected="false">
+        📅 Fechas
+      </button>
       <button class="tab-btn" data-tab="tab-matches" id="tab-btn-matches" role="tab" aria-selected="false">
         ⚽ Partidos
       </button>
@@ -141,6 +144,21 @@
 
         <div class="predictions-grid" id="predictions-grid-container">
           <!-- Prediction cards rendered by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: FECHAS -->
+    <div class="tab-content" id="tab-dates" role="tabpanel">
+      <div class="dates-layout">
+        <div class="date-selector-container" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; background: var(--card-bg); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <label for="date-select" style="font-size: 0.72rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Seleccionar Fecha:</label>
+          <select id="date-select" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.8rem; background: var(--bg); color: var(--text-primary); cursor: pointer; outline: none; font-weight: 500;">
+            <!-- Options populated by JS -->
+          </select>
+        </div>
+        <div id="date-matches-container" style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Matches and their predictions table rendered by JS -->
         </div>
       </div>
     </div>
