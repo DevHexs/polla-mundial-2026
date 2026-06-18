@@ -879,8 +879,8 @@
     "away": "Panamá",
     "awayFlag": "🇵🇦",
     "date": "2026-06-17",
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 1,
+    "awayScore": 0,
     "status": "pending"
   },
   {
