@@ -125,9 +125,9 @@
     "away": "Suiza",
     "awayFlag": "🇨🇭",
     "date": "2026-06-18",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 1,
+    "awayScore": 4,
+    "status": "finished"
   },
   {
     "id": "B5",
