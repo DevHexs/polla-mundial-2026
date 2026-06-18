@@ -853,9 +853,9 @@
     "away": "Uzbekistán",
     "awayFlag": "🇺🇿",
     "date": "2026-06-17",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "finished"
   },
   {
     "id": "L1",
