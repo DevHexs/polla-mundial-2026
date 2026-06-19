@@ -34,9 +34,9 @@
     "away": "Corea del Sur",
     "awayFlag": "🇰🇷",
     "date": "2026-06-18",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 1,
+    "awayScore": 0,
+    "status": "finished"
   },
   {
     "id": "A4",
