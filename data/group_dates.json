@@ -1,0 +1,458 @@
+{
+  "A": [
+    {
+      "date": "2026-06-11",
+      "home": "México",
+      "away": "Sudáfrica",
+      "stadium": "Estadio Ciudad de México"
+    },
+    {
+      "date": "2026-06-11",
+      "home": "Corea del Sur",
+      "away": "Chequia",
+      "stadium": "Estadio Guadalajara"
+    },
+    {
+      "date": "2026-06-18",
+      "home": "Chequia",
+      "away": "Sudáfrica",
+      "stadium": "Estadio Atlanta"
+    },
+    {
+      "date": "2026-06-18",
+      "home": "México",
+      "away": "Corea del Sur",
+      "stadium": "Estadio Guadalajara"
+    },
+    {
+      "date": "2026-06-24",
+      "home": "Chequia",
+      "away": "México",
+      "stadium": "Estadio Ciudad de México"
+    },
+    {
+      "date": "2026-06-24",
+      "home": "Sudáfrica",
+      "away": "Corea del Sur",
+      "stadium": "Estadio Monterrey"
+    }
+  ],
+  "B": [
+    {
+      "date": "2026-06-12",
+      "home": "Canadá",
+      "away": "Bosnia y Herzegovina",
+      "stadium": "Estadio Toronto"
+    },
+    {
+      "date": "2026-06-13",
+      "home": "Qatar",
+      "away": "Suiza",
+      "stadium": "Estadio Bahía de San Francisco"
+    },
+    {
+      "date": "2026-06-18",
+      "home": "Suiza",
+      "away": "Bosnia y Herzegovina",
+      "stadium": "Estadio Los Ángeles"
+    },
+    {
+      "date": "2026-06-18",
+      "home": "Canadá",
+      "away": "Qatar",
+      "stadium": "Estadio BC Place Vancouver"
+    },
+    {
+      "date": "2026-06-24",
+      "home": "Suiza",
+      "away": "Canadá",
+      "stadium": "Estadio BC Place Vancouver"
+    },
+    {
+      "date": "2026-06-24",
+      "home": "Bosnia y Herzegovina",
+      "away": "Qatar",
+      "stadium": "Estadio Seattle"
+    }
+  ],
+  "C": [
+    {
+      "date": "2026-06-13",
+      "home": "Brasil",
+      "away": "Marruecos",
+      "stadium": "Estadio Nueva York Nueva Jersey"
+    },
+    {
+      "date": "2026-06-13",
+      "home": "Haití",
+      "away": "Escocia",
+      "stadium": "Estadio Boston"
+    },
+    {
+      "date": "2026-06-19",
+      "home": "Escocia",
+      "away": "Marruecos",
+      "stadium": "Estadio Boston"
+    },
+    {
+      "date": "2026-06-19",
+      "home": "Brasil",
+      "away": "Haití",
+      "stadium": "Estadio Filadelfia"
+    },
+    {
+      "date": "2026-06-24",
+      "home": "Escocia",
+      "away": "Brasil",
+      "stadium": "Estadio Miami"
+    },
+    {
+      "date": "2026-06-24",
+      "home": "Marruecos",
+      "away": "Haití",
+      "stadium": "Estadio Atlanta"
+    }
+  ],
+  "D": [
+    {
+      "date": "2026-06-12",
+      "home": "Estados Unidos",
+      "away": "Paraguay",
+      "stadium": "Estadio Los Ángeles"
+    },
+    {
+      "date": "2026-06-13",
+      "home": "Australia",
+      "away": "Türkiye",
+      "stadium": "Estadio BC Place Vancouver"
+    },
+    {
+      "date": "2026-06-19",
+      "home": "Estados Unidos",
+      "away": "Australia",
+      "stadium": "Estadio Seattle"
+    },
+    {
+      "date": "2026-06-19",
+      "home": "Türkiye",
+      "away": "Paraguay",
+      "stadium": "Estadio Bahía de San Francisco"
+    },
+    {
+      "date": "2026-06-25",
+      "home": "Türkiye",
+      "away": "Estados Unidos",
+      "stadium": "Estadio Los Ángeles"
+    },
+    {
+      "date": "2026-06-25",
+      "home": "Paraguay",
+      "away": "Australia",
+      "stadium": "Estadio Bahía de San Francisco"
+    }
+  ],
+  "E": [
+    {
+      "date": "2026-06-14",
+      "home": "Alemania",
+      "away": "Curaçao",
+      "stadium": "Estadio Houston"
+    },
+    {
+      "date": "2026-06-14",
+      "home": "Costa de Marfil",
+      "away": "Ecuador",
+      "stadium": "Estadio Filadelfia"
+    },
+    {
+      "date": "2026-06-20",
+      "home": "Alemania",
+      "away": "Costa de Marfil",
+      "stadium": "Estadio Toronto"
+    },
+    {
+      "date": "2026-06-20",
+      "home": "Ecuador",
+      "away": "Curaçao",
+      "stadium": "Estadio Kansas City"
+    },
+    {
+      "date": "2026-06-25",
+      "home": "Curaçao",
+      "away": "Costa de Marfil",
+      "stadium": "Estadio Filadelfia"
+    },
+    {
+      "date": "2026-06-25",
+      "home": "Ecuador",
+      "away": "Alemania",
+      "stadium": "Estadio Nueva York Nueva Jersey"
+    }
+  ],
+  "F": [
+    {
+      "date": "2026-06-14",
+      "home": "Países Bajos",
+      "away": "Japón",
+      "stadium": "Estadio Dallas"
+    },
+    {
+      "date": "2026-06-14",
+      "home": "Suecia",
+      "away": "Túnez",
+      "stadium": "Estadio Monterrey"
+    },
+    {
+      "date": "2026-06-20",
+      "home": "Países Bajos",
+      "away": "Suecia",
+      "stadium": "Estadio Houston"
+    },
+    {
+      "date": "2026-06-20",
+      "home": "Túnez",
+      "away": "Japón",
+      "stadium": "Estadio Monterrey"
+    },
+    {
+      "date": "2026-06-25",
+      "home": "Japón",
+      "away": "Suecia",
+      "stadium": "Estadio Dallas"
+    },
+    {
+      "date": "2026-06-25",
+      "home": "Túnez",
+      "away": "Países Bajos",
+      "stadium": "Estadio Kansas City"
+    }
+  ],
+  "G": [
+    {
+      "date": "2026-06-15",
+      "home": "Bélgica",
+      "away": "Egipto",
+      "stadium": "Estadio Seattle"
+    },
+    {
+      "date": "2026-06-15",
+      "home": "Irán",
+      "away": "Nueva Zelanda",
+      "stadium": "Estadio Los Ángeles"
+    },
+    {
+      "date": "2026-06-21",
+      "home": "Bélgica",
+      "away": "Irán",
+      "stadium": "Estadio Los Ángeles"
+    },
+    {
+      "date": "2026-06-21",
+      "home": "Nueva Zelanda",
+      "away": "Egipto",
+      "stadium": "Estadio BC Place Vancouver"
+    },
+    {
+      "date": "2026-06-26",
+      "home": "Egipto",
+      "away": "Irán",
+      "stadium": "Estadio Seattle"
+    },
+    {
+      "date": "2026-06-26",
+      "home": "Nueva Zelanda",
+      "away": "Bélgica",
+      "stadium": "Estadio BC Place Vancouver"
+    }
+  ],
+  "H": [
+    {
+      "date": "2026-06-15",
+      "home": "España",
+      "away": "Cabo Verde",
+      "stadium": "Estadio Atlanta"
+    },
+    {
+      "date": "2026-06-15",
+      "home": "Arabia Saudita",
+      "away": "Uruguay",
+      "stadium": "Estadio Miami"
+    },
+    {
+      "date": "2026-06-21",
+      "home": "España",
+      "away": "Arabia Saudita",
+      "stadium": "Estadio Atlanta"
+    },
+    {
+      "date": "2026-06-21",
+      "home": "Uruguay",
+      "away": "Cabo Verde",
+      "stadium": "Estadio Miami"
+    },
+    {
+      "date": "2026-06-26",
+      "home": "Cabo Verde",
+      "away": "Arabia Saudita",
+      "stadium": "Estadio Houston"
+    },
+    {
+      "date": "2026-06-26",
+      "home": "Uruguay",
+      "away": "España",
+      "stadium": "Estadio Guadalajara"
+    }
+  ],
+  "I": [
+    {
+      "date": "2026-06-16",
+      "home": "Francia",
+      "away": "Senegal",
+      "stadium": "Estadio Nueva York Nueva Jersey"
+    },
+    {
+      "date": "2026-06-16",
+      "home": "Irak",
+      "away": "Noruega",
+      "stadium": "Estadio Boston"
+    },
+    {
+      "date": "2026-06-22",
+      "home": "Francia",
+      "away": "Irak",
+      "stadium": "Estadio Filadelfia"
+    },
+    {
+      "date": "2026-06-22",
+      "home": "Noruega",
+      "away": "Senegal",
+      "stadium": "Estadio Nueva York Nueva Jersey"
+    },
+    {
+      "date": "2026-06-26",
+      "home": "Noruega",
+      "away": "Francia",
+      "stadium": "Estadio Boston"
+    },
+    {
+      "date": "2026-06-26",
+      "home": "Senegal",
+      "away": "Irak",
+      "stadium": "Estadio Toronto"
+    }
+  ],
+  "J": [
+    {
+      "date": "2026-06-16",
+      "home": "Argentina",
+      "away": "Argelia",
+      "stadium": "Estadio Kansas City"
+    },
+    {
+      "date": "2026-06-16",
+      "home": "Austria",
+      "away": "Jordania",
+      "stadium": "Estadio Bahía de San Francisco"
+    },
+    {
+      "date": "2026-06-22",
+      "home": "Argentina",
+      "away": "Austria",
+      "stadium": "Estadio Dallas"
+    },
+    {
+      "date": "2026-06-22",
+      "home": "Jordania",
+      "away": "Argelia",
+      "stadium": "Estadio Bahía de San Francisco Bay"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "Argelia",
+      "away": "Austria",
+      "stadium": "Estadio Kansas City"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "Jordania",
+      "away": "Argentina",
+      "stadium": "Estadio Dallas"
+    }
+  ],
+  "K": [
+    {
+      "date": "2026-06-17",
+      "home": "Portugal",
+      "away": "RD Congo",
+      "stadium": "Estadio Houston"
+    },
+    {
+      "date": "2026-06-17",
+      "home": "Uzbekistán",
+      "away": "Colombia",
+      "stadium": "Estadio Ciudad de México"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "Portugal",
+      "away": "Uzbekistán",
+      "stadium": "Estadio Houston"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "Colombia",
+      "away": "RD Congo",
+      "stadium": "Estadio Guadalajara"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "Colombia",
+      "away": "Portugal",
+      "stadium": "Estadio Miami"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "RD Congo",
+      "away": "Uzbekistán",
+      "stadium": "Estadio Atlanta"
+    }
+  ],
+  "L": [
+    {
+      "date": "2026-06-17",
+      "home": "Inglaterra",
+      "away": "Croacia",
+      "stadium": "Estadio Dallas"
+    },
+    {
+      "date": "2026-06-17",
+      "home": "Ghana",
+      "away": "Panamá",
+      "stadium": "Estadio Toronto"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "Inglaterra",
+      "away": "Ghana",
+      "stadium": "Estadio Boston"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "Panamá",
+      "away": "Croacia",
+      "stadium": "Estadio Toronto"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "Panamá",
+      "away": "Inglaterra",
+      "stadium": "Estadio Nueva York Nueva Jersey"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "Croacia",
+      "away": "Ghana",
+      "stadium": "Estadio Filadelfia"
+    }
+  ]
+}
