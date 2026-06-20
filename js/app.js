@@ -5,7 +5,6 @@ const POINTS_WINNER = 1;
 
 let matchesData = [];
 let predictionsData = [];
-let isEditingMode = false;
 
 // ===== BOOT =====
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,7 +38,6 @@ function init() {
   initDatesTab();
   setupTabs();
   setupModal();
-  setupEditControls();
 }
 
 // ===== PUNTOS =====
@@ -491,26 +489,9 @@ function renderParticipantPredictions(name) {
 
     let resultHtml = "";
     let borderStyle = "";
-    if (!pred && !isEditingMode) {
+    if (!pred) {
       resultHtml = `<span class="pred-result no-pred">Sin pred.</span>`;
       borderStyle = "border-left: 4px solid var(--border);";
-    } else if (isEditingMode) {
-      if (!pred) {
-        resultHtml = `<span class="pred-result no-pred">Editable</span>`;
-        borderStyle = "border-left: 4px solid var(--border);";
-      } else if (result.type === "pending") {
-        resultHtml = `<span class="pred-result pending">Pendiente</span>`;
-        borderStyle = "border-left: 4px solid var(--border);";
-      } else if (result.type === "exact") {
-        resultHtml = `<span class="pred-result exact">🎯 +${POINTS_EXACT}pts</span>`;
-        borderStyle = "border-left: 4px solid var(--success);";
-      } else if (result.type === "winner") {
-        resultHtml = `<span class="pred-result winner">✅ +${POINTS_WINNER}pt</span>`;
-        borderStyle = "border-left: 4px solid var(--warning);";
-      } else {
-        resultHtml = `<span class="pred-result wrong">❌ 0pts</span>`;
-        borderStyle = "border-left: 4px solid var(--danger);";
-      }
     } else if (result.type === "pending") {
       resultHtml = `<span class="pred-result pending">Pendiente</span>`;
       borderStyle = "border-left: 4px solid var(--border);";
@@ -533,25 +514,12 @@ function renderParticipantPredictions(name) {
         ? `<span class="real-score-footer">Real: <strong>${match.homeScore} – ${match.awayScore}</strong></span>`
         : "";
 
-    let scoreDisplayHtml = "";
-    if (isEditingMode) {
-      const homeVal = pred ? pred.homeScore : "";
-      const awayVal = pred ? pred.awayScore : "";
-      scoreDisplayHtml = `
-        <div class="pred-card-prediction-score" style="display: flex; gap: 4px; align-items: center; justify-content: center; min-width: 90px;">
-          <input type="number" class="edit-score-input" data-match-id="${match.id}" data-type="home" value="${homeVal}" placeholder="0" min="0" max="99" style="width: 38px; padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.95rem; font-weight: 700; text-align: center; background: var(--bg); color: var(--text-primary); outline: none;">
-          <span style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">–</span>
-          <input type="number" class="edit-score-input" data-match-id="${match.id}" data-type="away" value="${awayVal}" placeholder="0" min="0" max="99" style="width: 38px; padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-family: inherit; font-size: 0.95rem; font-weight: 700; text-align: center; background: var(--bg); color: var(--text-primary); outline: none;">
-        </div>
-      `;
-    } else {
-      scoreDisplayHtml = `
-        <div class="pred-card-prediction-score">
-          <div class="pred-score-val">${predScoreStr}</div>
-          <div class="pred-score-label">Predicción</div>
-        </div>
-      `;
-    }
+    const scoreDisplayHtml = `
+      <div class="pred-card-prediction-score">
+        <div class="pred-score-val">${predScoreStr}</div>
+        <div class="pred-score-label">Predicción</div>
+      </div>
+    `;
 
     card.innerHTML = `
       <div class="pred-card-header">
@@ -581,62 +549,6 @@ function renderParticipantPredictions(name) {
     `;
     grid.appendChild(card);
   });
-
-  if (isEditingMode) {
-    grid.querySelectorAll(".edit-score-input").forEach((input) => {
-      input.addEventListener("input", (e) => {
-        const matchId = e.target.dataset.matchId;
-        const type = e.target.dataset.type;
-        let val = parseInt(e.target.value, 10);
-        if (isNaN(val)) val = 0;
-
-        const participant = predictionsData.find((p) => p.name === name);
-        if (participant) {
-          if (!participant.predictions[matchId]) {
-            participant.predictions[matchId] = { homeScore: 0, awayScore: 0 };
-          }
-          if (type === "home") {
-            participant.predictions[matchId].homeScore = val;
-          } else {
-            participant.predictions[matchId].awayScore = val;
-          }
-
-          // Actualizar standings y otros componentes (menos este selector de predicciones)
-          updateStandingsAndStatsOnly();
-
-          // Actualizar dinámicamente la tarjeta actual
-          const cardEl = e.target.closest(".pred-card");
-          if (cardEl) {
-            const matchObj = matchesData.find((m) => m.id === matchId);
-            if (matchObj) {
-              const freshPred = participant.predictions[matchId];
-              const freshResult = scorePredict(freshPred, matchObj);
-              const badgeEl = cardEl.querySelector(".pred-result");
-              if (badgeEl) {
-                if (freshResult.type === "pending") {
-                  badgeEl.className = "pred-result pending";
-                  badgeEl.textContent = "Pendiente";
-                  cardEl.style.borderLeft = "4px solid var(--border)";
-                } else if (freshResult.type === "exact") {
-                  badgeEl.className = "pred-result exact";
-                  badgeEl.textContent = `🎯 +${POINTS_EXACT}pts`;
-                  cardEl.style.borderLeft = "4px solid var(--success)";
-                } else if (freshResult.type === "winner") {
-                  badgeEl.className = "pred-result winner";
-                  badgeEl.textContent = `✅ +${POINTS_WINNER}pt`;
-                  cardEl.style.borderLeft = "4px solid var(--warning)";
-                } else {
-                  badgeEl.className = "pred-result wrong";
-                  badgeEl.textContent = "❌ 0pts";
-                  cardEl.style.borderLeft = "4px solid var(--danger)";
-                }
-              }
-            }
-          }
-        }
-      });
-    });
-  }
 }
 
 // ===== TAB: FECHAS (PARTIDOS DEL DÍA Y SUS PRONÓSTICOS) =====
@@ -821,70 +733,6 @@ function renderDateMatches() {
   });
 }
 
-// ===== EDITOR DE PREDICCIONES (CONTROLES) =====
-function setupEditControls() {
-  const container = document.querySelector(".edit-controls-group");
-  const btnToggle = document.getElementById("btn-toggle-edit");
-  const btnExport = document.getElementById("btn-export-json");
-  const btnReset = document.getElementById("btn-reset-predictions");
-
-  if (!btnToggle) return;
-
-  // Detectar si estamos en modo local (localhost, 127.0.0.1, ::1 o ejecutando desde archivo local)
-  const isLocal =
-    ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname) ||
-    window.location.protocol === "file:";
-
-  if (!isLocal) {
-    if (container) container.style.setProperty("display", "none", "important");
-    return;
-  }
-
-  // Ocultar botón de reset (ya no se usa localStorage)
-  if (btnReset) btnReset.style.display = "none";
-
-  btnToggle.addEventListener("click", () => {
-    isEditingMode = !isEditingMode;
-    if (isEditingMode) {
-      btnToggle.innerHTML = "✕ Desactivar Edición";
-      btnToggle.style.background = "var(--danger-light)";
-      btnToggle.style.color = "var(--danger)";
-      btnToggle.style.borderColor = "var(--danger)";
-      btnExport.style.display = "inline-flex";
-    } else {
-      btnToggle.innerHTML = "⚙️ Activar Edición";
-      btnToggle.style.background = "var(--bg)";
-      btnToggle.style.color = "var(--text-secondary)";
-      btnToggle.style.borderColor = "var(--border)";
-      btnExport.style.display = "none";
-    }
-
-    // Re-renderizar predicciones con la vista de edición o estática
-    renderParticipantPredictions(selectedParticipantName);
-  });
-
-  btnExport.addEventListener("click", () => {
-    const dataStr =
-      "data:text/json;charset=utf-8," +
-      encodeURIComponent(JSON.stringify(predictionsData, null, 2));
-    const downloadAnchor = document.createElement("a");
-    downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", "predictions.json");
-    document.body.appendChild(downloadAnchor);
-    downloadAnchor.click();
-    downloadAnchor.remove();
-  });
-
-  btnReset.addEventListener("click", () => {
-    if (
-      confirm(
-        "¿Estás seguro de que deseas restaurar las predicciones originales desde el JSON?",
-      )
-    ) {
-      window.location.reload();
-    }
-  });
-}
 
 function updateStandingsAndStatsOnly() {
   const standings = computeStandings();
@@ -892,6 +740,4 @@ function updateStandingsAndStatsOnly() {
   renderPodium(standings);
   renderRankingTable(standings);
   renderDateMatches();
-
-  // (localStorage ya no se usa para predicciones)
 }
