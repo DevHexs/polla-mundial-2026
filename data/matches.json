@@ -346,9 +346,9 @@
     "away": "Costa de Marfil",
     "awayFlag": "🇨🇮",
     "date": "2026-06-20",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "finished"
   },
   {
     "id": "E4",
