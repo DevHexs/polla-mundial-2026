@@ -216,9 +216,9 @@
     "away": "Haití",
     "awayFlag": "🇭🇹",
     "date": "2026-06-19",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 3,
+    "awayScore": 0,
+    "status": "finished"
   },
   {
     "id": "C6",
@@ -281,9 +281,9 @@
     "away": "Türkiye",
     "awayFlag": "🇹🇷",
     "date": "2026-06-19",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 0,
+    "awayScore": 1,
+    "status": "finished"
   },
   {
     "id": "D5",
