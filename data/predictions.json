@@ -299,10 +299,10 @@
       "predictions":{
          "A1":{
             "homeScore":2,
-            "awayScore":0
+            "awayScore":1
          },
          "A2":{
-            "homeScore":3,
+            "homeScore":0,
             "awayScore":2
          },
          "A3":{
@@ -322,7 +322,7 @@
             "awayScore":3
          },
          "B1":{
-            "homeScore":1,
+            "homeScore":2,
             "awayScore":1
          },
          "B2":{
@@ -347,11 +347,11 @@
          },
          "C1":{
             "homeScore":2,
-            "awayScore":0
+            "awayScore":1
          },
          "C2":{
-            "homeScore":0,
-            "awayScore":1
+            "homeScore":1,
+            "awayScore":5
          },
          "C3":{
             "homeScore":2,
@@ -374,8 +374,8 @@
             "awayScore":1
          },
          "D2":{
-            "homeScore":2,
-            "awayScore":2
+            "homeScore":0,
+            "awayScore":0
          },
          "D3":{
             "homeScore":2,
@@ -410,35 +410,35 @@
             "awayScore":3
          },
          "E5":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "E6":{
             "homeScore":1,
             "awayScore":2
          },
+         "E6":{
+            "homeScore":2,
+            "awayScore":3
+         },
          "F1":{
-            "homeScore":4,
-            "awayScore":0
+            "homeScore":3,
+            "awayScore":2
          },
          "F2":{
-            "homeScore":0,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "F3":{
             "homeScore":3,
             "awayScore":1
          },
          "F4":{
-            "homeScore":3,
-            "awayScore":0
+            "homeScore":1,
+            "awayScore":4
          },
          "F5":{
-            "homeScore":1,
+            "homeScore":3,
             "awayScore":1
          },
          "F6":{
-            "homeScore":3,
+            "homeScore":1,
             "awayScore":3
          },
          "G1":{
