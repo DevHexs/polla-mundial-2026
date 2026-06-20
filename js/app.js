@@ -9,23 +9,16 @@ let isEditingMode = false;
 
 // ===== BOOT =====
 document.addEventListener("DOMContentLoaded", () => {
+  // Limpiar datos obsoletos de predicciones del localStorage (ya no se usa)
+  localStorage.removeItem("ur_predictions_data");
   Promise.all([
     fetch("data/matches.json").then((r) => r.json()),
     fetch("data/predictions.json").then((r) => r.json()),
   ])
     .then(([matches, predictions]) => {
       matchesData = matches;
-      const localPreds = localStorage.getItem("ur_predictions_data");
-      if (localPreds) {
-        try {
-          predictionsData = JSON.parse(localPreds);
-        } catch (e) {
-          console.error("Error parseando localStorage:", e);
-          predictionsData = predictions;
-        }
-      } else {
-        predictionsData = predictions;
-      }
+      // Siempre usar el JSON como fuente de verdad (ignorar localStorage)
+      predictionsData = predictions;
       init();
     })
     .catch((err) => {
@@ -608,12 +601,6 @@ function renderParticipantPredictions(name) {
             participant.predictions[matchId].awayScore = val;
           }
 
-          // Guardar en localStorage
-          localStorage.setItem(
-            "ur_predictions_data",
-            JSON.stringify(predictionsData),
-          );
-
           // Actualizar standings y otros componentes (menos este selector de predicciones)
           updateStandingsAndStatsOnly();
 
@@ -853,10 +840,8 @@ function setupEditControls() {
     return;
   }
 
-  // Actualizar visibilidad inicial del botón de reset
-  btnReset.style.display = localStorage.getItem("ur_predictions_data")
-    ? "inline-flex"
-    : "none";
+  // Ocultar botón de reset (ya no se usa localStorage)
+  if (btnReset) btnReset.style.display = "none";
 
   btnToggle.addEventListener("click", () => {
     isEditingMode = !isEditingMode;
@@ -893,10 +878,9 @@ function setupEditControls() {
   btnReset.addEventListener("click", () => {
     if (
       confirm(
-        "¿Estás seguro de que deseas restaurar las predicciones originales y borrar todos los cambios locales?",
+        "¿Estás seguro de que deseas restaurar las predicciones originales desde el JSON?",
       )
     ) {
-      localStorage.removeItem("ur_predictions_data");
       window.location.reload();
     }
   });
@@ -909,11 +893,5 @@ function updateStandingsAndStatsOnly() {
   renderRankingTable(standings);
   renderDateMatches();
 
-  // Mostrar el botón de restaurar si hay algo guardado en localStorage
-  const btnReset = document.getElementById("btn-reset-predictions");
-  if (btnReset) {
-    btnReset.style.display = localStorage.getItem("ur_predictions_data")
-      ? "inline-flex"
-      : "none";
-  }
+  // (localStorage ya no se usa para predicciones)
 }
