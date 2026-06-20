@@ -424,9 +424,9 @@
     "away": "Suecia",
     "awayFlag": "🇸🇪",
     "date": "2026-06-20",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 5,
+    "awayScore": 1,
+    "status": "finished"
   },
   {
     "id": "F4",
