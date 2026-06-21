@@ -624,9 +624,9 @@
     "away": "Arabia Saudita",
     "awayFlag": "🇸🇦",
     "date": "2026-06-21",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 4,
+    "awayScore": 0,
+    "status": "finished",
     "time": "16:00"
   },
   {
