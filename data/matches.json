@@ -359,9 +359,9 @@
     "away": "Curaçao",
     "awayFlag": "🇨🇼",
     "date": "2026-06-20",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending"
+    "homeScore": 0,
+    "awayScore": 0,
+    "status": "finished"
   },
   {
     "id": "E5",
