@@ -470,9 +470,9 @@
     "away": "Japón",
     "awayFlag": "🇯🇵",
     "date": "2026-06-20",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 4,
+    "status": "finished",
     "time": "04:00"
   },
   {
