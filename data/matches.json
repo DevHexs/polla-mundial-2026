@@ -540,9 +540,9 @@
     "away": "Irán",
     "awayFlag": "🇮🇷",
     "date": "2026-06-21",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 0,
+    "status": "finished",
     "time": "19:00"
   },
   {
