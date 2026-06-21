@@ -10,7 +10,8 @@
     "date": "2026-06-11",
     "homeScore": 2,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "A2",
@@ -23,7 +24,8 @@
     "date": "2026-06-11",
     "homeScore": 2,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "02:00"
   },
   {
     "id": "A3",
@@ -36,7 +38,8 @@
     "date": "2026-06-18",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "16:00"
   },
   {
     "id": "A4",
@@ -49,7 +52,8 @@
     "date": "2026-06-18",
     "homeScore": 1,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "01:00"
   },
   {
     "id": "A5",
@@ -62,7 +66,8 @@
     "date": "2026-06-24",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "01:00"
   },
   {
     "id": "A6",
@@ -75,7 +80,8 @@
     "date": "2026-06-24",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "01:00"
   },
   {
     "id": "B1",
@@ -88,7 +94,8 @@
     "date": "2026-06-12",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "B2",
@@ -101,7 +108,8 @@
     "date": "2026-06-13",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "B3",
@@ -114,7 +122,8 @@
     "date": "2026-06-18",
     "homeScore": 4,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "B4",
@@ -127,7 +136,8 @@
     "date": "2026-06-18",
     "homeScore": 6,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "22:00"
   },
   {
     "id": "B5",
@@ -140,7 +150,8 @@
     "date": "2026-06-24",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "19:00"
   },
   {
     "id": "B6",
@@ -153,7 +164,8 @@
     "date": "2026-06-24",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "19:00"
   },
   {
     "id": "C1",
@@ -166,7 +178,8 @@
     "date": "2026-06-13",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "22:00"
   },
   {
     "id": "C2",
@@ -179,7 +192,8 @@
     "date": "2026-06-13",
     "homeScore": 0,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "01:00"
   },
   {
     "id": "C3",
@@ -192,7 +206,8 @@
     "date": "2026-06-19",
     "homeScore": 0,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "22:00"
   },
   {
     "id": "C4",
@@ -205,7 +220,8 @@
     "date": "2026-06-19",
     "homeScore": 3,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "00:30"
   },
   {
     "id": "C5",
@@ -218,7 +234,8 @@
     "date": "2026-06-24",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "22:00"
   },
   {
     "id": "C6",
@@ -231,7 +248,8 @@
     "date": "2026-06-24",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "22:00"
   },
   {
     "id": "D1",
@@ -244,7 +262,8 @@
     "date": "2026-06-12",
     "homeScore": 4,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "01:00"
   },
   {
     "id": "D2",
@@ -257,7 +276,8 @@
     "date": "2026-06-13",
     "homeScore": 2,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "04:00"
   },
   {
     "id": "D3",
@@ -270,7 +290,8 @@
     "date": "2026-06-19",
     "homeScore": 2,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "D4",
@@ -283,7 +304,8 @@
     "date": "2026-06-19",
     "homeScore": 0,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "03:00"
   },
   {
     "id": "D5",
@@ -296,7 +318,8 @@
     "date": "2026-06-25",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "02:00"
   },
   {
     "id": "D6",
@@ -309,7 +332,8 @@
     "date": "2026-06-25",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "02:00"
   },
   {
     "id": "E1",
@@ -322,7 +346,8 @@
     "date": "2026-06-14",
     "homeScore": 7,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "17:00"
   },
   {
     "id": "E2",
@@ -335,7 +360,8 @@
     "date": "2026-06-14",
     "homeScore": 1,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "23:00"
   },
   {
     "id": "E3",
@@ -348,7 +374,8 @@
     "date": "2026-06-20",
     "homeScore": 2,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "20:00"
   },
   {
     "id": "E4",
@@ -361,7 +388,8 @@
     "date": "2026-06-20",
     "homeScore": 0,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "00:00"
   },
   {
     "id": "E5",
@@ -374,7 +402,8 @@
     "date": "2026-06-25",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "20:00"
   },
   {
     "id": "E6",
@@ -387,7 +416,8 @@
     "date": "2026-06-25",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "20:00"
   },
   {
     "id": "F1",
@@ -400,7 +430,8 @@
     "date": "2026-06-14",
     "homeScore": 2,
     "awayScore": 2,
-    "status": "finished"
+    "status": "finished",
+    "time": "20:00"
   },
   {
     "id": "F2",
@@ -413,7 +444,8 @@
     "date": "2026-06-14",
     "homeScore": 5,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "02:00"
   },
   {
     "id": "F3",
@@ -426,7 +458,8 @@
     "date": "2026-06-20",
     "homeScore": 5,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "17:00"
   },
   {
     "id": "F4",
@@ -439,7 +472,8 @@
     "date": "2026-06-20",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "04:00"
   },
   {
     "id": "F5",
@@ -452,7 +486,8 @@
     "date": "2026-06-25",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "23:00"
   },
   {
     "id": "F6",
@@ -465,7 +500,8 @@
     "date": "2026-06-25",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "23:00"
   },
   {
     "id": "G1",
@@ -478,7 +514,8 @@
     "date": "2026-06-15",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "G2",
@@ -491,7 +528,8 @@
     "date": "2026-06-15",
     "homeScore": 2,
     "awayScore": 2,
-    "status": "finished"
+    "status": "finished",
+    "time": "01:00"
   },
   {
     "id": "G3",
@@ -504,7 +542,8 @@
     "date": "2026-06-21",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "19:00"
   },
   {
     "id": "G4",
@@ -517,7 +556,8 @@
     "date": "2026-06-21",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "01:00"
   },
   {
     "id": "G5",
@@ -530,7 +570,8 @@
     "date": "2026-06-26",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "03:00"
   },
   {
     "id": "G6",
@@ -543,7 +584,8 @@
     "date": "2026-06-26",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "03:00"
   },
   {
     "id": "H1",
@@ -556,7 +598,8 @@
     "date": "2026-06-15",
     "homeScore": 0,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "16:00"
   },
   {
     "id": "H2",
@@ -569,7 +612,8 @@
     "date": "2026-06-15",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "22:00"
   },
   {
     "id": "H3",
@@ -582,7 +626,8 @@
     "date": "2026-06-21",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "16:00"
   },
   {
     "id": "H4",
@@ -595,7 +640,8 @@
     "date": "2026-06-21",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "22:00"
   },
   {
     "id": "H5",
@@ -608,7 +654,8 @@
     "date": "2026-06-26",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "00:00"
   },
   {
     "id": "H6",
@@ -621,7 +668,8 @@
     "date": "2026-06-26",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "00:00"
   },
   {
     "id": "I1",
@@ -634,7 +682,8 @@
     "date": "2026-06-16",
     "homeScore": 3,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "19:00"
   },
   {
     "id": "I2",
@@ -647,7 +696,8 @@
     "date": "2026-06-16",
     "homeScore": 1,
     "awayScore": 4,
-    "status": "finished"
+    "status": "finished",
+    "time": "22:00"
   },
   {
     "id": "I3",
@@ -660,7 +710,8 @@
     "date": "2026-06-22",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "21:00"
   },
   {
     "id": "I4",
@@ -673,7 +724,8 @@
     "date": "2026-06-22",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "00:00"
   },
   {
     "id": "I5",
@@ -686,7 +738,8 @@
     "date": "2026-06-26",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "19:00"
   },
   {
     "id": "I6",
@@ -699,7 +752,8 @@
     "date": "2026-06-26",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "19:00"
   },
   {
     "id": "J1",
@@ -712,7 +766,8 @@
     "date": "2026-06-16",
     "homeScore": 3,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "01:00"
   },
   {
     "id": "J2",
@@ -725,7 +780,8 @@
     "date": "2026-06-16",
     "homeScore": 3,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "04:00"
   },
   {
     "id": "J3",
@@ -738,7 +794,8 @@
     "date": "2026-06-22",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "17:00"
   },
   {
     "id": "J4",
@@ -751,7 +808,8 @@
     "date": "2026-06-22",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "03:00"
   },
   {
     "id": "J5",
@@ -764,7 +822,8 @@
     "date": "2026-06-27",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "02:00"
   },
   {
     "id": "J6",
@@ -777,7 +836,8 @@
     "date": "2026-06-27",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "02:00"
   },
   {
     "id": "K1",
@@ -790,7 +850,8 @@
     "date": "2026-06-17",
     "homeScore": 1,
     "awayScore": 1,
-    "status": "finished"
+    "status": "finished",
+    "time": "17:00"
   },
   {
     "id": "K2",
@@ -803,7 +864,8 @@
     "date": "2026-06-17",
     "homeScore": 1,
     "awayScore": 3,
-    "status": "finished"
+    "status": "finished",
+    "time": "02:00"
   },
   {
     "id": "K3",
@@ -816,7 +878,8 @@
     "date": "2026-06-23",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "17:00"
   },
   {
     "id": "K4",
@@ -829,7 +892,8 @@
     "date": "2026-06-23",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "02:00"
   },
   {
     "id": "K5",
@@ -842,7 +906,8 @@
     "date": "2026-06-27",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "23:30"
   },
   {
     "id": "K6",
@@ -855,7 +920,8 @@
     "date": "2026-06-27",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "23:30"
   },
   {
     "id": "L1",
@@ -868,7 +934,8 @@
     "date": "2026-06-17",
     "homeScore": 4,
     "awayScore": 2,
-    "status": "finished"
+    "status": "finished",
+    "time": "20:00"
   },
   {
     "id": "L2",
@@ -881,7 +948,8 @@
     "date": "2026-06-17",
     "homeScore": 1,
     "awayScore": 0,
-    "status": "finished"
+    "status": "finished",
+    "time": "23:00"
   },
   {
     "id": "L3",
@@ -894,7 +962,8 @@
     "date": "2026-06-23",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "20:00"
   },
   {
     "id": "L4",
@@ -907,7 +976,8 @@
     "date": "2026-06-23",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "23:00"
   },
   {
     "id": "L5",
@@ -920,7 +990,8 @@
     "date": "2026-06-27",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "21:00"
   },
   {
     "id": "L6",
@@ -933,6 +1004,7 @@
     "date": "2026-06-27",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending"
+    "status": "pending",
+    "time": "21:00"
   }
 ]

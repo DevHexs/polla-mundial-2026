@@ -15,7 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("data/predictions.json").then((r) => r.json()),
   ])
     .then(([matches, predictions]) => {
-      matchesData = matches;
+      matchesData = matches.sort((a, b) => {
+        const aInfo = getPanamaDateTime(a);
+        const bInfo = getPanamaDateTime(b);
+        return aInfo.sortValue.localeCompare(bInfo.sortValue);
+      });
       // Siempre usar el JSON como fuente de verdad (ignorar localStorage)
       predictionsData = predictions;
       init();
@@ -213,6 +217,46 @@ function formatDate(dateStr) {
   return date.toLocaleDateString("es", { day: "numeric", month: "short" });
 }
 
+function formatPanamaTime(utcTimeStr) {
+  if (!utcTimeStr) return "";
+  const [h, m] = utcTimeStr.split(":").map(Number);
+  const panamaHour = (h - 5 + 24) % 24;
+  const ampm = panamaHour >= 12 ? "p.m." : "a.m.";
+  let displayHour = panamaHour % 12;
+  if (displayHour === 0) displayHour = 12;
+  return `${displayHour}:${String(m).padStart(2, "0")} ${ampm}`;
+}
+
+function getPanamaDateTime(match) {
+  if (!match.time) return { sortValue: match.date + "T99:99", dateStr: match.date, timeStr: "" };
+  
+  const [y, m, d] = match.date.split("-").map(Number);
+  const [h, min] = match.time.split(":").map(Number);
+  
+  // Rule: If UTC hour is between 0 and 6, the match takes place on the next day in UTC compared to local date
+  let utcDay = d;
+  if (h >= 0 && h <= 6) {
+    utcDay = d + 1;
+  }
+  
+  const utcDate = new Date(Date.UTC(y, m - 1, utcDay, h, min));
+  
+  // Subtract 5 hours from UTC timestamp to get Panama time
+  const panamaTimeMs = utcDate.getTime() - (5 * 60 * 60 * 1000);
+  const panamaDate = new Date(panamaTimeMs);
+  
+  const pY = panamaDate.getUTCFullYear();
+  const pM = String(panamaDate.getUTCMonth() + 1).padStart(2, "0");
+  const pD = String(panamaDate.getUTCDate()).padStart(2, "0");
+  const dateStr = `${pY}-${pM}-${pD}`;
+  
+  const pH = panamaDate.getUTCHours();
+  const pMin = panamaDate.getUTCMinutes();
+  const sortValue = `${dateStr}T${String(pH).padStart(2, "0")}:${String(pMin).padStart(2, "0")}`;
+  
+  return { sortValue, dateStr, timeStr: formatPanamaTime(match.time) };
+}
+
 function renderMatches() {
   const container = document.getElementById("matches-container");
   container.innerHTML = "";
@@ -250,7 +294,7 @@ function renderMatches() {
         ? "Finalizado"
         : isLive
           ? "🔴 En vivo"
-          : formatDate(match.date);
+          : (match.time ? formatPanamaTime(match.time) : "Pendiente");
       const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
 
       card.innerHTML = `
@@ -264,7 +308,7 @@ function renderMatches() {
           <span class="team-name">${match.away}</span>
         </div>
         <div class="match-date-col">
-          <span class="match-date">${formatDate(match.date)}</span>
+          <span class="match-date">${formatDate(getPanamaDateTime(match).dateStr)}</span>
           <span class="status-pill ${statusClass}">${statusLabel}</span>
         </div>
       `;
@@ -328,7 +372,7 @@ function openModal(participant) {
         if (!pred) {
           resultHtml = `<span class="pred-result no-pred">Sin pred.</span>`;
         } else if (result.type === "pending") {
-          resultHtml = `<span class="pred-result pending">Pendiente</span>`;
+          resultHtml = `<span class="pred-result pending">${match.time ? formatPanamaTime(match.time) : 'Pendiente'}</span>`;
         } else if (result.type === "exact") {
           resultHtml = `<span class="pred-result exact">🎯 +${POINTS_EXACT}pts</span>`;
         } else if (result.type === "winner") {
@@ -471,10 +515,11 @@ function renderParticipantPredictions(name) {
     return;
   }
 
-  // Ordenar partidos por grupo y luego por ID
+  // Ordenar partidos por fecha y hora en Panamá
   const sortedMatches = filteredMatches.sort((a, b) => {
-    if (a.group !== b.group) return a.group.localeCompare(b.group);
-    return a.id.localeCompare(b.id);
+    const aInfo = getPanamaDateTime(a);
+    const bInfo = getPanamaDateTime(b);
+    return aInfo.sortValue.localeCompare(bInfo.sortValue);
   });
 
   sortedMatches.forEach((match) => {
@@ -540,7 +585,7 @@ function renderParticipantPredictions(name) {
       <div class="pred-card-footer">
         <div style="display:flex; flex-direction:column; gap:2px; align-items:flex-start;">
           <span class="status-date" style="font-size:0.65rem; color: var(--text-muted); font-weight:500;">
-            ${isFinished ? "Finalizado" : isLive ? "🔴 En vivo" : formatDate(match.date)}
+            ${isFinished ? "Finalizado" : isLive ? "🔴 En vivo" : (match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : formatDate(getPanamaDateTime(match).dateStr))}
           </span>
           ${realScoreHtml}
         </div>
@@ -559,7 +604,7 @@ function initDatesTab() {
   if (!dateSelect) return;
 
   // Extraer fechas únicas y ordenarlas cronológicamente
-  const uniqueDates = [...new Set(matchesData.map((m) => m.date))].sort();
+  const uniqueDates = [...new Set(matchesData.map((m) => getPanamaDateTime(m).dateStr))].sort();
 
   dateSelect.innerHTML = "";
   uniqueDates.forEach((dateVal) => {
@@ -628,7 +673,7 @@ function renderDateMatches() {
 
   if (!selectedDateStr) return;
 
-  const matches = matchesData.filter((m) => m.date === selectedDateStr);
+  const matches = matchesData.filter((m) => getPanamaDateTime(m).dateStr === selectedDateStr);
 
   if (matches.length === 0) {
     container.innerHTML = `
@@ -660,7 +705,7 @@ function renderDateMatches() {
       ? "Finalizado"
       : isLive
         ? "🔴 En vivo"
-        : formatDate(match.date);
+        : (match.time ? formatPanamaTime(match.time) : formatDate(getPanamaDateTime(match).dateStr));
     const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
 
     // 1. HTML del partido (encabezado)
