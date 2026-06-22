@@ -792,8 +792,8 @@
     "away": "Austria",
     "awayFlag": "🇦🇹",
     "date": "2026-06-22",
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 2,
+    "awayScore": 0,
     "status": "pending",
     "time": "17:00"
   },
@@ -808,7 +808,7 @@
     "date": "2026-06-22",
     "homeScore": null,
     "awayScore": null,
-    "status": "pending",
+    "status": "finished",
     "time": "03:00"
   },
   {
