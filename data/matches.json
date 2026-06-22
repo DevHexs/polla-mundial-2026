@@ -554,9 +554,9 @@
     "away": "Egipto",
     "awayFlag": "🇪🇬",
     "date": "2026-06-21",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 3,
+    "status": "finished",
     "time": "01:00"
   },
   {
