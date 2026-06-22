@@ -638,9 +638,9 @@
     "away": "Cabo Verde",
     "awayFlag": "🇨🇻",
     "date": "2026-06-21",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 2,
+    "status": "finished",
     "time": "22:00"
   },
   {
