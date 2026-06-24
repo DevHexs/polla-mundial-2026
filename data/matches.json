@@ -890,9 +890,9 @@
     "away": "RD Congo",
     "awayFlag": "🇨🇩",
     "date": "2026-06-23",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 0,
+    "status": "finished",
     "time": "02:00"
   },
   {
