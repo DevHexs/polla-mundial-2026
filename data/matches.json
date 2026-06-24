@@ -148,9 +148,9 @@
     "away": "Canadá",
     "awayFlag": "🇨🇦",
     "date": "2026-06-24",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "finished",
     "time": "19:00"
   },
   {
@@ -162,9 +162,9 @@
     "away": "Qatar",
     "awayFlag": "🇶🇦",
     "date": "2026-06-24",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "finished",
     "time": "19:00"
   },
   {
