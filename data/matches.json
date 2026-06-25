@@ -400,9 +400,9 @@
     "away": "Costa de Marfil",
     "awayFlag": "🇨🇮",
     "date": "2026-06-25",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 2,
+    "status": "finished",
     "time": "20:00"
   },
   {
@@ -414,9 +414,9 @@
     "away": "Alemania",
     "awayFlag": "🇩🇪",
     "date": "2026-06-25",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "finished",
     "time": "20:00"
   },
   {
