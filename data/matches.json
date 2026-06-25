@@ -232,9 +232,9 @@
     "away": "Brasil",
     "awayFlag": "🇧🇷",
     "date": "2026-06-24",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 3,
+    "status": "finished",
     "time": "22:00"
   },
   {
@@ -246,9 +246,9 @@
     "away": "Haití",
     "awayFlag": "🇭🇹",
     "date": "2026-06-24",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 4,
+    "awayScore": 2,
+    "status": "finished",
     "time": "22:00"
   },
   {
