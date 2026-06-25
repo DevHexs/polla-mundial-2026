@@ -64,9 +64,9 @@
     "away": "México",
     "awayFlag": "🇲🇽",
     "date": "2026-06-24",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 3,
+    "status": "finished",
     "time": "01:00"
   },
   {
@@ -78,9 +78,9 @@
     "away": "Corea del Sur",
     "awayFlag": "🇰🇷",
     "date": "2026-06-24",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 0,
+    "status": "finished",
     "time": "01:00"
   },
   {
