@@ -484,9 +484,9 @@
     "away": "Suecia",
     "awayFlag": "🇸🇪",
     "date": "2026-06-25",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 1,
+    "status": "finished",
     "time": "23:00"
   },
   {
@@ -498,9 +498,9 @@
     "away": "Países Bajos",
     "awayFlag": "🇳🇱",
     "date": "2026-06-25",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 3,
+    "status": "finished",
     "time": "23:00"
   },
   {
