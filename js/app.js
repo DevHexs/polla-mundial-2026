@@ -195,6 +195,11 @@ const GROUPS_ORDER = [
   "J",
   "K",
   "L",
+  "R32",
+  "R16",
+  "QF",
+  "SF",
+  "FINAL",
 ];
 const GROUPS_NAMES = {
   A: "Grupo A — México, Sudáfrica, Corea del Sur, Chequia",
@@ -209,6 +214,11 @@ const GROUPS_NAMES = {
   J: "Grupo J — Argentina, Argelia, Austria, Jordania",
   K: "Grupo K — Portugal, Uzbekistán, Colombia, RD Congo",
   L: "Grupo L — Inglaterra, Croacia, Ghana, Panamá",
+  R32: "Dieciseisavos de Final (16avos)",
+  R16: "Octavos de Final",
+  QF: "Cuartos de Final",
+  SF: "Semifinales",
+  FINAL: "Final y Tercer Puesto",
 };
 
 function formatDate(dateStr) {
@@ -354,7 +364,7 @@ function openModal(participant) {
 
       const groupTitle = document.createElement("div");
       groupTitle.className = "modal-group-title";
-      groupTitle.textContent = `Grupo ${group}`;
+      groupTitle.textContent = GROUPS_NAMES[group] || `Grupo ${group}`;
       body.appendChild(groupTitle);
 
       groupMatches.forEach((match) => {
