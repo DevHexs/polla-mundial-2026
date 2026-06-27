@@ -1222,19 +1222,144 @@ function applyBracketMobileRound(round) {
     r32Section.classList.remove("mobile-visible");
     mainSection.classList.add("mobile-visible");
 
-    // Scroll bracket tree to the correct round column
-    const tree = document.getElementById("bracket-tree");
-    if (!tree) return;
+    // Build match lookup
+    const matchesMap = {};
+    matchesData.forEach((m) => { matchesMap[m.id] = m; });
 
-    const roundMap = { R16: 0, QF: 1, SF: 2, FINAL: 3 };
-    const roundIdx = roundMap[round] ?? 0;
-    const cols = tree.querySelectorAll(".bracket-round-col");
-    if (cols[roundIdx]) {
-      const wrapper = tree.parentElement;
-      wrapper.scrollLeft = cols[roundIdx].offsetLeft - 8;
-    }
+    // Determine which matches to show for this round
+    const roundMatchIds = {
+      R16:   ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"],
+      QF:    ["QF_1","QF_2","QF_3","QF_4"],
+      SF:    ["SF_1","SF_2"],
+      FINAL: ["F_2","F_1"],
+    };
+
+    const ids = roundMatchIds[round] || [];
+    const matches = ids.map((id) => matchesMap[id]).filter(Boolean);
+
+    renderBracketMobileCards(matches, round);
   }
 }
+
+// ── Build a single mobile versus card ──
+function buildBmcCard(match, roundLabel) {
+  const isFinished = match.status === "finished";
+  const isLive     = match.status === "live";
+
+  let homeWinner = false, awayWinner = false, isDraw = false;
+  if (isFinished && match.homeScore !== null && match.awayScore !== null) {
+    if (match.homeScore > match.awayScore)       homeWinner = true;
+    else if (match.awayScore > match.homeScore)  awayWinner = true;
+    else                                          isDraw = true;
+  }
+
+  const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
+  const statusLabel = isFinished ? "Finalizado" : isLive ? "🔴 En vivo" : "Pendiente";
+
+  const dateTimeStr = match.time
+    ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}`
+    : formatDate(getPanamaDateTime(match).dateStr);
+
+  // Extra class for final/third
+  let extraClass = "";
+  if (match.id === "F_2") extraClass = " final-card";
+  if (match.id === "F_1") extraClass = " third-card";
+
+  // Score center HTML
+  let scoreCenterHtml;
+  if (isFinished || isLive) {
+    scoreCenterHtml = `
+      <div class="bmc-score-center">
+        <div class="bmc-score">${match.homeScore}<span class="bmc-score-sep"> – </span>${match.awayScore}</div>
+        <div class="bmc-score-label">${isLive ? "En juego" : "Final"}</div>
+      </div>`;
+  } else {
+    scoreCenterHtml = `
+      <div class="bmc-score-center">
+        <div class="bmc-vs">VS</div>
+        <div class="bmc-score-label">${dateTimeStr}</div>
+      </div>`;
+  }
+
+  // Winner badge
+  const winBadge = `<span class="bmc-winner-badge">✓ Ganador</span>`;
+
+  // Result strip (only for finished matches)
+  let resultStripHtml = "";
+  if (isFinished) {
+    if (homeWinner) {
+      resultStripHtml = `<div class="bmc-result-strip win-home">🏆 Ganó ${match.home}</div>`;
+    } else if (awayWinner) {
+      resultStripHtml = `<div class="bmc-result-strip win-away">🏆 Ganó ${match.away}</div>`;
+    } else {
+      resultStripHtml = `<div class="bmc-result-strip draw">🤝 Empate (penales)</div>`;
+    }
+  }
+
+  // Special header for Final matches
+  let specialLabel = roundLabel;
+  if (match.id === "F_2") specialLabel = "🏆 Gran Final";
+  if (match.id === "F_1") specialLabel = "🥉 Tercer Puesto";
+
+  const card = document.createElement("div");
+  card.className = `bmc-card status-${match.status}${extraClass}`;
+
+  card.innerHTML = `
+    <div class="bmc-header">
+      <span class="bmc-header-left">${specialLabel} · ${match.id}</span>
+      <div class="bmc-header-right">
+        ${isFinished || isLive ? `<span class="bmc-datetime">${dateTimeStr}</span>` : ""}
+        <span class="bmc-status-dot ${statusClass}">${statusLabel}</span>
+      </div>
+    </div>
+    <div class="bmc-body">
+      <div class="bmc-team home${homeWinner ? " winner" : ""}">
+        <span class="bmc-flag">${match.homeFlag}</span>
+        <span class="bmc-name">${match.home}</span>
+        ${homeWinner ? winBadge : ""}
+      </div>
+      ${scoreCenterHtml}
+      <div class="bmc-team away${awayWinner ? " winner" : ""}">
+        <span class="bmc-flag">${match.awayFlag}</span>
+        <span class="bmc-name">${match.away}</span>
+        ${awayWinner ? winBadge : ""}
+      </div>
+    </div>
+    ${resultStripHtml}
+    <div class="bmc-footer">
+      <span class="bmc-footer-icon">📊</span>
+      Ver pronósticos de este partido
+    </div>
+  `;
+
+  // Click on card (except footer) → open predictions popover
+  card.addEventListener("click", (e) => {
+    openBracketPredModal(match);
+  });
+
+  return card;
+}
+
+// ── Render mobile cards for a given round ──
+function renderBracketMobileCards(matches, round) {
+  const container = document.getElementById("bracket-mobile-cards");
+  if (!container) return;
+  container.innerHTML = "";
+
+  if (matches.length === 0) {
+    container.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:32px 0;font-size:0.85rem;">
+      <span style="font-size:2rem;display:block;margin-bottom:8px;">📅</span>
+      No hay partidos programados para esta ronda.
+    </div>`;
+    return;
+  }
+
+  const roundLabel = BRACKET_ROUND_NAMES[round] || round;
+  matches.forEach((match) => {
+    container.appendChild(buildBmcCard(match, roundLabel));
+  });
+}
+
 
 // Re-apply mobile visibility on resize
 window.addEventListener("resize", () => {
