@@ -47,7 +47,8 @@
           <p>Mira los resúmenes oficiales y jugadas destacadas en FIFA.com</p>
         </div>
       </div>
-      <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/highlights/all-matches" target="_blank" class="highlights-banner-btn">
+      <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/highlights/all-matches"
+        target="_blank" class="highlights-banner-btn">
         Ver Resúmenes ↗
       </a>
     </div>
@@ -79,6 +80,9 @@
       <button class="tab-btn active" data-tab="tab-ranking" id="tab-btn-ranking" role="tab" aria-selected="true">
         🏆 Posiciones
       </button>
+      <button class="tab-btn" data-tab="tab-bracket" id="tab-btn-bracket" role="tab" aria-selected="false">
+        🎯 Eliminatorias
+      </button>
       <button class="tab-btn" data-tab="tab-predictions" id="tab-btn-predictions" role="tab" aria-selected="false">
         📝 Predicciones
       </button>
@@ -88,6 +92,7 @@
       <button class="tab-btn" data-tab="tab-matches" id="tab-btn-matches" role="tab" aria-selected="false">
         ⚽ Partidos
       </button>
+
     </div>
 
     <!-- TAB: RANKING -->
@@ -196,6 +201,42 @@
     <div class="tab-content" id="tab-matches" role="tabpanel">
       <div id="matches-container">
         <!-- Match cards rendered by JS -->
+      </div>
+    </div>
+
+    <!-- TAB: BRACKET ELIMINATORIAS -->
+    <div class="tab-content" id="tab-bracket" role="tabpanel">
+      <!-- Mobile round selector -->
+      <div class="bracket-round-selector" id="bracket-round-selector">
+        <button class="bracket-round-btn active" data-round="R32" id="brs-R32">16avos</button>
+        <button class="bracket-round-btn" data-round="R16" id="brs-R16">Octavos</button>
+        <button class="bracket-round-btn" data-round="QF" id="brs-QF">Cuartos</button>
+        <button class="bracket-round-btn" data-round="SF" id="brs-SF">Semis</button>
+        <button class="bracket-round-btn" data-round="FINAL" id="brs-FINAL">Final</button>
+      </div>
+
+      <!-- R32 section (list, not tree) -->
+      <div id="bracket-r32-section">
+        <div class="bracket-phase-title">
+          <span class="bracket-phase-icon">⚔️</span>
+          Dieciseisavos de Final
+        </div>
+        <div class="bracket-r32-grid" id="bracket-r32-grid">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Main bracket: R16 → QF → SF → Final -->
+      <div id="bracket-main-section">
+        <div class="bracket-phase-title">
+          <span class="bracket-phase-icon">🏆</span>
+          Fase Final — Bracket
+        </div>
+        <div class="bracket-scroll-wrapper">
+          <div class="bracket-tree" id="bracket-tree">
+            <!-- rendered by JS -->
+          </div>
+        </div>
       </div>
     </div>
 

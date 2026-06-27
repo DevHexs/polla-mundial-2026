@@ -40,8 +40,10 @@ function init() {
   renderMatches();
   renderPredictionsTab(standings);
   initDatesTab();
+  renderBracket();
   setupTabs();
   setupModal();
+  setupBracketPredModal();
 }
 
 // ===== PUNTOS =====
@@ -433,6 +435,23 @@ function setupTabs() {
       contents.forEach((c) => c.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById(btn.dataset.tab).classList.add("active");
+
+      // Redraw SVG connectors when bracket tab becomes visible
+      if (btn.dataset.tab === "tab-bracket") {
+        requestAnimationFrame(() => {
+          const tree = document.getElementById("bracket-tree");
+          if (tree && tree.children.length > 0) {
+            const matchesMap = {};
+            matchesData.forEach((m) => { matchesMap[m.id] = m; });
+            const roundsConfig = [
+              { key: "R16", matches: ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"] },
+              { key: "QF",  matches: ["QF_1","QF_2","QF_3","QF_4"] },
+              { key: "SF",  matches: ["SF_1","SF_2"] },
+            ];
+            drawBracketConnectors(tree, roundsConfig, matchesMap);
+          }
+        });
+      }
     });
   });
 }
@@ -795,4 +814,560 @@ function updateStandingsAndStatsOnly() {
   renderPodium(standings);
   renderRankingTable(standings);
   renderDateMatches();
+}
+
+// =====================================================
+// ===== BRACKET — FASE ELIMINATORIA ================
+// =====================================================
+
+const BRACKET_ROUND_NAMES = {
+  R32: "Dieciseisavos de Final",
+  R16: "Octavos de Final",
+  QF: "Cuartos de Final",
+  SF: "Semifinales",
+  FINAL: "Final",
+};
+
+// Pairing: R32 matches feed into R16 matches (by index)
+// R32_1 + R32_2 → R16_1, R32_3 + R32_4 → R16_2 ... etc.
+const R32_TO_R16 = {
+  R16_1: ["R32_1", "R32_2"],
+  R16_2: ["R32_3", "R32_4"],
+  R16_3: ["R32_5", "R32_6"],
+  R16_4: ["R32_7", "R32_8"],
+  R16_5: ["R32_9", "R32_10"],
+  R16_6: ["R32_11", "R32_12"],
+  R16_7: ["R32_13", "R32_14"],
+  R16_8: ["R32_15", "R32_16"],
+};
+const R16_TO_QF = {
+  QF_1: ["R16_1", "R16_2"],
+  QF_2: ["R16_3", "R16_4"],
+  QF_3: ["R16_5", "R16_6"],
+  QF_4: ["R16_7", "R16_8"],
+};
+const QF_TO_SF = {
+  SF_1: ["QF_1", "QF_2"],
+  SF_2: ["QF_3", "QF_4"],
+};
+// F_1 = 3rd place (SF losers), F_2 = Final (SF winners)
+
+// ── Helper: build a bracket match card (for tree) ──
+function buildBtCard(match, extraClass = "") {
+  const isFinished = match.status === "finished";
+  const isLive = match.status === "live";
+
+  // Determine winner team for styling
+  let homeWinner = false, awayWinner = false;
+  if (isFinished && match.homeScore !== null && match.awayScore !== null) {
+    if (match.homeScore > match.awayScore) homeWinner = true;
+    else if (match.awayScore > match.homeScore) awayWinner = true;
+  }
+
+  const statusLabel = isFinished
+    ? "Finalizado"
+    : isLive
+      ? "🔴 En vivo"
+      : (match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : formatDate(getPanamaDateTime(match).dateStr));
+
+  const homeScore = isFinished || isLive ? String(match.homeScore) : "";
+  const awayScore = isFinished || isLive ? String(match.awayScore) : "";
+
+  const shortName = (name) => name.length > 12 ? name.split(" ")[0] : name;
+
+  const card = document.createElement("div");
+  card.className = `bt-card status-${match.status}${extraClass ? " " + extraClass : ""}`;
+  card.dataset.matchId = match.id;
+  card.innerHTML = `
+    <div class="bt-top">
+      <span>${match.id}</span>
+      <span>${statusLabel}</span>
+    </div>
+    <div class="bt-team${homeWinner ? " winner" : ""}">
+      <div class="bt-team-info">
+        <span class="bt-flag">${match.homeFlag}</span>
+        <span class="bt-name${homeWinner ? " winner-name" : ""}">${shortName(match.home)}</span>
+      </div>
+      <span class="bt-score${homeWinner ? " winner-score" : ""}">${homeScore}</span>
+    </div>
+    <div class="bt-team${awayWinner ? " winner" : ""}">
+      <div class="bt-team-info">
+        <span class="bt-flag">${match.awayFlag}</span>
+        <span class="bt-name${awayWinner ? " winner-name" : ""}">${shortName(match.away)}</span>
+      </div>
+      <span class="bt-score${awayWinner ? " winner-score" : ""}">${awayScore}</span>
+    </div>
+  `;
+  card.addEventListener("click", () => openBracketPredModal(match));
+  return card;
+}
+
+// ── Helper: build a bm-card (for R32 grid and mobile) ──
+function buildBmCard(match) {
+  const isFinished = match.status === "finished";
+  const isLive = match.status === "live";
+
+  let homeWinner = false, awayWinner = false;
+  if (isFinished && match.homeScore !== null && match.awayScore !== null) {
+    if (match.homeScore > match.awayScore) homeWinner = true;
+    else if (match.awayScore > match.homeScore) awayWinner = true;
+  }
+
+  const statusLabel = isFinished
+    ? "Finalizado"
+    : isLive
+      ? "🔴 En vivo"
+      : (match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : "Pendiente");
+
+  const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
+
+  const homeScore = isFinished || isLive ? String(match.homeScore) : "—";
+  const awayScore = isFinished || isLive ? String(match.awayScore) : "—";
+
+  const card = document.createElement("div");
+  card.className = `bm-card status-${match.status}`;
+  card.dataset.matchId = match.id;
+  card.innerHTML = `
+    <div class="bm-card-top">
+      <span>${match.id}</span>
+      <span class="bm-status-pill ${statusClass}">${statusLabel}</span>
+    </div>
+    <div class="bm-teams">
+      <div class="bm-team${homeWinner ? " winner" : ""}">
+        <div class="bm-team-info">
+          <span class="bm-flag">${match.homeFlag}</span>
+          <span class="bm-name${homeWinner ? " winner-name" : ""}">${match.home}</span>
+        </div>
+        <span class="bm-score${homeWinner ? " winner-score" : ""}">${homeScore}</span>
+      </div>
+      <div class="bm-team${awayWinner ? " winner" : ""}">
+        <div class="bm-team-info">
+          <span class="bm-flag">${match.awayFlag}</span>
+          <span class="bm-name${awayWinner ? " winner-name" : ""}">${match.away}</span>
+        </div>
+        <span class="bm-score${awayWinner ? " winner-score" : ""}">${awayScore}</span>
+      </div>
+    </div>
+  `;
+  card.addEventListener("click", () => openBracketPredModal(match));
+  return card;
+}
+
+// ── Render R32 grid section ──
+function renderBracketR32(r32Matches) {
+  const grid = document.getElementById("bracket-r32-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  r32Matches.forEach((m) => grid.appendChild(buildBmCard(m)));
+}
+
+// ── Render bracket tree (R16 → QF → SF → Final) ──
+function renderBracketTree(matchesMap) {
+  const tree = document.getElementById("bracket-tree");
+  if (!tree) return;
+  tree.innerHTML = "";
+
+  // MATCH_HEIGHT: height of a bt-card in px (top-bar ~22 + 2x team-row ~35 each = ~92)
+  const MATCH_H = 92;
+  const MATCH_W = 200; // column width
+  const GAP_X   = 40; // horizontal gap between columns
+
+  const roundsConfig = [
+    { key: "R16", matches: ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"], label: "Octavos" },
+    { key: "QF",  matches: ["QF_1","QF_2","QF_3","QF_4"], label: "Cuartos" },
+    { key: "SF",  matches: ["SF_1","SF_2"], label: "Semis" },
+  ];
+
+  // Maximum slots = 8 (R16); each slot = card height + generous padding
+  const maxSlots = 8;
+  const slotH = MATCH_H + 32; // 32px breathing room between cards
+  const totalH = maxSlots * slotH;
+  const headerH = 28;
+
+  const colEls = []; // store column elements for SVG positions
+
+  roundsConfig.forEach((round, roundIdx) => {
+    const col = document.createElement("div");
+    col.className = "bracket-round-col";
+    col.style.width = MATCH_W + "px";
+
+    const header = document.createElement("div");
+    header.className = "bracket-round-header";
+    header.textContent = round.label;
+    col.appendChild(header);
+
+    // Content area with fixed height
+    const content = document.createElement("div");
+    content.style.cssText = `position:relative; height:${totalH}px;`;
+
+    const matchCount = round.matches.length;
+    round.matches.forEach((matchId, idx) => {
+      const match = matchesMap[matchId];
+      if (!match) return;
+
+      // Calculate vertical center position for this slot
+      const slotSize = totalH / matchCount;
+      const topCenter = slotSize * idx + slotSize / 2;
+      const topPx = topCenter - MATCH_H / 2;
+
+      const wrapper = document.createElement("div");
+      wrapper.style.cssText = `position:absolute; top:${topPx}px; left:8px; right:8px;`;
+      wrapper.dataset.matchId = matchId;
+      wrapper.dataset.roundKey = round.key;
+      wrapper.dataset.slotIdx = idx;
+
+      const card = buildBtCard(match);
+      wrapper.appendChild(card);
+      content.appendChild(wrapper);
+    });
+
+    col.appendChild(content);
+    tree.appendChild(col);
+    colEls.push({ col, round: round.key, config: round });
+
+    // Add gap spacer between columns (except before final)
+    if (roundIdx < roundsConfig.length - 1) {
+      const spacer = document.createElement("div");
+      spacer.style.cssText = `width:${GAP_X}px; flex-shrink:0;`;
+      tree.appendChild(spacer);
+    }
+  });
+
+  // ── Final column (3rd place + Final, separated) ──
+  const gapSpacer = document.createElement("div");
+  gapSpacer.style.cssText = `width:${GAP_X}px; flex-shrink:0;`;
+  tree.appendChild(gapSpacer);
+
+  const finalCol = document.createElement("div");
+  finalCol.className = "bracket-round-col col-final";
+  finalCol.style.cssText = `width:${MATCH_W}px; height:${totalH + headerH}px; justify-content:center; display:flex; flex-direction:column; gap:20px;`;
+
+  const finalHeader = document.createElement("div");
+  finalHeader.className = "bracket-round-header";
+  finalHeader.textContent = "Final";
+  finalCol.appendChild(finalHeader);
+
+  // Final match (F_2)
+  const finalContent = document.createElement("div");
+  finalContent.style.cssText = "display:flex; flex-direction:column; gap:20px; flex:1; justify-content:center;";
+
+  const f2Match = matchesMap["F_2"];
+  if (f2Match) {
+    const w2 = document.createElement("div");
+    w2.style.cssText = "padding: 0 8px;";
+    w2.dataset.matchId = "F_2";
+
+    const label2 = document.createElement("div");
+    label2.style.cssText = "font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent); margin-bottom:6px; text-align:center;";
+    label2.textContent = "🏆 Gran Final";
+    w2.appendChild(label2);
+
+    const card2 = buildBtCard(f2Match, "final-card");
+    w2.appendChild(card2);
+    finalContent.appendChild(w2);
+  }
+
+  // 3rd place match (F_1)
+  const f1Match = matchesMap["F_1"];
+  if (f1Match) {
+    const w1 = document.createElement("div");
+    w1.style.cssText = "padding: 0 8px;";
+    w1.dataset.matchId = "F_1";
+
+    const label1 = document.createElement("div");
+    label1.style.cssText = "font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:#a1826e; margin-bottom:6px; text-align:center;";
+    label1.textContent = "🥉 3er Puesto";
+    w1.appendChild(label1);
+
+    const card1 = buildBtCard(f1Match, "third-card");
+    w1.appendChild(card1);
+    finalContent.appendChild(w1);
+  }
+
+  finalCol.appendChild(finalContent);
+  tree.appendChild(finalCol);
+  colEls.push({ col: finalCol, round: "FINAL" });
+
+  // ── Draw SVG connectors after layout paint ──
+  requestAnimationFrame(() => drawBracketConnectors(tree, roundsConfig, matchesMap));
+}
+
+// ── Draw SVG connector paths ──
+// Uses offsetTop/offsetLeft (relative to tree) instead of getBoundingClientRect
+// so it works correctly even when the tab panel was previously hidden (display:none).
+function drawBracketConnectors(tree, roundsConfig, matchesMap) {
+  const existing = tree.querySelector(".bracket-svg-connectors");
+  if (existing) existing.remove();
+
+  const treeW = tree.scrollWidth;
+  const treeH = tree.scrollHeight;
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.classList.add("bracket-svg-connectors");
+  svg.setAttribute("width", treeW);
+  svg.setAttribute("height", treeH);
+  svg.style.cssText = `position:absolute; top:0; left:0; width:${treeW}px; height:${treeH}px; pointer-events:none; z-index:1;`;
+
+  // Get element offset relative to the #bracket-tree container
+  function getOffsetInTree(el) {
+    let top = 0, left = 0;
+    let cur = el;
+    while (cur && cur !== tree) {
+      top  += cur.offsetTop;
+      left += cur.offsetLeft;
+      cur   = cur.offsetParent;
+    }
+    return { top, left, width: el.offsetWidth, height: el.offsetHeight };
+  }
+
+  const wrapperMap = {};
+  tree.querySelectorAll("[data-match-id]").forEach((el) => {
+    // Only pick direct wrappers (not nested cards)
+    if (el.dataset.matchId && !el.classList.contains("bt-card") && !el.classList.contains("bm-card")) {
+      wrapperMap[el.dataset.matchId] = el;
+    }
+  });
+
+  const connections = [
+    ...Object.entries(R16_TO_QF).map(([target, sources]) => ({ target, sources })),
+    ...Object.entries(QF_TO_SF).map(([target, sources]) => ({ target, sources })),
+    { target: "F_2", sources: ["SF_1", "SF_2"] },
+  ];
+
+  connections.forEach(({ target, sources }) => {
+    const targetEl = wrapperMap[target];
+    if (!targetEl) return;
+    const tOff = getOffsetInTree(targetEl);
+    const tX = tOff.left;
+    const tY = tOff.top + tOff.height / 2;
+
+    sources.forEach((srcId) => {
+      const srcEl = wrapperMap[srcId];
+      if (!srcEl) return;
+      const sOff = getOffsetInTree(srcEl);
+      const srcMatch = matchesMap[srcId];
+      const isFinished = srcMatch && srcMatch.status === "finished";
+
+      const sX = sOff.left + sOff.width;
+      const sY = sOff.top + sOff.height / 2;
+      const midX = (sX + tX) / 2;
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", `M ${sX} ${sY} C ${midX} ${sY}, ${midX} ${tY}, ${tX} ${tY}`);
+      path.setAttribute("class", `bracket-connector-path${isFinished ? " finished" : ""}`);
+      svg.appendChild(path);
+    });
+  });
+
+  tree.insertBefore(svg, tree.firstChild);
+}
+
+// ── Main render function ──
+function renderBracket() {
+  // Build match lookup map
+  const matchesMap = {};
+  matchesData.forEach((m) => { matchesMap[m.id] = m; });
+
+  const r32Matches = matchesData.filter((m) => m.group === "R32").sort((a, b) => {
+    const aNum = parseInt(a.id.replace("R32_",""));
+    const bNum = parseInt(b.id.replace("R32_",""));
+    return aNum - bNum;
+  });
+
+  renderBracketR32(r32Matches);
+  renderBracketTree(matchesMap);
+
+  // Mobile selector logic
+  setupBracketMobileSelector();
+}
+
+// ── Mobile round selector ──
+let bracketMobileRound = "R32";
+
+function setupBracketMobileSelector() {
+  const selector = document.getElementById("bracket-round-selector");
+  if (!selector) return;
+
+  // Apply initial mobile visibility
+  applyBracketMobileRound(bracketMobileRound);
+
+  selector.querySelectorAll(".bracket-round-btn").forEach((btn) => {
+    if (btn.dataset.listener) return;
+    btn.dataset.listener = "true";
+    btn.addEventListener("click", () => {
+      bracketMobileRound = btn.dataset.round;
+      selector.querySelectorAll(".bracket-round-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      applyBracketMobileRound(bracketMobileRound);
+    });
+  });
+}
+
+function applyBracketMobileRound(round) {
+  const r32Section = document.getElementById("bracket-r32-section");
+  const mainSection = document.getElementById("bracket-main-section");
+  if (!r32Section || !mainSection) return;
+
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile) {
+    r32Section.classList.remove("mobile-visible");
+    mainSection.classList.remove("mobile-visible");
+    return;
+  }
+
+  if (round === "R32") {
+    r32Section.classList.add("mobile-visible");
+    mainSection.classList.remove("mobile-visible");
+  } else {
+    r32Section.classList.remove("mobile-visible");
+    mainSection.classList.add("mobile-visible");
+
+    // Scroll bracket tree to the correct round column
+    const tree = document.getElementById("bracket-tree");
+    if (!tree) return;
+
+    const roundMap = { R16: 0, QF: 1, SF: 2, FINAL: 3 };
+    const roundIdx = roundMap[round] ?? 0;
+    const cols = tree.querySelectorAll(".bracket-round-col");
+    if (cols[roundIdx]) {
+      const wrapper = tree.parentElement;
+      wrapper.scrollLeft = cols[roundIdx].offsetLeft - 8;
+    }
+  }
+}
+
+// Re-apply mobile visibility on resize
+window.addEventListener("resize", () => {
+  applyBracketMobileRound(bracketMobileRound);
+  // Redraw SVG connectors on resize
+  const tree = document.getElementById("bracket-tree");
+  if (tree && tree.children.length > 0) {
+    const matchesMap = {};
+    matchesData.forEach((m) => { matchesMap[m.id] = m; });
+    const roundsConfig = [
+      { key: "R16", matches: ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"] },
+      { key: "QF",  matches: ["QF_1","QF_2","QF_3","QF_4"] },
+      { key: "SF",  matches: ["SF_1","SF_2"] },
+    ];
+    drawBracketConnectors(tree, roundsConfig, matchesMap);
+  }
+});
+
+// =====================================================
+// ===== BRACKET PREDICTIONS POPOVER ================
+// =====================================================
+
+function setupBracketPredModal() {
+  // Inject modal HTML into body if not present
+  if (document.getElementById("bracket-pred-overlay")) return;
+
+  const overlay = document.createElement("div");
+  overlay.className = "bracket-pred-overlay";
+  overlay.id = "bracket-pred-overlay";
+  overlay.innerHTML = `
+    <div class="bracket-pred-modal" id="bracket-pred-modal">
+      <div class="bpm-header">
+        <div class="bpm-match-info">
+          <div class="bpm-round-label" id="bpm-round-label">Fase</div>
+          <div class="bpm-teams-display" id="bpm-teams-display"></div>
+        </div>
+        <button class="bpm-close" id="bpm-close-btn" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="bpm-body" id="bpm-body"></div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  document.getElementById("bpm-close-btn").addEventListener("click", closeBracketPredModal);
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeBracketPredModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeBracketPredModal();
+  });
+}
+
+function openBracketPredModal(match) {
+  const overlay = document.getElementById("bracket-pred-overlay");
+  if (!overlay) return;
+
+  const isFinished = match.status === "finished";
+  const isLive = match.status === "live";
+
+  // Header
+  document.getElementById("bpm-round-label").textContent =
+    BRACKET_ROUND_NAMES[match.group] || match.group;
+
+  const scoreDisplay = isFinished || isLive
+    ? `<span class="bpm-score-display">${match.homeScore} – ${match.awayScore}</span>`
+    : `<span style="opacity:0.7;font-size:0.85rem;">vs</span>`;
+
+  document.getElementById("bpm-teams-display").innerHTML = `
+    <span class="bpm-flag">${match.homeFlag}</span>
+    <span>${match.home}</span>
+    ${scoreDisplay}
+    <span>${match.away}</span>
+    <span class="bpm-flag">${match.awayFlag}</span>
+  `;
+
+  // Body: participants sorted by standings
+  const body = document.getElementById("bpm-body");
+  body.innerHTML = "";
+
+  const standings = computeStandings();
+
+  // Section label
+  const sectionLabel = document.createElement("div");
+  sectionLabel.style.cssText = "font-size:0.68rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;";
+  sectionLabel.textContent = "Pronósticos";
+  body.appendChild(sectionLabel);
+
+  let hasAnyPred = false;
+  standings.forEach((p) => {
+    const pred = p.predictions[match.id];
+    const result = scorePredict(pred, match);
+
+    if (pred) hasAnyPred = true;
+
+    const predScoreStr = pred ? `${pred.homeScore} – ${pred.awayScore}` : "—";
+
+    let badgeClass = "no-pred";
+    let badgeText = "Sin pred.";
+    if (pred) {
+      if (result.type === "exact")  { badgeClass = "exact";  badgeText = `🎯 +${POINTS_EXACT}pts`; }
+      else if (result.type === "winner") { badgeClass = "winner"; badgeText = `✅ +${POINTS_WINNER}pt`; }
+      else if (result.type === "wrong")  { badgeClass = "wrong";  badgeText = "❌ 0pts"; }
+      else { badgeClass = "pending"; badgeText = "Pendiente"; }
+    }
+
+    const row = document.createElement("div");
+    row.className = "bpm-pred-row";
+    row.innerHTML = `
+      <div class="bpm-pred-participant">
+        <span style="font-size:1.1rem;">${p.avatar}</span>
+        <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${p.name}</span>
+      </div>
+      <div class="bpm-pred-right">
+        <span class="bpm-pred-score">${predScoreStr}</span>
+        <span class="bpm-result-badge ${badgeClass}">${badgeText}</span>
+      </div>
+    `;
+    body.appendChild(row);
+  });
+
+  if (!hasAnyPred) {
+    const empty = document.createElement("div");
+    empty.style.cssText = "text-align:center;color:var(--text-muted);font-size:0.85rem;padding:24px 0;";
+    empty.innerHTML = `<span style="font-size:2rem;display:block;margin-bottom:8px;">📝</span>Ningún participante tiene predicción para este partido.`;
+    body.appendChild(empty);
+  }
+
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeBracketPredModal() {
+  const overlay = document.getElementById("bracket-pred-overlay");
+  if (overlay) overlay.classList.remove("open");
+  document.body.style.overflow = "";
 }
