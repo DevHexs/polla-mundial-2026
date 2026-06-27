@@ -988,9 +988,9 @@
     "away": "Inglaterra",
     "awayFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "date": "2026-06-27",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 2,
+    "status": "finished",
     "time": "21:00"
   },
   {
@@ -1002,9 +1002,9 @@
     "away": "Ghana",
     "awayFlag": "🇬🇭",
     "date": "2026-06-27",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "finished",
     "time": "21:00"
   },
   {
