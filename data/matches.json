@@ -652,9 +652,9 @@
     "away": "Arabia Saudita",
     "awayFlag": "🇸🇦",
     "date": "2026-06-26",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 0,
+    "status": "finished",
     "time": "00:00"
   },
   {
@@ -666,9 +666,9 @@
     "away": "España",
     "awayFlag": "🇪🇸",
     "date": "2026-06-26",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 1,
+    "status": "finished",
     "time": "00:00"
   },
   {
