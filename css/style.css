@@ -123,6 +123,7 @@ body {
 /* ===== TABS ===== */
 .tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   margin-bottom: 24px;
   background: var(--card-bg);
@@ -133,7 +134,8 @@ body {
 }
 
 .tab-btn {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   padding: 10px 16px;
   border: none;
   background: transparent;
@@ -148,6 +150,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  white-space: nowrap;
 }
 
 .tab-btn:hover { background: var(--bg); color: var(--text-primary); }
@@ -771,8 +774,8 @@ body {
   .match-card { grid-template-columns: 1fr auto 1fr; gap: 8px; padding: 12px 14px; }
   .match-date-col { display: none; }
 
-  .tabs { gap: 2px; }
-  .tab-btn { font-size: 0.78rem; padding: 8px 10px; }
+  .tabs { gap: 4px; padding: 4px; }
+  .tab-btn { font-size: 0.75rem; padding: 7px 8px; flex: 1 1 calc(33% - 4px); }
 
   .modal { max-height: 90vh; }
   .modal-header { padding: 16px 18px; }
