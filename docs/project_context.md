@@ -29,7 +29,7 @@ La aplicación funciona 100% en el lado del cliente (frontend). No cuenta con ba
     *   Determina los puntos por partido usando la función [scorePredict](file:///Users/hex/Documents/polla-mundial-2026/js/app.js#L56).
     *   Controla la navegación de pestañas (Tabs), filtros y la visualización de fechas en el huso horario de Panamá.
 *   **Carpeta `data/`**:
-    *   **[matches.json](file:///Users/hex/Documents/polla-mundial-2026/data/matches.json)**: Catálogo de partidos oficiales de la fase de grupos. Cada partido tiene un identificador único (ej. `A1`), los nombres de los equipos, banderas (emojis), fecha, hora UTC, marcador real (`homeScore`, `awayScore`) y estado (`status` que puede ser `"pending"` o `"finished"`).
+    *   **[matches.json](file:///Users/hex/Documents/polla-mundial-2026/data/matches.json)**: Catálogo de partidos oficiales del mundial (fase de grupos y fases eliminatorias R32, R16, QF, SF, F). Cada partido tiene un identificador único (ej. `A1`, `R32_1`), los nombres de los equipos, banderas (emojis), fecha, hora UTC, marcador real (`homeScore`, `awayScore`) y estado (`status` que puede ser `"pending"` o `"finished"`).
     *   **[predictions.json](file:///Users/hex/Documents/polla-mundial-2026/data/predictions.json)**: Contiene la lista de participantes junto con sus respectivos avatares y el mapa de sus predicciones asignadas al ID de cada partido.
     *   **[group_dates.json](file:///Users/hex/Documents/polla-mundial-2026/data/group_dates.json)**: Información organizativa de los grupos del mundial.
 *   **Carpeta `scripts/`**:
@@ -43,6 +43,13 @@ La lógica implementada en [scorePredict](file:///Users/hex/Documents/polla-mund
 *   **Marcador Exacto (3 Puntos):** Coincidencia perfecta de los goles del local y visitante predichos con los resultados reales.
 *   **Acierto de Ganador o Empate (1 Punto):** Coincidencia del resultado general (ej. ganó local o empate) pero con un marcador de goles diferente.
 *   **Error Total (0 Puntos):** Ningún acierto en el resultado ni en goles.
+
+### Lógica para Fases de Eliminación Directa
+Como en las fases eliminatorias debe definirse un ganador, los marcadores ingresados en `matches.json` deben ajustarse a las siguientes reglas de la polla:
+*   **Definido en 90 minutos regulares:** Se ingresa el marcador final de los 90 minutos.
+*   **Definido en Tiempo Extra (120 minutos):** Se ingresa el marcador acumulado final al término de los 120 minutos (ej. si quedó 2-1 tras el tiempo extra, se ingresa `2-1`).
+*   **Definido en Tanda de Penales:** Se ignora la tanda de penales y se ingresa el marcador de **empate** con el que terminaron los 120 minutos de juego (ej. si tras el tiempo extra el marcador final fue 2-2, se ingresa `2-2`, contándose como un empate para la polla).
+
 
 ### Criterio de Desempate en Posiciones
 Si dos o más participantes empatan en puntos, la clasificación los ordena bajo los siguientes criterios en orden de prioridad:

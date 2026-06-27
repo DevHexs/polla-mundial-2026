@@ -526,5 +526,239 @@
       "stadium": "Estadio Filadelfia",
       "time": "21:00"
     }
+  ],
+  "R32": [
+    {
+      "date": "2026-06-28",
+      "home": "Sudáfrica",
+      "away": "Canadá",
+      "stadium": "Por definir",
+      "time": "14:00"
+    },
+    {
+      "date": "2026-06-29",
+      "home": "Brasil",
+      "away": "Japón",
+      "stadium": "Por definir",
+      "time": "12:00"
+    },
+    {
+      "date": "2026-06-29",
+      "home": "Alemania",
+      "away": "Paraguay",
+      "stadium": "Por definir",
+      "time": "15:30"
+    },
+    {
+      "date": "2026-06-29",
+      "home": "Países Bajos",
+      "away": "Marruecos",
+      "stadium": "Por definir",
+      "time": "20:00"
+    },
+    {
+      "date": "2026-06-30",
+      "home": "Costa de Marfil",
+      "away": "Noruega",
+      "stadium": "Por definir",
+      "time": "12:00"
+    },
+    {
+      "date": "2026-06-30",
+      "home": "Francia",
+      "away": "Suecia",
+      "stadium": "Por definir",
+      "time": "16:00"
+    },
+    {
+      "date": "2026-06-30",
+      "home": "México",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "20:00"
+    },
+    {
+      "date": "2026-07-01",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "11:00"
+    },
+    {
+      "date": "2026-07-01",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "15:00"
+    },
+    {
+      "date": "2026-07-01",
+      "home": "Estados Unidos",
+      "away": "Bosnia y Herzegovina",
+      "stadium": "Por definir",
+      "time": "19:00"
+    },
+    {
+      "date": "2026-07-02",
+      "home": "España",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "14:00"
+    },
+    {
+      "date": "2026-07-02",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "18:00"
+    },
+    {
+      "date": "2026-07-02",
+      "home": "Suiza",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "22:00"
+    },
+    {
+      "date": "2026-07-03",
+      "home": "Australia",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "13:00"
+    },
+    {
+      "date": "2026-07-03",
+      "home": "Argentina",
+      "away": "Cabo Verde",
+      "stadium": "Por definir",
+      "time": "17:00"
+    },
+    {
+      "date": "2026-07-03",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "20:30"
+    }
+  ],
+  "R16": [
+    {
+      "date": "2026-07-04",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "12:00"
+    },
+    {
+      "date": "2026-07-04",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "16:00"
+    },
+    {
+      "date": "2026-07-05",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "15:00"
+    },
+    {
+      "date": "2026-07-05",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "19:00"
+    },
+    {
+      "date": "2026-07-06",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "14:00"
+    },
+    {
+      "date": "2026-07-06",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "19:00"
+    },
+    {
+      "date": "2026-07-07",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "11:00"
+    },
+    {
+      "date": "2026-07-07",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "15:00"
+    }
+  ],
+  "QF": [
+    {
+      "date": "2026-07-09",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "15:00"
+    },
+    {
+      "date": "2026-07-10",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "14:00"
+    },
+    {
+      "date": "2026-07-11",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "16:00"
+    },
+    {
+      "date": "2026-07-11",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "20:00"
+    }
+  ],
+  "SF": [
+    {
+      "date": "2026-07-14",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "14:00"
+    },
+    {
+      "date": "2026-07-15",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "14:00"
+    }
+  ],
+  "FINAL": [
+    {
+      "date": "2026-07-18",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "16:00"
+    },
+    {
+      "date": "2026-07-19",
+      "home": "A definir",
+      "away": "A definir",
+      "stadium": "Por definir",
+      "time": "14:00"
+    }
   ]
 }
