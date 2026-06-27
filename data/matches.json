@@ -316,9 +316,9 @@
     "away": "Estados Unidos",
     "awayFlag": "🇺🇸",
     "date": "2026-06-25",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 3,
+    "awayScore": 2,
+    "status": "finished",
     "time": "02:00"
   },
   {
@@ -330,9 +330,9 @@
     "away": "Australia",
     "awayFlag": "🇦🇺",
     "date": "2026-06-25",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 0,
+    "status": "finished",
     "time": "02:00"
   },
   {
@@ -736,9 +736,9 @@
     "away": "Francia",
     "awayFlag": "🇫🇷",
     "date": "2026-06-26",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 4,
+    "status": "finished",
     "time": "19:00"
   },
   {
@@ -750,9 +750,9 @@
     "away": "Irak",
     "awayFlag": "🇮🇶",
     "date": "2026-06-26",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 5,
+    "awayScore": 0,
+    "status": "finished",
     "time": "19:00"
   },
   {
