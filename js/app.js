@@ -141,7 +141,9 @@ function renderPodium(standings) {
     if (rank === 1) {
       return p.exactCount >= 4 ? "👑 El Gurú Supremo" : "🔥 Líder Absoluto";
     } else if (rank === 2) {
-      return p.exactCount > p.winnerCount / 2 ? "🎯 Francotirador" : "⚡ Al Acecho";
+      return p.exactCount > p.winnerCount / 2
+        ? "🎯 Francotirador"
+        : "⚡ Al Acecho";
     } else {
       return p.winnerCount > 5 ? "🧠 El Estratega" : "🛡️ En la Pelea";
     }
@@ -151,9 +153,9 @@ function renderPodium(standings) {
     const rank = i + 1;
     const card = document.createElement("div");
     card.className = `podium-card ${rankClasses[i]}`;
-    
+
     const title = getPodiumTitle(p, rank);
-    
+
     card.innerHTML = `
       <div class="podium-badge-title">${title}</div>
       <span class="podium-medal">${medals[i]}</span>
@@ -173,16 +175,17 @@ function renderPodium(standings) {
         for (let j = 0; j < 15; j++) {
           const emojiSpan = document.createElement("span");
           emojiSpan.className = "floating-emoji";
-          emojiSpan.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-          
+          emojiSpan.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
           const xOffset = `${(Math.random() - 0.5) * 160}px`;
           const rotation = `${(Math.random() - 0.5) * 180}deg`;
           emojiSpan.style.setProperty("--x-offset", xOffset);
           emojiSpan.style.setProperty("--rotation", rotation);
-          
+
           emojiSpan.style.left = `${20 + Math.random() * 60}%`;
           emojiSpan.style.animationDelay = `${Math.random() * 0.15}s`;
-          
+
           card.appendChild(emojiSpan);
           setTimeout(() => emojiSpan.remove(), 1200);
         }
@@ -198,10 +201,213 @@ function renderPodium(standings) {
   });
 }
 
+// ===== CALCULAR LOGROS Y MEDALLAS DINÁMICAS =====
+function calculateAdvancedBadges(standings) {
+  const finishedMatches = matchesData
+    .filter((m) => m.status === "finished")
+    .sort((a, b) => {
+      const aInfo = getPanamaDateTime(a);
+      const bInfo = getPanamaDateTime(b);
+      return aInfo.sortValue.localeCompare(bInfo.sortValue);
+    });
+
+  const badges = {}; // name -> array of badges
+  standings.forEach((p) => {
+    badges[p.name] = [];
+  });
+
+  if (standings.length === 0) return badges;
+
+  // 1. 🐢 El "Farolillo Rojo" (Último lugar)
+  const lastParticipantName = standings[standings.length - 1].name;
+  badges[lastParticipantName].push({
+    emoji: "🐢",
+    title: "Farolillo Rojo",
+    class: "tag-remontando",
+    desc: "Preparando la remontada..."
+  });
+
+  // 2. 🎯 El Francotirador (Mayor % de exactos respecto a sus predicciones totales)
+  let maxExactRatio = 0;
+  const ratios = standings.map((p) => {
+    const ratio = p.predictedCount > 0 ? p.exactCount / p.predictedCount : 0;
+    if (p.exactCount > 0 && ratio > maxExactRatio) maxExactRatio = ratio;
+    return { name: p.name, ratio };
+  });
+  if (maxExactRatio > 0) {
+    ratios.forEach((r) => {
+      if (r.ratio === maxExactRatio) {
+        badges[r.name].push({
+          emoji: "🎯",
+          title: "Francotirador",
+          class: "tag-francotirador",
+          desc: `Precisión del ${(r.ratio * 100).toFixed(0)}% en aciertos exactos`
+        });
+      }
+    });
+  }
+
+  // 3. ⚖️ El Pacifista (Rey del Empate - más empates reales predichos correctamente)
+  const drawCounts = standings.map((p) => {
+    let correctDraws = 0;
+    finishedMatches.forEach((m) => {
+      if (m.homeScore === m.awayScore) {
+        const pred = p.predictions[m.id];
+        if (pred && pred.homeScore === pred.awayScore) {
+          correctDraws++;
+        }
+      }
+    });
+    return { name: p.name, count: correctDraws };
+  });
+  const maxDraws = Math.max(...drawCounts.map((d) => d.count));
+  if (maxDraws > 0) {
+    drawCounts.forEach((d) => {
+      if (d.count === maxDraws) {
+        badges[d.name].push({
+          emoji: "⚖️",
+          title: "Pacifista",
+          class: "tag-pacifista",
+          desc: `Acertó ${d.count} empates en el mundial`
+        });
+      }
+    });
+  }
+
+  if (finishedMatches.length > 0) {
+    // 4. 🔥 En Racha (Más puntos en la última fecha de partidos terminados)
+    const lastMatch = finishedMatches[finishedMatches.length - 1];
+    const lastDateStr = getPanamaDateTime(lastMatch).dateStr;
+    const lastMatchesOnDate = finishedMatches.filter(
+      (m) => getPanamaDateTime(m).dateStr === lastDateStr
+    );
+
+    const lastDatePoints = standings.map((p) => {
+      let pts = 0;
+      lastMatchesOnDate.forEach((m) => {
+        const result = scorePredict(p.predictions[m.id], m);
+        pts += result.points;
+      });
+      return { name: p.name, pts };
+    });
+    const maxLastDatePoints = Math.max(...lastDatePoints.map((x) => x.pts));
+    if (maxLastDatePoints > 0) {
+      lastDatePoints.forEach((x) => {
+        if (x.pts === maxLastDatePoints) {
+          badges[x.name].push({
+            emoji: "🔥",
+            title: "En Racha",
+            class: "tag-racha",
+            desc: `Sumó ${x.pts} pts en la última fecha jugada`
+          });
+        }
+      });
+    }
+
+    // 5. 🎢 La Montaña Rusa (Mayor cantidad de cambios de posición/volatilidad de rango)
+    const playerPointsHistory = {};
+    standings.forEach((p) => {
+      playerPointsHistory[p.name] = 0;
+    });
+
+    const rankChanges = {};
+    standings.forEach((p) => {
+      rankChanges[p.name] = 0;
+    });
+
+    let previousRanks = {};
+
+    finishedMatches.forEach((m) => {
+      standings.forEach((p) => {
+        const result = scorePredict(p.predictions[m.id], m);
+        playerPointsHistory[p.name] += result.points;
+      });
+
+      const snapshotStandings = standings
+        .map((p) => ({
+          name: p.name,
+          points: playerPointsHistory[p.name],
+          exactCount: p.exactCount,
+          winnerCount: p.winnerCount
+        }))
+        .sort((a, b) => {
+          if (b.points !== a.points) return b.points - a.points;
+          if (b.exactCount !== a.exactCount) return b.exactCount - a.exactCount;
+          return b.winnerCount - a.winnerCount;
+        });
+
+      const currentRanks = {};
+      snapshotStandings.forEach((p, idx) => {
+        currentRanks[p.name] = idx + 1;
+      });
+
+      if (Object.keys(previousRanks).length > 0) {
+        standings.forEach((p) => {
+          const diff = Math.abs(currentRanks[p.name] - previousRanks[p.name]);
+          rankChanges[p.name] += diff;
+        });
+      }
+      previousRanks = currentRanks;
+    });
+
+    const maxChanges = Math.max(...Object.values(rankChanges));
+    if (maxChanges > 0) {
+      standings.forEach((p) => {
+        if (rankChanges[p.name] === maxChanges) {
+          badges[p.name].push({
+            emoji: "🎢",
+            title: "Montaña Rusa",
+            class: "tag-volatil",
+            desc: `Cambió de posición ${rankChanges[p.name]} veces en el torneo`
+          });
+        }
+      });
+    }
+  }
+
+  return badges;
+}
+
+// ===== MOSTRAR DETALLE DEL LOGRO (MODAL) =====
+function showBadgeInfoModal(badgeTitle, badgeEmoji, badgeDesc) {
+  const existing = document.getElementById("badge-info-modal");
+  if (existing) existing.remove();
+
+  const overlay = document.createElement("div");
+  overlay.id = "badge-info-modal";
+  overlay.className = "modal-overlay open";
+  overlay.style.zIndex = "2000"; // Display on top of other modals
+
+  overlay.innerHTML = `
+    <div class="modal" style="max-width: 360px; padding: 24px; text-align: center; border-radius: var(--radius-lg); position: relative; margin: auto;">
+      <button class="modal-close" id="badge-modal-close" style="position: absolute; right: 16px; top: 16px; font-size: 1.2rem; background: none; border: none; cursor: pointer; color: var(--text-secondary);">✕</button>
+      <div style="font-size: 3rem; margin-bottom: 12px; animation: bounce 1s ease infinite;">${badgeEmoji}</div>
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">${badgeTitle}</h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">${badgeDesc}</p>
+      <button id="badge-modal-btn" style="background: var(--primary); color: white; border: none; padding: 8px 24px; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; transition: background var(--transition);">Entendido</button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const close = () => {
+    overlay.classList.remove("open");
+    setTimeout(() => overlay.remove(), 200);
+  };
+
+  overlay.querySelector("#badge-modal-close").addEventListener("click", close);
+  overlay.querySelector("#badge-modal-btn").addEventListener("click", close);
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) close();
+  });
+}
+
 // ===== TABLA DE POSICIONES =====
 function renderRankingTable(standings) {
   const tbody = document.getElementById("ranking-body");
   tbody.innerHTML = "";
+
+  const allBadges = calculateAdvancedBadges(standings);
 
   standings.forEach((p, i) => {
     const rank = i + 1;
@@ -235,13 +441,30 @@ function renderRankingTable(standings) {
       <div class="col-rank">${rankHtml}</div>
       <div class="col-name">
         <span class="avatar-circle" style="background: rgba(0,0,0,0.04); font-size:1.1rem;">${p.avatar}</span>
-        ${p.name}
+        <span style="font-weight:600;">${p.name}</span>
+        <span class="row-badges-container" style="display: inline-flex; gap: 4px;"></span>
       </div>
       <div class="col-pts">${p.totalPoints}</div>
       <div class="col-exact">🎯 ${p.exactCount}</div>
       <div class="col-winner">✅ ${p.winnerCount}</div>
       <div class="col-total">${p.predictedCount}</div>
     `;
+
+    // Add badge elements individually with click listeners
+    const badgesContainer = row.querySelector(".row-badges-container");
+    const pBadges = allBadges[p.name] || [];
+    pBadges.forEach((badge) => {
+      const span = document.createElement("span");
+      span.className = `badge-tag ${badge.class}`;
+      span.title = badge.desc;
+      span.innerHTML = `${badge.emoji} ${badge.title}`;
+      span.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent opening the participant modal
+        showBadgeInfoModal(badge.title, badge.emoji, badge.desc);
+      });
+      badgesContainer.appendChild(span);
+    });
+
     row.addEventListener("click", () => openModal(p));
     tbody.appendChild(row);
   });
@@ -304,32 +527,37 @@ function formatPanamaTime(utcTimeStr) {
 }
 
 function getPanamaDateTime(match) {
-  if (!match.time) return { sortValue: match.date + "T99:99", dateStr: match.date, timeStr: "" };
-  
+  if (!match.time)
+    return {
+      sortValue: match.date + "T99:99",
+      dateStr: match.date,
+      timeStr: "",
+    };
+
   const [y, m, d] = match.date.split("-").map(Number);
   const [h, min] = match.time.split(":").map(Number);
-  
+
   // Rule: If UTC hour is between 0 and 6, the match takes place on the next day in UTC compared to local date
   let utcDay = d;
   if (h >= 0 && h <= 6) {
     utcDay = d + 1;
   }
-  
+
   const utcDate = new Date(Date.UTC(y, m - 1, utcDay, h, min));
-  
+
   // Subtract 5 hours from UTC timestamp to get Panama time
-  const panamaTimeMs = utcDate.getTime() - (5 * 60 * 60 * 1000);
+  const panamaTimeMs = utcDate.getTime() - 5 * 60 * 60 * 1000;
   const panamaDate = new Date(panamaTimeMs);
-  
+
   const pY = panamaDate.getUTCFullYear();
   const pM = String(panamaDate.getUTCMonth() + 1).padStart(2, "0");
   const pD = String(panamaDate.getUTCDate()).padStart(2, "0");
   const dateStr = `${pY}-${pM}-${pD}`;
-  
+
   const pH = panamaDate.getUTCHours();
   const pMin = panamaDate.getUTCMinutes();
   const sortValue = `${dateStr}T${String(pH).padStart(2, "0")}:${String(pMin).padStart(2, "0")}`;
-  
+
   return { sortValue, dateStr, timeStr: formatPanamaTime(match.time) };
 }
 
@@ -370,7 +598,9 @@ function renderMatches() {
         ? "Finalizado"
         : isLive
           ? "🔴 En vivo"
-          : (match.time ? formatPanamaTime(match.time) : "Pendiente");
+          : match.time
+            ? formatPanamaTime(match.time)
+            : "Pendiente";
       const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
 
       card.innerHTML = `
@@ -448,7 +678,7 @@ function openModal(participant) {
         if (!pred) {
           resultHtml = `<span class="pred-result no-pred">Sin pred.</span>`;
         } else if (result.type === "pending") {
-          resultHtml = `<span class="pred-result pending">${match.time ? formatPanamaTime(match.time) : 'Pendiente'}</span>`;
+          resultHtml = `<span class="pred-result pending">${match.time ? formatPanamaTime(match.time) : "Pendiente"}</span>`;
         } else if (result.type === "exact") {
           resultHtml = `<span class="pred-result exact">🎯 +${POINTS_EXACT}pts</span>`;
         } else if (result.type === "winner") {
@@ -506,11 +736,25 @@ function setupTabs() {
           const tree = document.getElementById("bracket-tree");
           if (tree && tree.children.length > 0) {
             const matchesMap = {};
-            matchesData.forEach((m) => { matchesMap[m.id] = m; });
+            matchesData.forEach((m) => {
+              matchesMap[m.id] = m;
+            });
             const roundsConfig = [
-              { key: "R16", matches: ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"] },
-              { key: "QF",  matches: ["QF_1","QF_2","QF_3","QF_4"] },
-              { key: "SF",  matches: ["SF_1","SF_2"] },
+              {
+                key: "R16",
+                matches: [
+                  "R16_1",
+                  "R16_2",
+                  "R16_3",
+                  "R16_4",
+                  "R16_5",
+                  "R16_6",
+                  "R16_7",
+                  "R16_8",
+                ],
+              },
+              { key: "QF", matches: ["QF_1", "QF_2", "QF_3", "QF_4"] },
+              { key: "SF", matches: ["SF_1", "SF_2"] },
             ];
             drawBracketConnectors(tree, roundsConfig, matchesMap);
           }
@@ -603,7 +847,11 @@ function renderPredictionsTab(standings) {
     if (!matchedPhase) {
       let closestPhase = null;
       let minDiff = Infinity;
-      const todayMs = new Date(yyyy, today.getMonth(), today.getDate()).getTime();
+      const todayMs = new Date(
+        yyyy,
+        today.getMonth(),
+        today.getDate(),
+      ).getTime();
 
       for (const phase of phases) {
         const matches = groupDatesData[phase] || [];
@@ -744,7 +992,7 @@ function renderParticipantPredictions(name) {
       <div class="pred-card-footer">
         <div style="display:flex; flex-direction:column; gap:2px; align-items:flex-start;">
           <span class="status-date" style="font-size:0.65rem; color: var(--text-muted); font-weight:500;">
-            ${isFinished ? "Finalizado" : isLive ? "🔴 En vivo" : (match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : formatDate(getPanamaDateTime(match).dateStr))}
+            ${isFinished ? "Finalizado" : isLive ? "🔴 En vivo" : match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : formatDate(getPanamaDateTime(match).dateStr)}
           </span>
           ${realScoreHtml}
         </div>
@@ -763,7 +1011,9 @@ function initDatesTab() {
   if (!dateSelect) return;
 
   // Extraer fechas únicas y ordenarlas cronológicamente
-  const uniqueDates = [...new Set(matchesData.map((m) => getPanamaDateTime(m).dateStr))].sort();
+  const uniqueDates = [
+    ...new Set(matchesData.map((m) => getPanamaDateTime(m).dateStr)),
+  ].sort();
 
   dateSelect.innerHTML = "";
   uniqueDates.forEach((dateVal) => {
@@ -832,7 +1082,9 @@ function renderDateMatches() {
 
   if (!selectedDateStr) return;
 
-  const matches = matchesData.filter((m) => getPanamaDateTime(m).dateStr === selectedDateStr);
+  const matches = matchesData.filter(
+    (m) => getPanamaDateTime(m).dateStr === selectedDateStr,
+  );
 
   if (matches.length === 0) {
     container.innerHTML = `
@@ -864,7 +1116,9 @@ function renderDateMatches() {
       ? "Finalizado"
       : isLive
         ? "🔴 En vivo"
-        : (match.time ? formatPanamaTime(match.time) : formatDate(getPanamaDateTime(match).dateStr));
+        : match.time
+          ? formatPanamaTime(match.time)
+          : formatDate(getPanamaDateTime(match).dateStr);
     const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
 
     // 1. HTML del partido (encabezado)
@@ -937,7 +1191,6 @@ function renderDateMatches() {
   });
 }
 
-
 function updateStandingsAndStatsOnly() {
   const standings = computeStandings();
   renderStats();
@@ -988,7 +1241,8 @@ function buildBtCard(match, extraClass = "") {
   const isLive = match.status === "live";
 
   // Determine winner team for styling
-  let homeWinner = false, awayWinner = false;
+  let homeWinner = false,
+    awayWinner = false;
   if (isFinished && match.homeScore !== null && match.awayScore !== null) {
     if (match.homeScore > match.awayScore) homeWinner = true;
     else if (match.awayScore > match.homeScore) awayWinner = true;
@@ -998,12 +1252,14 @@ function buildBtCard(match, extraClass = "") {
     ? "Finalizado"
     : isLive
       ? "🔴 En vivo"
-      : (match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : formatDate(getPanamaDateTime(match).dateStr));
+      : match.time
+        ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}`
+        : formatDate(getPanamaDateTime(match).dateStr);
 
   const homeScore = isFinished || isLive ? String(match.homeScore) : "";
   const awayScore = isFinished || isLive ? String(match.awayScore) : "";
 
-  const shortName = (name) => name.length > 12 ? name.split(" ")[0] : name;
+  const shortName = (name) => (name.length > 12 ? name.split(" ")[0] : name);
 
   const card = document.createElement("div");
   card.className = `bt-card status-${match.status}${extraClass ? " " + extraClass : ""}`;
@@ -1037,7 +1293,8 @@ function buildBmCard(match) {
   const isFinished = match.status === "finished";
   const isLive = match.status === "live";
 
-  let homeWinner = false, awayWinner = false;
+  let homeWinner = false,
+    awayWinner = false;
   if (isFinished && match.homeScore !== null && match.awayScore !== null) {
     if (match.homeScore > match.awayScore) homeWinner = true;
     else if (match.awayScore > match.homeScore) awayWinner = true;
@@ -1047,7 +1304,9 @@ function buildBmCard(match) {
     ? "Finalizado"
     : isLive
       ? "🔴 En vivo"
-      : (match.time ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}` : "Pendiente");
+      : match.time
+        ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}`
+        : "Pendiente";
 
   const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
 
@@ -1100,12 +1359,25 @@ function renderBracketTree(matchesMap) {
   // MATCH_HEIGHT: height of a bt-card in px (top-bar ~22 + 2x team-row ~35 each = ~92)
   const MATCH_H = 92;
   const MATCH_W = 200; // column width
-  const GAP_X   = 40; // horizontal gap between columns
+  const GAP_X = 40; // horizontal gap between columns
 
   const roundsConfig = [
-    { key: "R16", matches: ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"], label: "Octavos" },
-    { key: "QF",  matches: ["QF_1","QF_2","QF_3","QF_4"], label: "Cuartos" },
-    { key: "SF",  matches: ["SF_1","SF_2"], label: "Semis" },
+    {
+      key: "R16",
+      matches: [
+        "R16_1",
+        "R16_2",
+        "R16_3",
+        "R16_4",
+        "R16_5",
+        "R16_6",
+        "R16_7",
+        "R16_8",
+      ],
+      label: "Octavos",
+    },
+    { key: "QF", matches: ["QF_1", "QF_2", "QF_3", "QF_4"], label: "Cuartos" },
+    { key: "SF", matches: ["SF_1", "SF_2"], label: "Semis" },
   ];
 
   // Maximum slots = 8 (R16); each slot = card height + generous padding
@@ -1179,7 +1451,8 @@ function renderBracketTree(matchesMap) {
 
   // Final match (F_2)
   const finalContent = document.createElement("div");
-  finalContent.style.cssText = "display:flex; flex-direction:column; gap:20px; flex:1; justify-content:center;";
+  finalContent.style.cssText =
+    "display:flex; flex-direction:column; gap:20px; flex:1; justify-content:center;";
 
   const f2Match = matchesMap["F_2"];
   if (f2Match) {
@@ -1188,7 +1461,8 @@ function renderBracketTree(matchesMap) {
     w2.dataset.matchId = "F_2";
 
     const label2 = document.createElement("div");
-    label2.style.cssText = "font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent); margin-bottom:6px; text-align:center;";
+    label2.style.cssText =
+      "font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent); margin-bottom:6px; text-align:center;";
     label2.textContent = "🏆 Gran Final";
     w2.appendChild(label2);
 
@@ -1205,7 +1479,8 @@ function renderBracketTree(matchesMap) {
     w1.dataset.matchId = "F_1";
 
     const label1 = document.createElement("div");
-    label1.style.cssText = "font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:#a1826e; margin-bottom:6px; text-align:center;";
+    label1.style.cssText =
+      "font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:#a1826e; margin-bottom:6px; text-align:center;";
     label1.textContent = "🥉 3er Puesto";
     w1.appendChild(label1);
 
@@ -1219,7 +1494,9 @@ function renderBracketTree(matchesMap) {
   colEls.push({ col: finalCol, round: "FINAL" });
 
   // ── Draw SVG connectors after layout paint ──
-  requestAnimationFrame(() => drawBracketConnectors(tree, roundsConfig, matchesMap));
+  requestAnimationFrame(() =>
+    drawBracketConnectors(tree, roundsConfig, matchesMap),
+  );
 }
 
 // ── Draw SVG connector paths ──
@@ -1240,12 +1517,13 @@ function drawBracketConnectors(tree, roundsConfig, matchesMap) {
 
   // Get element offset relative to the #bracket-tree container
   function getOffsetInTree(el) {
-    let top = 0, left = 0;
+    let top = 0,
+      left = 0;
     let cur = el;
     while (cur && cur !== tree) {
-      top  += cur.offsetTop;
+      top += cur.offsetTop;
       left += cur.offsetLeft;
-      cur   = cur.offsetParent;
+      cur = cur.offsetParent;
     }
     return { top, left, width: el.offsetWidth, height: el.offsetHeight };
   }
@@ -1253,14 +1531,24 @@ function drawBracketConnectors(tree, roundsConfig, matchesMap) {
   const wrapperMap = {};
   tree.querySelectorAll("[data-match-id]").forEach((el) => {
     // Only pick direct wrappers (not nested cards)
-    if (el.dataset.matchId && !el.classList.contains("bt-card") && !el.classList.contains("bm-card")) {
+    if (
+      el.dataset.matchId &&
+      !el.classList.contains("bt-card") &&
+      !el.classList.contains("bm-card")
+    ) {
       wrapperMap[el.dataset.matchId] = el;
     }
   });
 
   const connections = [
-    ...Object.entries(R16_TO_QF).map(([target, sources]) => ({ target, sources })),
-    ...Object.entries(QF_TO_SF).map(([target, sources]) => ({ target, sources })),
+    ...Object.entries(R16_TO_QF).map(([target, sources]) => ({
+      target,
+      sources,
+    })),
+    ...Object.entries(QF_TO_SF).map(([target, sources]) => ({
+      target,
+      sources,
+    })),
     { target: "F_2", sources: ["SF_1", "SF_2"] },
   ];
 
@@ -1282,9 +1570,18 @@ function drawBracketConnectors(tree, roundsConfig, matchesMap) {
       const sY = sOff.top + sOff.height / 2;
       const midX = (sX + tX) / 2;
 
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path.setAttribute("d", `M ${sX} ${sY} C ${midX} ${sY}, ${midX} ${tY}, ${tX} ${tY}`);
-      path.setAttribute("class", `bracket-connector-path${isFinished ? " finished" : ""}`);
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
+      path.setAttribute(
+        "d",
+        `M ${sX} ${sY} C ${midX} ${sY}, ${midX} ${tY}, ${tX} ${tY}`,
+      );
+      path.setAttribute(
+        "class",
+        `bracket-connector-path${isFinished ? " finished" : ""}`,
+      );
       svg.appendChild(path);
     });
   });
@@ -1296,13 +1593,17 @@ function drawBracketConnectors(tree, roundsConfig, matchesMap) {
 function renderBracket() {
   // Build match lookup map
   const matchesMap = {};
-  matchesData.forEach((m) => { matchesMap[m.id] = m; });
-
-  const r32Matches = matchesData.filter((m) => m.group === "R32").sort((a, b) => {
-    const aInfo = getPanamaDateTime(a);
-    const bInfo = getPanamaDateTime(b);
-    return aInfo.sortValue.localeCompare(bInfo.sortValue);
+  matchesData.forEach((m) => {
+    matchesMap[m.id] = m;
   });
+
+  const r32Matches = matchesData
+    .filter((m) => m.group === "R32")
+    .sort((a, b) => {
+      const aInfo = getPanamaDateTime(a);
+      const bInfo = getPanamaDateTime(b);
+      return aInfo.sortValue.localeCompare(bInfo.sortValue);
+    });
 
   renderBracketR32(r32Matches);
   renderBracketTree(matchesMap);
@@ -1326,7 +1627,9 @@ function setupBracketMobileSelector() {
     btn.dataset.listener = "true";
     btn.addEventListener("click", () => {
       bracketMobileRound = btn.dataset.round;
-      selector.querySelectorAll(".bracket-round-btn").forEach((b) => b.classList.remove("active"));
+      selector
+        .querySelectorAll(".bracket-round-btn")
+        .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       applyBracketMobileRound(bracketMobileRound);
     });
@@ -1354,22 +1657,36 @@ function applyBracketMobileRound(round) {
 
     // Build match lookup
     const matchesMap = {};
-    matchesData.forEach((m) => { matchesMap[m.id] = m; });
+    matchesData.forEach((m) => {
+      matchesMap[m.id] = m;
+    });
 
     // Determine which matches to show for this round
     const roundMatchIds = {
-      R16:   ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"],
-      QF:    ["QF_1","QF_2","QF_3","QF_4"],
-      SF:    ["SF_1","SF_2"],
-      FINAL: ["F_2","F_1"],
+      R16: [
+        "R16_1",
+        "R16_2",
+        "R16_3",
+        "R16_4",
+        "R16_5",
+        "R16_6",
+        "R16_7",
+        "R16_8",
+      ],
+      QF: ["QF_1", "QF_2", "QF_3", "QF_4"],
+      SF: ["SF_1", "SF_2"],
+      FINAL: ["F_2", "F_1"],
     };
 
     const ids = roundMatchIds[round] || [];
-    const matches = ids.map((id) => matchesMap[id]).filter(Boolean).sort((a, b) => {
-      const aInfo = getPanamaDateTime(a);
-      const bInfo = getPanamaDateTime(b);
-      return aInfo.sortValue.localeCompare(bInfo.sortValue);
-    });
+    const matches = ids
+      .map((id) => matchesMap[id])
+      .filter(Boolean)
+      .sort((a, b) => {
+        const aInfo = getPanamaDateTime(a);
+        const bInfo = getPanamaDateTime(b);
+        return aInfo.sortValue.localeCompare(bInfo.sortValue);
+      });
 
     renderBracketMobileCards(matches, round);
   }
@@ -1378,17 +1695,23 @@ function applyBracketMobileRound(round) {
 // ── Build a single mobile versus card ──
 function buildBmcCard(match, roundLabel) {
   const isFinished = match.status === "finished";
-  const isLive     = match.status === "live";
+  const isLive = match.status === "live";
 
-  let homeWinner = false, awayWinner = false, isDraw = false;
+  let homeWinner = false,
+    awayWinner = false,
+    isDraw = false;
   if (isFinished && match.homeScore !== null && match.awayScore !== null) {
-    if (match.homeScore > match.awayScore)       homeWinner = true;
-    else if (match.awayScore > match.homeScore)  awayWinner = true;
-    else                                          isDraw = true;
+    if (match.homeScore > match.awayScore) homeWinner = true;
+    else if (match.awayScore > match.homeScore) awayWinner = true;
+    else isDraw = true;
   }
 
   const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
-  const statusLabel = isFinished ? "Finalizado" : isLive ? "🔴 En vivo" : "Pendiente";
+  const statusLabel = isFinished
+    ? "Finalizado"
+    : isLive
+      ? "🔴 En vivo"
+      : "Pendiente";
 
   const dateTimeStr = match.time
     ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}`
@@ -1494,7 +1817,6 @@ function renderBracketMobileCards(matches, round) {
   });
 }
 
-
 // Re-apply mobile visibility on resize
 window.addEventListener("resize", () => {
   applyBracketMobileRound(bracketMobileRound);
@@ -1502,11 +1824,25 @@ window.addEventListener("resize", () => {
   const tree = document.getElementById("bracket-tree");
   if (tree && tree.children.length > 0) {
     const matchesMap = {};
-    matchesData.forEach((m) => { matchesMap[m.id] = m; });
+    matchesData.forEach((m) => {
+      matchesMap[m.id] = m;
+    });
     const roundsConfig = [
-      { key: "R16", matches: ["R16_1","R16_2","R16_3","R16_4","R16_5","R16_6","R16_7","R16_8"] },
-      { key: "QF",  matches: ["QF_1","QF_2","QF_3","QF_4"] },
-      { key: "SF",  matches: ["SF_1","SF_2"] },
+      {
+        key: "R16",
+        matches: [
+          "R16_1",
+          "R16_2",
+          "R16_3",
+          "R16_4",
+          "R16_5",
+          "R16_6",
+          "R16_7",
+          "R16_8",
+        ],
+      },
+      { key: "QF", matches: ["QF_1", "QF_2", "QF_3", "QF_4"] },
+      { key: "SF", matches: ["SF_1", "SF_2"] },
     ];
     drawBracketConnectors(tree, roundsConfig, matchesMap);
   }
@@ -1537,7 +1873,9 @@ function setupBracketPredModal() {
   `;
   document.body.appendChild(overlay);
 
-  document.getElementById("bpm-close-btn").addEventListener("click", closeBracketPredModal);
+  document
+    .getElementById("bpm-close-btn")
+    .addEventListener("click", closeBracketPredModal);
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) closeBracketPredModal();
   });
@@ -1557,9 +1895,10 @@ function openBracketPredModal(match) {
   document.getElementById("bpm-round-label").textContent =
     BRACKET_ROUND_NAMES[match.group] || match.group;
 
-  const scoreDisplay = isFinished || isLive
-    ? `<span class="bpm-score-display">${match.homeScore} – ${match.awayScore}</span>`
-    : `<span style="opacity:0.7;font-size:0.85rem;">vs</span>`;
+  const scoreDisplay =
+    isFinished || isLive
+      ? `<span class="bpm-score-display">${match.homeScore} – ${match.awayScore}</span>`
+      : `<span style="opacity:0.7;font-size:0.85rem;">vs</span>`;
 
   document.getElementById("bpm-teams-display").innerHTML = `
     <span class="bpm-flag">${match.homeFlag}</span>
@@ -1577,7 +1916,8 @@ function openBracketPredModal(match) {
 
   // Section label
   const sectionLabel = document.createElement("div");
-  sectionLabel.style.cssText = "font-size:0.68rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;";
+  sectionLabel.style.cssText =
+    "font-size:0.68rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;";
   sectionLabel.textContent = "Pronósticos";
   body.appendChild(sectionLabel);
 
@@ -1593,10 +1933,19 @@ function openBracketPredModal(match) {
     let badgeClass = "no-pred";
     let badgeText = "Sin pred.";
     if (pred) {
-      if (result.type === "exact")  { badgeClass = "exact";  badgeText = `🎯 +${POINTS_EXACT}pts`; }
-      else if (result.type === "winner") { badgeClass = "winner"; badgeText = `✅ +${POINTS_WINNER}pt`; }
-      else if (result.type === "wrong")  { badgeClass = "wrong";  badgeText = "❌ 0pts"; }
-      else { badgeClass = "pending"; badgeText = "Pendiente"; }
+      if (result.type === "exact") {
+        badgeClass = "exact";
+        badgeText = `🎯 +${POINTS_EXACT}pts`;
+      } else if (result.type === "winner") {
+        badgeClass = "winner";
+        badgeText = `✅ +${POINTS_WINNER}pt`;
+      } else if (result.type === "wrong") {
+        badgeClass = "wrong";
+        badgeText = "❌ 0pts";
+      } else {
+        badgeClass = "pending";
+        badgeText = "Pendiente";
+      }
     }
 
     const row = document.createElement("div");
@@ -1616,7 +1965,8 @@ function openBracketPredModal(match) {
 
   if (!hasAnyPred) {
     const empty = document.createElement("div");
-    empty.style.cssText = "text-align:center;color:var(--text-muted);font-size:0.85rem;padding:24px 0;";
+    empty.style.cssText =
+      "text-align:center;color:var(--text-muted);font-size:0.85rem;padding:24px 0;";
     empty.innerHTML = `<span style="font-size:2rem;display:block;margin-bottom:8px;">📝</span>Ningún participante tiene predicción para este partido.`;
     body.appendChild(empty);
   }
