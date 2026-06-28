@@ -274,8 +274,142 @@ function calculateAdvancedBadges(standings) {
     });
   }
 
+  // 4. ⚽ El Optimista & 5. 🛡️ El Conservador (Promedio de goles predichos)
+  const avgGoals = standings.map((p) => {
+    let total = 0, count = 0;
+    Object.values(p.predictions).forEach((pred) => {
+      if (pred && pred.homeScore !== undefined && pred.homeScore !== null) {
+        total += Number(pred.homeScore) + Number(pred.awayScore);
+        count++;
+      }
+    });
+    return { name: p.name, avg: count > 0 ? total / count : 0 };
+  });
+
+  const maxAvg = Math.max(...avgGoals.map((x) => x.avg));
+  const minAvg = Math.min(...avgGoals.map((x) => x.avg));
+
+  if (maxAvg > 0) {
+    avgGoals.forEach((x) => {
+      if (x.avg === maxAvg) {
+        badges[x.name].push({
+          emoji: "⚽",
+          title: "Optimista",
+          class: "tag-optimista",
+          desc: `Promedio de goles predichos más alto: ${x.avg.toFixed(2)} por partido`
+        });
+      }
+      if (x.avg === minAvg && minAvg < maxAvg) {
+        badges[x.name].push({
+          emoji: "🛡️",
+          title: "Conservador",
+          class: "tag-conservador",
+          desc: `Promedio de goles predichos más bajo: ${x.avg.toFixed(2)} por partido`
+        });
+      }
+    });
+  }
+
+  // 6. 💔 El Casi Casi (Errores por exactamente 1 gol tras acertar ganador)
+  const casiCasiCounts = standings.map((p) => {
+    let count = 0;
+    finishedMatches.forEach((m) => {
+      const pred = p.predictions[m.id];
+      if (pred && pred.homeScore !== null && pred.awayScore !== null) {
+        const result = scorePredict(pred, m);
+        if (result.type === "winner") {
+          const err = Math.abs(Number(pred.homeScore) - m.homeScore) + Math.abs(Number(pred.awayScore) - m.awayScore);
+          if (err === 1) {
+            count++;
+          }
+        }
+      }
+    });
+    return { name: p.name, count };
+  });
+  const maxCasiCasi = Math.max(...casiCasiCounts.map((x) => x.count));
+  if (maxCasiCasi > 0) {
+    casiCasiCounts.forEach((x) => {
+      if (x.count === maxCasiCasi) {
+        badges[x.name].push({
+          emoji: "💔",
+          title: "Casi Casi",
+          class: "tag-casicasi",
+          desc: `Estuvo a exactamente 1 gol de acertar marcador exacto en ${x.count} ocasiones`
+        });
+      }
+    });
+  }
+
+  // 7. 🦁 El Rebelde (Acertar resultados sorprendentes donde sumó <= 25% del grupo)
+  const rebeldeCounts = {};
+  standings.forEach((p) => { rebeldeCounts[p.name] = 0; });
+  finishedMatches.forEach((m) => {
+    const scorers = [];
+    standings.forEach((p) => {
+      const pred = p.predictions[m.id];
+      if (pred) {
+        const result = scorePredict(pred, m);
+        if (result.points > 0) {
+          scorers.push(p.name);
+        }
+      }
+    });
+    if (scorers.length > 0 && (scorers.length / standings.length) <= 0.25) {
+      scorers.forEach((name) => {
+        rebeldeCounts[name]++;
+      });
+    }
+  });
+  const maxRebelde = Math.max(...Object.values(rebeldeCounts));
+  if (maxRebelde > 0) {
+    standings.forEach((p) => {
+      if (rebeldeCounts[p.name] === maxRebelde) {
+        badges[p.name].push({
+          emoji: "🦁",
+          title: "Rebelde",
+          class: "tag-rebelde",
+          desc: `Acertó ${rebeldeCounts[p.name]} resultados sorpresa donde casi nadie sumó puntos`
+        });
+      }
+    });
+  }
+
+  // 8. 🔮 El Clónico (Predicciones idénticas repetidas)
+  const clonicoFreqs = standings.map((p) => {
+    const counts = {};
+    Object.values(p.predictions).forEach((pred) => {
+      if (pred && pred.homeScore !== undefined && pred.homeScore !== null) {
+        const key = `${pred.homeScore}-${pred.awayScore}`;
+        counts[key] = (counts[key] || 0) + 1;
+      }
+    });
+    let maxKey = "";
+    let maxFreq = 0;
+    Object.entries(counts).forEach(([key, val]) => {
+      if (val > maxFreq) {
+        maxFreq = val;
+        maxKey = key;
+      }
+    });
+    return { name: p.name, score: maxKey, freq: maxFreq };
+  });
+  const maxFreqVal = Math.max(...clonicoFreqs.map((x) => x.freq));
+  if (maxFreqVal > 5) {
+    clonicoFreqs.forEach((x) => {
+      if (x.freq === maxFreqVal) {
+        badges[x.name].push({
+          emoji: "🔮",
+          title: "Clónico",
+          class: "tag-clonico",
+          desc: `Repitió su marcador favorito (${x.score}) unas ${x.freq} veces en sus apuestas`
+        });
+      }
+    });
+  }
+
   if (finishedMatches.length > 0) {
-    // 4. 🔥 En Racha (Más puntos en la última fecha de partidos terminados)
+    // 9. 🔥 En Racha (Más puntos en la última fecha de partidos terminados)
     const lastMatch = finishedMatches[finishedMatches.length - 1];
     const lastDateStr = getPanamaDateTime(lastMatch).dateStr;
     const lastMatchesOnDate = finishedMatches.filter(
@@ -304,7 +438,7 @@ function calculateAdvancedBadges(standings) {
       });
     }
 
-    // 5. 🎢 La Montaña Rusa (Mayor cantidad de cambios de posición/volatilidad de rango)
+    // 10. 🎢 La Montaña Rusa (Mayor cantidad de cambios de posición/volatilidad de rango)
     const playerPointsHistory = {};
     standings.forEach((p) => {
       playerPointsHistory[p.name] = 0;
@@ -441,8 +575,10 @@ function renderRankingTable(standings) {
       <div class="col-rank">${rankHtml}</div>
       <div class="col-name">
         <span class="avatar-circle" style="background: rgba(0,0,0,0.04); font-size:1.1rem;">${p.avatar}</span>
-        <span style="font-weight:600;">${p.name}</span>
-        <span class="row-badges-container" style="display: inline-flex; gap: 4px;"></span>
+        <div class="name-badges-wrapper">
+          <span style="font-weight:600;">${p.name}</span>
+          <span class="row-badges-container" style="display: inline-flex; gap: 4px; flex-wrap: wrap;"></span>
+        </div>
       </div>
       <div class="col-pts">${p.totalPoints}</div>
       <div class="col-exact">🎯 ${p.exactCount}</div>
@@ -457,7 +593,7 @@ function renderRankingTable(standings) {
       const span = document.createElement("span");
       span.className = `badge-tag ${badge.class}`;
       span.title = badge.desc;
-      span.innerHTML = `${badge.emoji} ${badge.title}`;
+      span.innerHTML = `${badge.emoji} <span class="badge-text">${badge.title}</span>`;
       span.addEventListener("click", (e) => {
         e.stopPropagation(); // Prevent opening the participant modal
         showBadgeInfoModal(badge.title, badge.emoji, badge.desc);

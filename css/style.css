@@ -423,6 +423,36 @@ body {
   border: 1px solid rgba(74, 20, 140, 0.2);
 }
 
+.tag-optimista {
+  background: #e0f2f1;
+  color: #00695c;
+  border: 1px solid rgba(0, 105, 92, 0.2);
+}
+
+.tag-conservador {
+  background: #eceff1;
+  color: #37474f;
+  border: 1px solid rgba(55, 71, 79, 0.2);
+}
+
+.tag-casicasi {
+  background: #fce4ec;
+  color: #c2185b;
+  border: 1px solid rgba(194, 24, 91, 0.2);
+}
+
+.tag-rebelde {
+  background: #fff8e1;
+  color: #ff8f00;
+  border: 1px solid rgba(255, 143, 0, 0.2);
+}
+
+.tag-clonico {
+  background: #e0f7fa;
+  color: #00838f;
+  border: 1px solid rgba(0, 131, 143, 0.2);
+}
+
 /* Ranking Table */
 .ranking-table {
   background: var(--card-bg);
@@ -472,6 +502,15 @@ body {
   align-items: center;
   gap: 8px;
 }
+
+.name-badges-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
 .col-pts {
   font-weight: 800;
   font-size: 1rem;
@@ -1176,6 +1215,21 @@ body {
   .podium-breakdown {
     flex-direction: column;
     gap: 4px;
+  }
+
+  .badge-text {
+    display: none;
+  }
+  .name-badges-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 3px !important;
+  }
+  .badge-tag {
+    padding: 2px 4px;
+    margin-left: 0 !important;
+    margin-right: 2px;
+    font-size: 0.8rem;
   }
 
   .ranking-row {
