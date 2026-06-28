@@ -1016,9 +1016,9 @@
     "away": "Canadá",
     "awayFlag": "🇨🇦",
     "date": "2026-06-28",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 1,
+    "status": "finished",
     "time": "19:00"
   },
   {
