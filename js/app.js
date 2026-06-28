@@ -5,6 +5,7 @@ const POINTS_WINNER = 1;
 
 let matchesData = [];
 let predictionsData = [];
+let groupDatesData = {};
 
 // ===== BOOT =====
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,8 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   Promise.all([
     fetch("data/matches.json").then((r) => r.json()),
     fetch("data/predictions.json").then((r) => r.json()),
+    fetch("data/group_dates.json").then((r) => r.json()),
   ])
-    .then(([matches, predictions]) => {
+    .then(([matches, predictions, groupDates]) => {
       matchesData = matches.sort((a, b) => {
         const aInfo = getPanamaDateTime(a);
         const bInfo = getPanamaDateTime(b);
@@ -22,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       // Siempre usar el JSON como fuente de verdad (ignorar localStorage)
       predictionsData = predictions;
+      groupDatesData = groupDates;
       init();
     })
     .catch((err) => {
@@ -499,6 +502,72 @@ function renderPredictionsTab(standings) {
     groupSelect.addEventListener("change", () => {
       renderParticipantPredictions(selectedParticipantName);
     });
+
+    // Determinar el valor default de grupo (fase) según la fecha actual (solo 16avos en adelante)
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    const phases = ["R32", "R16", "QF", "SF", "FINAL"];
+    let matchedPhase = null;
+
+    // 1. Buscar coincidencia exacta de fecha
+    for (const phase of phases) {
+      const matches = groupDatesData[phase] || [];
+      if (matches.some((m) => m.date === todayStr)) {
+        matchedPhase = phase;
+        break;
+      }
+    }
+
+    // 2. Si no hay coincidencia exacta (por ejemplo, día de descanso), buscar por rango [minDate, maxDate]
+    if (!matchedPhase) {
+      for (const phase of phases) {
+        const matches = groupDatesData[phase] || [];
+        if (matches.length > 0) {
+          const dates = matches.map((m) => m.date).sort();
+          const minDate = dates[0];
+          const maxDate = dates[dates.length - 1];
+          if (todayStr >= minDate && todayStr <= maxDate) {
+            matchedPhase = phase;
+            break;
+          }
+        }
+      }
+    }
+
+    // 3. Si sigue sin haber coincidencia, buscar la fase más cercana a la fecha de hoy
+    if (!matchedPhase) {
+      let closestPhase = null;
+      let minDiff = Infinity;
+      const todayMs = new Date(yyyy, today.getMonth(), today.getDate()).getTime();
+
+      for (const phase of phases) {
+        const matches = groupDatesData[phase] || [];
+        if (matches.length > 0) {
+          const dates = matches.map((m) => m.date).sort();
+          const minDateStr = dates[0];
+          const [y, m, d] = minDateStr.split("-").map(Number);
+          const phaseStartMs = new Date(y, m - 1, d).getTime();
+
+          const diff = Math.abs(phaseStartMs - todayMs);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestPhase = phase;
+          }
+        }
+      }
+
+      if (closestPhase && todayStr >= "2026-06-28") {
+        matchedPhase = closestPhase;
+      }
+    }
+
+    if (matchedPhase) {
+      groupSelect.value = matchedPhase;
+    }
   }
 
   if (statusSelect && !statusSelect.dataset.listener) {
