@@ -168,6 +168,24 @@ function renderRankingTable(standings) {
     else if (rank === 3) rankHtml = `<span class="rank-badge r3">🥉</span>`;
     else rankHtml = `<span class="rank-badge rn">${rank}</span>`;
 
+    // Insert zone headers for a fun experience
+    if (i === 0) {
+      const header = document.createElement("div");
+      header.className = "ranking-zone-header zone-champions";
+      header.innerHTML = "🌟 Zona Champions (Puestos 1-3)";
+      tbody.appendChild(header);
+    } else if (i === 3) {
+      const header = document.createElement("div");
+      header.className = "ranking-zone-header zone-media";
+      header.innerHTML = "⚔️ Mitad de Tabla (Puestos 4-6)";
+      tbody.appendChild(header);
+    } else if (i === 6) {
+      const header = document.createElement("div");
+      header.className = "ranking-zone-header zone-repechaje";
+      header.innerHTML = "🥶 Zona de Repechaje (Puestos 7-9)";
+      tbody.appendChild(header);
+    }
+
     const row = document.createElement("div");
     row.className = "ranking-row";
     row.innerHTML = `
