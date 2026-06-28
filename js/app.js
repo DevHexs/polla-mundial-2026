@@ -137,10 +137,25 @@ function renderPodium(standings) {
   const container = document.getElementById("podium-container");
   container.innerHTML = "";
 
+  function getPodiumTitle(p, rank) {
+    if (rank === 1) {
+      return p.exactCount >= 4 ? "👑 El Gurú Supremo" : "🔥 Líder Absoluto";
+    } else if (rank === 2) {
+      return p.exactCount > p.winnerCount / 2 ? "🎯 Francotirador" : "⚡ Al Acecho";
+    } else {
+      return p.winnerCount > 5 ? "🧠 El Estratega" : "🛡️ En la Pelea";
+    }
+  }
+
   standings.slice(0, 3).forEach((p, i) => {
+    const rank = i + 1;
     const card = document.createElement("div");
     card.className = `podium-card ${rankClasses[i]}`;
+    
+    const title = getPodiumTitle(p, rank);
+    
     card.innerHTML = `
+      <div class="podium-badge-title">${title}</div>
       <span class="podium-medal">${medals[i]}</span>
       <div class="podium-name">${p.avatar} ${p.name}</div>
       <div class="podium-pts">${p.totalPoints}</div>
@@ -150,7 +165,35 @@ function renderPodium(standings) {
         <span class="badge-winner">✅ ${p.winnerCount} ganador</span>
       </div>
     `;
-    card.addEventListener("click", () => openModal(p));
+
+    // Confetti effect on hover for the 1st place
+    if (rank === 1) {
+      card.addEventListener("mouseenter", () => {
+        const emojis = ["⚽", "🥇", "✨", "👑", "🎉", "🔥"];
+        for (let j = 0; j < 15; j++) {
+          const emojiSpan = document.createElement("span");
+          emojiSpan.className = "floating-emoji";
+          emojiSpan.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          
+          const xOffset = `${(Math.random() - 0.5) * 160}px`;
+          const rotation = `${(Math.random() - 0.5) * 180}deg`;
+          emojiSpan.style.setProperty("--x-offset", xOffset);
+          emojiSpan.style.setProperty("--rotation", rotation);
+          
+          emojiSpan.style.left = `${20 + Math.random() * 60}%`;
+          emojiSpan.style.animationDelay = `${Math.random() * 0.15}s`;
+          
+          card.appendChild(emojiSpan);
+          setTimeout(() => emojiSpan.remove(), 1200);
+        }
+      });
+    }
+
+    card.addEventListener("click", (e) => {
+      // Don't open modal if they clicked on a floating emoji
+      if (e.target.classList.contains("floating-emoji")) return;
+      openModal(p);
+    });
     container.appendChild(card);
   });
 }
