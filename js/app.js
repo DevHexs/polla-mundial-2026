@@ -1169,9 +1169,9 @@ function renderBracket() {
   matchesData.forEach((m) => { matchesMap[m.id] = m; });
 
   const r32Matches = matchesData.filter((m) => m.group === "R32").sort((a, b) => {
-    const aNum = parseInt(a.id.replace("R32_",""));
-    const bNum = parseInt(b.id.replace("R32_",""));
-    return aNum - bNum;
+    const aInfo = getPanamaDateTime(a);
+    const bInfo = getPanamaDateTime(b);
+    return aInfo.sortValue.localeCompare(bInfo.sortValue);
   });
 
   renderBracketR32(r32Matches);
@@ -1235,7 +1235,11 @@ function applyBracketMobileRound(round) {
     };
 
     const ids = roundMatchIds[round] || [];
-    const matches = ids.map((id) => matchesMap[id]).filter(Boolean);
+    const matches = ids.map((id) => matchesMap[id]).filter(Boolean).sort((a, b) => {
+      const aInfo = getPanamaDateTime(a);
+      const bInfo = getPanamaDateTime(b);
+      return aInfo.sortValue.localeCompare(bInfo.sortValue);
+    });
 
     renderBracketMobileCards(matches, round);
   }
