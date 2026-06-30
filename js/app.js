@@ -499,6 +499,204 @@ function calculateAdvancedBadges(standings) {
     }
   }
 
+  // 11. 🧱 Portero de Acero (Predijo más partidos 0-0)
+  const cerosCounts = standings.map((p) => {
+    let count = 0;
+    Object.values(p.predictions).forEach((pred) => {
+      if (pred && Number(pred.homeScore) === 0 && Number(pred.awayScore) === 0) {
+        count++;
+      }
+    });
+    return { name: p.name, count };
+  });
+  const maxCeros = Math.max(...cerosCounts.map((x) => x.count));
+  if (maxCeros >= 3) {
+    cerosCounts.forEach((x) => {
+      if (x.count === maxCeros) {
+        badges[x.name].push({
+          emoji: "🧱",
+          title: "Portero de Acero",
+          class: "tag-portero",
+          desc: `Predijo ${x.count} partidos con marcador 0-0. ¡Creía en el fútbol aburrido!`
+        });
+      }
+    });
+  }
+
+  // 12. 🤡 El Puyero (Adivino Fallido — predijo más empates pero acertó el menor % de ellos)
+  const puyeroCounts = standings.map((p) => {
+    let predictedDraws = 0;
+    let correctDraws = 0;
+    finishedMatches.forEach((m) => {
+      const pred = p.predictions[m.id];
+      if (pred && Number(pred.homeScore) === Number(pred.awayScore)) {
+        predictedDraws++;
+        if (m.homeScore === m.awayScore) correctDraws++;
+      }
+    });
+    const failRate = predictedDraws > 0 ? (predictedDraws - correctDraws) / predictedDraws : 0;
+    return { name: p.name, predictedDraws, correctDraws, failRate };
+  });
+  // Must have predicted at least 3 draws to qualify
+  const puyeroQualified = puyeroCounts.filter((x) => x.predictedDraws >= 3);
+  if (puyeroQualified.length > 0) {
+    const maxFailRate = Math.max(...puyeroQualified.map((x) => x.failRate));
+    if (maxFailRate >= 0.7) {
+      puyeroQualified.forEach((x) => {
+        if (x.failRate === maxFailRate) {
+          badges[x.name].push({
+            emoji: "🤡",
+            title: "El Puyero",
+            class: "tag-puyero",
+            desc: `Apostó ${x.predictedDraws} empates y solo acertó ${x.correctDraws}. ¡Los empates no son lo suyo!`
+          });
+        }
+      });
+    }
+  }
+
+  // 13. 🏖️ El Vacacionista (Menos predicciones ingresadas — se fue de vacaciones)
+  const minPredicted = Math.min(...standings.map((p) => p.predictedCount));
+  // Only give this badge if the participant actually missed a significant number
+  const maxPredicted = Math.max(...standings.map((p) => p.predictedCount));
+  if (maxPredicted > 0 && minPredicted < maxPredicted * 0.8) {
+    standings.forEach((p) => {
+      if (p.predictedCount === minPredicted) {
+        badges[p.name].push({
+          emoji: "🏖️",
+          title: "Vacacionista",
+          class: "tag-vacacionista",
+          desc: `Solo ingresó ${p.predictedCount} predicciones de ${maxPredicted}. ¡Parece que se fue de vacaciones durante el mundial!`
+        });
+      }
+    });
+  }
+
+  // 14. 🐑 La Oveja (Sus predicciones son las más similares a las del líder)
+  if (standings.length >= 2) {
+    const leader = standings[0];
+    const similarityCounts = standings.slice(1).map((p) => {
+      let sameCount = 0;
+      Object.keys(leader.predictions).forEach((matchId) => {
+        const leaderPred = leader.predictions[matchId];
+        const pPred = p.predictions[matchId];
+        if (leaderPred && pPred &&
+            Number(leaderPred.homeScore) === Number(pPred.homeScore) &&
+            Number(leaderPred.awayScore) === Number(pPred.awayScore)) {
+          sameCount++;
+        }
+      });
+      return { name: p.name, sameCount };
+    });
+    const maxSimilarity = Math.max(...similarityCounts.map((x) => x.sameCount));
+    if (maxSimilarity >= 5) {
+      similarityCounts.forEach((x) => {
+        if (x.sameCount === maxSimilarity) {
+          badges[x.name].push({
+            emoji: "🐑",
+            title: "La Oveja",
+            class: "tag-oveja",
+            desc: `Copió ${x.sameCount} predicciones exactas del líder. ¡Beeee, beeee!`
+          });
+        }
+      });
+    }
+  }
+
+  // 15. 💸 El Apostador Loco (Predijo el marcador más escandaloso — mayor diferencia de goles en una sola predicción)
+  const escandalosoData = standings.map((p) => {
+    let maxDiff = 0;
+    let worstScore = "";
+    Object.values(p.predictions).forEach((pred) => {
+      if (pred && pred.homeScore !== null && pred.awayScore !== null) {
+        const diff = Math.abs(Number(pred.homeScore) - Number(pred.awayScore));
+        if (diff > maxDiff) {
+          maxDiff = diff;
+          worstScore = `${pred.homeScore}-${pred.awayScore}`;
+        }
+      }
+    });
+    return { name: p.name, maxDiff, worstScore };
+  });
+  const maxEscandaloso = Math.max(...escandalosoData.map((x) => x.maxDiff));
+  if (maxEscandaloso >= 5) {
+    escandalosoData.forEach((x) => {
+      if (x.maxDiff === maxEscandaloso) {
+        badges[x.name].push({
+          emoji: "💸",
+          title: "Apostador Loco",
+          class: "tag-apostador",
+          desc: `Predijo un marcador de ${x.worstScore}. ¡Eso no es una predicción, es una fantasía!`
+        });
+      }
+    });
+  }
+
+  // 16. 🍍 La Piña (Peor racha — más partidos consecutivos sin sumar un solo punto)
+  if (finishedMatches.length >= 5) {
+    const rachaMalaCounts = standings.map((p) => {
+      let maxBadStreak = 0;
+      let currentStreak = 0;
+      finishedMatches.forEach((m) => {
+        const result = scorePredict(p.predictions[m.id], m);
+        if (result.points === 0) {
+          currentStreak++;
+          if (currentStreak > maxBadStreak) maxBadStreak = currentStreak;
+        } else {
+          currentStreak = 0;
+        }
+      });
+      return { name: p.name, streak: maxBadStreak };
+    });
+    const maxBadStreak = Math.max(...rachaMalaCounts.map((x) => x.streak));
+    if (maxBadStreak >= 5) {
+      rachaMalaCounts.forEach((x) => {
+        if (x.streak === maxBadStreak) {
+          badges[x.name].push({
+            emoji: "🍍",
+            title: "La Piña",
+            class: "tag-pina",
+            desc: `Encadenó ${x.streak} partidos consecutivos sin sumar ni un punto. ¡Qué mala pata!`
+          });
+        }
+      });
+    }
+  }
+
+  // 17. 🎲 El Seis Doble (Predijo empates con marcador idéntico más veces — ej: 1-1, 2-2, etc.)
+  const seisDobleData = standings.map((p) => {
+    let tiedPredCount = 0;
+    let mostFreqTied = "";
+    const tiedFreqs = {};
+    Object.values(p.predictions).forEach((pred) => {
+      if (pred && pred.homeScore !== null && pred.awayScore !== null) {
+        if (Number(pred.homeScore) === Number(pred.awayScore) && Number(pred.homeScore) > 0) {
+          tiedPredCount++;
+          const key = `${pred.homeScore}-${pred.awayScore}`;
+          tiedFreqs[key] = (tiedFreqs[key] || 0) + 1;
+        }
+      }
+    });
+    let maxTiedFreq = 0;
+    Object.entries(tiedFreqs).forEach(([key, val]) => {
+      if (val > maxTiedFreq) { maxTiedFreq = val; mostFreqTied = key; }
+    });
+    return { name: p.name, tiedPredCount, mostFreqTied, maxTiedFreq };
+  });
+  const maxSeis = Math.max(...seisDobleData.map((x) => x.tiedPredCount));
+  if (maxSeis >= 4) {
+    seisDobleData.forEach((x) => {
+      if (x.tiedPredCount === maxSeis) {
+        badges[x.name].push({
+          emoji: "🎲",
+          title: "Seis Doble",
+          class: "tag-seisdoble",
+          desc: `Predijo ${x.tiedPredCount} empates con marcador idéntico (más frecuente: ${x.mostFreqTied}). ¡Fan del domino!`
+        });
+      }
+    });
+  }
+
   return badges;
 }
 
