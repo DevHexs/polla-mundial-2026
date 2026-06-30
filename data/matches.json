@@ -1032,6 +1032,8 @@
     "date": "2026-06-29",
     "homeScore": 1,
     "awayScore": 1,
+    "homePenalties": 3,
+    "awayPenalties": 4,
     "status": "finished",
     "time": "20:30"
   },
@@ -1046,6 +1048,8 @@
     "date": "2026-06-29",
     "homeScore": 1,
     "awayScore": 1,
+    "homePenalties": 2,
+    "awayPenalties": 3,
     "status": "finished",
     "time": "01:00"
   },

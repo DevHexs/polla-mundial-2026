@@ -1537,6 +1537,8 @@ function updateStandingsAndStatsOnly() {
 // ===== BRACKET — FASE ELIMINATORIA ================
 // =====================================================
 
+const KNOCKOUT_GROUPS = ["R32", "R16", "QF", "SF", "FINAL"];
+
 const BRACKET_ROUND_NAMES = {
   R32: "Dieciseisavos de Final",
   R16: "Octavos de Final",
@@ -1578,8 +1580,19 @@ function buildBtCard(match, extraClass = "") {
   let homeWinner = false,
     awayWinner = false;
   if (isFinished && match.homeScore !== null && match.awayScore !== null) {
-    if (match.homeScore > match.awayScore) homeWinner = true;
-    else if (match.awayScore > match.homeScore) awayWinner = true;
+    if (match.homeScore > match.awayScore) {
+      homeWinner = true;
+    } else if (match.awayScore > match.homeScore) {
+      awayWinner = true;
+    } else if (KNOCKOUT_GROUPS.includes(match.group)) {
+      if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+        if (Number(match.homePenalties) > Number(match.awayPenalties)) {
+          homeWinner = true;
+        } else if (Number(match.awayPenalties) > Number(match.homePenalties)) {
+          awayWinner = true;
+        }
+      }
+    }
   }
 
   const statusLabel = isFinished
@@ -1590,8 +1603,15 @@ function buildBtCard(match, extraClass = "") {
         ? `${formatDate(getPanamaDateTime(match).dateStr)} · ${formatPanamaTime(match.time)}`
         : formatDate(getPanamaDateTime(match).dateStr);
 
-  const homeScore = isFinished || isLive ? String(match.homeScore) : "";
-  const awayScore = isFinished || isLive ? String(match.awayScore) : "";
+  let homeScore = isFinished || isLive ? String(match.homeScore) : "";
+  let awayScore = isFinished || isLive ? String(match.awayScore) : "";
+
+  if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+    if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+      homeScore += ` (${match.homePenalties})`;
+      awayScore += ` (${match.awayPenalties})`;
+    }
+  }
 
   const shortName = (name) => (name.length > 12 ? name.split(" ")[0] : name);
 
@@ -1630,8 +1650,19 @@ function buildBmCard(match) {
   let homeWinner = false,
     awayWinner = false;
   if (isFinished && match.homeScore !== null && match.awayScore !== null) {
-    if (match.homeScore > match.awayScore) homeWinner = true;
-    else if (match.awayScore > match.homeScore) awayWinner = true;
+    if (match.homeScore > match.awayScore) {
+      homeWinner = true;
+    } else if (match.awayScore > match.homeScore) {
+      awayWinner = true;
+    } else if (KNOCKOUT_GROUPS.includes(match.group)) {
+      if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+        if (Number(match.homePenalties) > Number(match.awayPenalties)) {
+          homeWinner = true;
+        } else if (Number(match.awayPenalties) > Number(match.homePenalties)) {
+          awayWinner = true;
+        }
+      }
+    }
   }
 
   const statusLabel = isFinished
@@ -1644,8 +1675,15 @@ function buildBmCard(match) {
 
   const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
 
-  const homeScore = isFinished || isLive ? String(match.homeScore) : "—";
-  const awayScore = isFinished || isLive ? String(match.awayScore) : "—";
+  let homeScore = isFinished || isLive ? String(match.homeScore) : "—";
+  let awayScore = isFinished || isLive ? String(match.awayScore) : "—";
+
+  if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+    if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+      homeScore += ` (${match.homePenalties})`;
+      awayScore += ` (${match.awayPenalties})`;
+    }
+  }
 
   const card = document.createElement("div");
   card.className = `bm-card status-${match.status}`;
@@ -2035,9 +2073,22 @@ function buildBmcCard(match, roundLabel) {
     awayWinner = false,
     isDraw = false;
   if (isFinished && match.homeScore !== null && match.awayScore !== null) {
-    if (match.homeScore > match.awayScore) homeWinner = true;
-    else if (match.awayScore > match.homeScore) awayWinner = true;
-    else isDraw = true;
+    if (match.homeScore > match.awayScore) {
+      homeWinner = true;
+    } else if (match.awayScore > match.homeScore) {
+      awayWinner = true;
+    } else {
+      isDraw = true;
+      if (KNOCKOUT_GROUPS.includes(match.group)) {
+        if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+          if (Number(match.homePenalties) > Number(match.awayPenalties)) {
+            homeWinner = true;
+          } else if (Number(match.awayPenalties) > Number(match.homePenalties)) {
+            awayWinner = true;
+          }
+        }
+      }
+    }
   }
 
   const statusClass = isFinished ? "finished" : isLive ? "live" : "pending";
@@ -2059,9 +2110,16 @@ function buildBmcCard(match, roundLabel) {
   // Score center HTML
   let scoreCenterHtml;
   if (isFinished || isLive) {
+    let penaltyText = "";
+    if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+      if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+        penaltyText = `<div class="bmc-penalties-label" style="font-size: 0.85em; opacity: 0.8; margin-top: 4px;">(${match.homePenalties} - ${match.awayPenalties} Pen.)</div>`;
+      }
+    }
     scoreCenterHtml = `
       <div class="bmc-score-center">
         <div class="bmc-score">${match.homeScore}<span class="bmc-score-sep"> – </span>${match.awayScore}</div>
+        ${penaltyText}
         <div class="bmc-score-label">${isLive ? "En juego" : "Final"}</div>
       </div>`;
   } else {
@@ -2078,10 +2136,11 @@ function buildBmcCard(match, roundLabel) {
   // Result strip (only for finished matches)
   let resultStripHtml = "";
   if (isFinished) {
+    const isPenaltyWin = match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group);
     if (homeWinner) {
-      resultStripHtml = `<div class="bmc-result-strip win-home">🏆 Ganó ${match.home}</div>`;
+      resultStripHtml = `<div class="bmc-result-strip win-home">🏆 Ganó ${match.home}${isPenaltyWin ? " (penales)" : ""}</div>`;
     } else if (awayWinner) {
-      resultStripHtml = `<div class="bmc-result-strip win-away">🏆 Ganó ${match.away}</div>`;
+      resultStripHtml = `<div class="bmc-result-strip win-away">🏆 Ganó ${match.away}${isPenaltyWin ? " (penales)" : ""}</div>`;
     } else {
       resultStripHtml = `<div class="bmc-result-strip draw">🤝 Empate (penales)</div>`;
     }
