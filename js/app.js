@@ -921,11 +921,23 @@ function renderMatches() {
       const isFinished = match.status === "finished";
       const isLive = match.status === "live";
 
+      let penaltyHtml = "";
+      if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+        if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+          penaltyHtml = `<div class="match-penalties" style="font-size: 0.8em; opacity: 0.7; font-weight: bold; margin-top: 2px;">(${match.homePenalties} - ${match.awayPenalties} Pen.)</div>`;
+        }
+      }
+
       const scoreHtml =
         isFinished || isLive
-          ? `<div class="score-box">${match.homeScore}</div>
-           <span class="score-separator">–</span>
-           <div class="score-box">${match.awayScore}</div>`
+          ? `<div style="display: flex; flex-direction: column; align-items: center;">
+               <div style="display: flex; align-items: center;">
+                 <div class="score-box">${match.homeScore}</div>
+                 <span class="score-separator">–</span>
+                 <div class="score-box">${match.awayScore}</div>
+               </div>
+               ${penaltyHtml}
+             </div>`
           : `<div class="score-pending">vs</div>`;
 
       const statusLabel = isFinished
@@ -1295,9 +1307,15 @@ function renderParticipantPredictions(name) {
     card.style = borderStyle;
 
     const predScoreStr = pred ? `${pred.homeScore} – ${pred.awayScore}` : "—";
+    let penaltySuffix = "";
+    if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+      if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+        penaltySuffix = ` (${match.homePenalties} - ${match.awayPenalties} Pen.)`;
+      }
+    }
     const realScoreHtml =
       isFinished || isLive
-        ? `<span class="real-score-footer">Real: <strong>${match.homeScore} – ${match.awayScore}</strong></span>`
+        ? `<span class="real-score-footer">Real: <strong>${match.homeScore} – ${match.awayScore}${penaltySuffix}</strong></span>`
         : "";
 
     const scoreDisplayHtml = `
@@ -1439,11 +1457,23 @@ function renderDateMatches() {
     const isFinished = match.status === "finished";
     const isLive = match.status === "live";
 
+    let penaltyHtml = "";
+    if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+      if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+        penaltyHtml = `<div class="match-penalties" style="font-size: 0.8em; opacity: 0.7; font-weight: bold; margin-top: 2px;">(${match.homePenalties} - ${match.awayPenalties} Pen.)</div>`;
+      }
+    }
+
     const scoreHtml =
       isFinished || isLive
-        ? `<div class="score-box">${match.homeScore}</div>
-         <span class="score-separator">–</span>
-         <div class="score-box">${match.awayScore}</div>`
+        ? `<div style="display: flex; flex-direction: column; align-items: center;">
+             <div style="display: flex; align-items: center;">
+               <div class="score-box">${match.homeScore}</div>
+               <span class="score-separator">–</span>
+               <div class="score-box">${match.awayScore}</div>
+             </div>
+             ${penaltyHtml}
+           </div>`
         : `<div class="score-pending">vs</div>`;
 
     const statusLabel = isFinished
@@ -2288,9 +2318,19 @@ function openBracketPredModal(match) {
   document.getElementById("bpm-round-label").textContent =
     BRACKET_ROUND_NAMES[match.group] || match.group;
 
+  let penaltyDisplay = "";
+  if (isFinished && match.homeScore === match.awayScore && KNOCKOUT_GROUPS.includes(match.group)) {
+    if (match.homePenalties !== undefined && match.awayPenalties !== undefined && match.homePenalties !== null && match.awayPenalties !== null) {
+      penaltyDisplay = `<div style="font-size:0.8rem; font-weight:bold; opacity:0.8; margin-top:2px;">(${match.homePenalties} - ${match.awayPenalties} Pen.)</div>`;
+    }
+  }
+
   const scoreDisplay =
     isFinished || isLive
-      ? `<span class="bpm-score-display">${match.homeScore} – ${match.awayScore}</span>`
+      ? `<div style="display:flex; flex-direction:column; align-items:center;">
+           <span class="bpm-score-display">${match.homeScore} – ${match.awayScore}</span>
+           ${penaltyDisplay}
+         </div>`
       : `<span style="opacity:0.7;font-size:0.85rem;">vs</span>`;
 
   document.getElementById("bpm-teams-display").innerHTML = `
