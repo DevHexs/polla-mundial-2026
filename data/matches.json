@@ -1104,9 +1104,9 @@
     "away": "Ecuador",
     "awayFlag": "🇪🇨",
     "date": "2026-06-30",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 0,
+    "status": "finished",
     "time": "01:00"
   },
   {
