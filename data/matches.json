@@ -1132,9 +1132,9 @@
     "away": "Bosnia y Herzegovina",
     "awayFlag": "🇧🇦",
     "date": "2026-07-01",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 0,
+    "status": "finished",
     "time": "00:00"
   },
   {
