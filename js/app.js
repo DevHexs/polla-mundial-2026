@@ -84,7 +84,7 @@ function scorePredict(prediction, match) {
 }
 
 function computeStandings() {
-  return predictionsData
+  const sorted = predictionsData
     .map((participant) => {
       let totalPoints = 0,
         exactCount = 0,
@@ -115,6 +115,20 @@ function computeStandings() {
       if (b.exactCount !== a.exactCount) return b.exactCount - a.exactCount;
       return b.winnerCount - a.winnerCount;
     });
+
+  let currentRank = 1;
+  return sorted.map((p, i) => {
+    if (i > 0) {
+      const prev = sorted[i - 1];
+      const isTied = p.totalPoints === prev.totalPoints &&
+                     p.exactCount === prev.exactCount &&
+                     p.winnerCount === prev.winnerCount;
+      if (!isTied) {
+        currentRank = i + 1;
+      }
+    }
+    return { ...p, rank: currentRank };
+  });
 }
 
 // ===== STATS GENERALES =====
@@ -150,15 +164,29 @@ function renderPodium(standings) {
   }
 
   standings.slice(0, 3).forEach((p, i) => {
-    const rank = i + 1;
+    const rank = p.rank;
     const card = document.createElement("div");
-    card.className = `podium-card ${rankClasses[i]}`;
+    card.className = `podium-card ${rankClasses[rank - 1]}`;
 
-    const title = getPodiumTitle(p, rank);
+    // Detect ties
+    const tiedWith = standings.filter((other) => other.name !== p.name && other.rank === rank);
+    const isTied = tiedWith.length > 0;
+
+    let title = getPodiumTitle(p, rank);
+    let tieBadgeHtml = "";
+
+    if (isTied && rank <= 3) {
+      const tiedNames = tiedWith.map((other) => other.name).join(" y ");
+      tieBadgeHtml = `<div class="podium-tie-badge" title="Empatado con ${tiedNames}">🤝 Duelo de Titanes</div>`;
+      title = `⚔️ Co-Líder (${title})`;
+    }
+
+    const medal = rank <= 3 ? medals[rank - 1] : "🏅";
 
     card.innerHTML = `
       <div class="podium-badge-title">${title}</div>
-      <span class="podium-medal">${medals[i]}</span>
+      <span class="podium-medal">${medal}</span>
+      ${tieBadgeHtml}
       <div class="podium-name">${p.avatar} ${p.name}</div>
       <div class="podium-pts">${p.totalPoints}</div>
       <div class="podium-pts-label">puntos</div>
@@ -168,7 +196,7 @@ function renderPodium(standings) {
       </div>
     `;
 
-    // Confetti effect on hover for the 1st place
+    // Confetti effect on hover for the 1st place (including tied first place)
     if (rank === 1) {
       card.addEventListener("mouseenter", () => {
         const emojis = ["⚽", "🥇", "✨", "👑", "🎉", "🔥"];
@@ -742,7 +770,7 @@ function renderRankingTable(standings) {
   const allBadges = calculateAdvancedBadges(standings);
 
   standings.forEach((p, i) => {
-    const rank = i + 1;
+    const rank = p.rank;
     let rankHtml;
     if (rank === 1) rankHtml = `<span class="rank-badge r1">🥇</span>`;
     else if (rank === 2) rankHtml = `<span class="rank-badge r2">🥈</span>`;
