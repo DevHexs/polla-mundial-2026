@@ -153,13 +153,13 @@ function renderPodium(standings) {
 
   function getPodiumTitle(p, rank) {
     if (rank === 1) {
-      return p.exactCount >= 4 ? "👑 El Gurú Supremo" : "🔥 Líder Absoluto";
+      return p.exactCount >= 4 ? "👑 Gran Gurú" : "🔥 Líder Indiscutible";
     } else if (rank === 2) {
       return p.exactCount > p.winnerCount / 2
-        ? "🎯 Francotirador"
+        ? "🎯 Puntería de Élite"
         : "⚡ Al Acecho";
     } else {
-      return p.winnerCount > 5 ? "🧠 El Estratega" : "🛡️ En la Pelea";
+      return p.winnerCount > 5 ? "🧠 Estratega" : "🛡️ En la Pelea";
     }
   }
 
