@@ -1188,9 +1188,9 @@
     "away": "Argelia",
     "awayFlag": "🇩🇿",
     "date": "2026-07-02",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 2,
+    "awayScore": 0,
+    "status": "finished",
     "time": "03:00"
   },
   {
