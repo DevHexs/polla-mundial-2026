@@ -2,6 +2,7 @@
 
 ¡Bienvenidos al centro de control del oráculo de **UR Deliveries**! Aquí es donde demostramos quién tiene la visión del fútbol de su lado y quién debería quedarse manejando la logística de envíos.
 
+
 Esta es una aplicación web estática, limpia y elegante para seguir los puntajes de la polla interna del mundial de manera automática.
 
 ---
