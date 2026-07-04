@@ -1671,7 +1671,7 @@ function buildBtCard(match, extraClass = "") {
     }
   }
 
-  const shortName = (name) => (name.length > 12 ? name.split(" ")[0] : name);
+  const shortName = (name) => (name.length > 16 ? name.split(" ")[0] : name);
 
   const card = document.createElement("div");
   card.className = `bt-card status-${match.status}${extraClass ? " " + extraClass : ""}`;
@@ -1786,10 +1786,10 @@ function renderBracketTree(matchesMap) {
   if (!tree) return;
   tree.innerHTML = "";
 
-  // MATCH_HEIGHT: height of a bt-card in px (top-bar ~22 + 2x team-row ~35 each = ~92)
-  const MATCH_H = 92;
-  const MATCH_W = 200; // column width
-  const GAP_X = 40; // horizontal gap between columns
+  // MATCH_HEIGHT: height of a bt-card in px (top-bar ~24 + 2x team-row ~38 each = ~100)
+  const MATCH_H = 104;
+  const MATCH_W = 236; // column width
+  const GAP_X = 50; // horizontal gap between columns
 
   const roundsConfig = [
     {
@@ -2043,7 +2043,7 @@ function renderBracket() {
 }
 
 // ── Mobile round selector ──
-let bracketMobileRound = "R32";
+let bracketMobileRound = "R16";
 
 function setupBracketMobileSelector() {
   const selector = document.getElementById("bracket-round-selector");

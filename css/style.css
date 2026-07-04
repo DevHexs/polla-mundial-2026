@@ -1681,7 +1681,7 @@ body {
   flex-direction: column;
   gap: 0;
   position: relative;
-  width: 200px;
+  width: 236px;
   flex-shrink: 0;
 }
 .bracket-round-col.col-final {
@@ -1692,7 +1692,7 @@ body {
 }
 
 .bracket-round-header {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1714,7 +1714,7 @@ body {
   background: var(--card-bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
-  width: 184px;
+  width: 220px;
   overflow: hidden;
   cursor: pointer;
   transition:
@@ -1742,8 +1742,8 @@ body {
 
 .bt-top {
   background: var(--bg);
-  padding: 4px 10px;
-  font-size: 0.58rem;
+  padding: 5px 12px;
+  font-size: 0.68rem;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -1765,7 +1765,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 10px;
+  padding: 9px 12px;
   gap: 6px;
 }
 .bt-team:first-of-type {
@@ -1784,11 +1784,11 @@ body {
 .bt-flag {
   font-family:
     "Twemoji Country Flags", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   flex-shrink: 0;
 }
 .bt-name {
-  font-size: 0.76rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
@@ -1800,10 +1800,10 @@ body {
   font-weight: 700;
 }
 .bt-score {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--primary);
-  min-width: 16px;
+  min-width: 20px;
   text-align: right;
 }
 .bt-score.winner-score {
