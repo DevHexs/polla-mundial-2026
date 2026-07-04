@@ -1246,9 +1246,9 @@
     "away": "Marruecos",
     "awayFlag": "🇲🇦",
     "date": "2026-07-04",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore":3,
+    "status": "finished",
     "time": "17:00"
   },
   {
