@@ -1789,7 +1789,7 @@ function renderBracketTree(matchesMap) {
   // MATCH_HEIGHT: height of a bt-card in px (top-bar ~24 + 2x team-row ~38 each = ~100)
   const MATCH_H = 104;
   const MATCH_W = 236; // column width
-  const GAP_X = 50; // horizontal gap between columns
+  const GAP_X = 40; // horizontal gap between columns
 
   const roundsConfig = [
     {
