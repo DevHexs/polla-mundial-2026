@@ -1274,9 +1274,9 @@
     "away": "Noruega",
     "awayFlag": "🇳🇴",
     "date": "2026-07-05",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 2,
+    "status": "finished",
     "time": "20:00"
   },
   {
