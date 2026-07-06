@@ -1302,9 +1302,9 @@
     "away": "España",
     "awayFlag": "🇪🇸",
     "date": "2026-07-06",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 0,
+    "awayScore": 1,
+    "status": "finished",
     "time": "19:00"
   },
   {
