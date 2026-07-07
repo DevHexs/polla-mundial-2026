@@ -1247,7 +1247,7 @@
     "awayFlag": "🇲🇦",
     "date": "2026-07-04",
     "homeScore": 0,
-    "awayScore":3,
+    "awayScore": 3,
     "status": "finished",
     "time": "17:00"
   },
@@ -1330,9 +1330,9 @@
     "away": "Egipto",
     "awayFlag": "🇪🇬",
     "date": "2026-07-07",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 3,
+    "awayScore": 2,
+    "status": "finished",
     "time": "16:00"
   },
   {
@@ -1395,8 +1395,8 @@
     "id": "QF_4",
     "group": "QF",
     "matchday": 6,
-    "home": "A definir",
-    "homeFlag": "🏳️",
+    "home": "Argentina",
+    "homeFlag": "🇦🇷",
     "away": "A definir",
     "awayFlag": "🏳️",
     "date": "2026-07-11",
