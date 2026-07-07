@@ -1346,6 +1346,8 @@
     "date": "2026-07-07",
     "homeScore": 0,
     "awayScore": 0,
+    "homePenalties": 4,
+    "awayPenalties": 3,
     "status": "finished",
     "time": "20:00"
   },
