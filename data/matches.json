@@ -1316,9 +1316,9 @@
     "away": "Bélgica",
     "awayFlag": "🇧🇪",
     "date": "2026-07-06",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 4,
+    "status": "finished",
     "time": "00:00"
   },
   {
