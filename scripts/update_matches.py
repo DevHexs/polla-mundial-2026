@@ -2,8 +2,8 @@ import json
 from datetime import datetime, timedelta
 
 # Files paths
-group_dates_path = "/Users/hex/Documents/polla-mundial-2026/data/group_dates.json"
-matches_path = "/Users/hex/Documents/polla-mundial-2026/data/matches.json"
+group_dates_path = "data/group_dates.json"
+matches_path = "data/matches.json"
 
 with open(group_dates_path, "r") as f:
     group_dates = json.load(f)
