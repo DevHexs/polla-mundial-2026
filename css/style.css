@@ -496,6 +496,25 @@ body {
   border: 1px solid rgba(40, 53, 147, 0.2);
 }
 
+.tag-direccion-incorrecta {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid rgba(198, 40, 40, 0.25);
+}
+
+.tag-retraso-aduana {
+  background: #efebe9;
+  color: #4e342e;
+  border: 1px solid rgba(78, 52, 46, 0.25);
+}
+
+.tag-propina-minima {
+  background: #fff8e1;
+  color: #f57f17;
+  border: 1px solid rgba(245, 127, 23, 0.25);
+}
+
+
 
 
 /* Ranking Table */

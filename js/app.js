@@ -725,6 +725,106 @@ function calculateAdvancedBadges(standings) {
     });
   }
 
+  // 18. 📭 Dirección Incorrecta (Predijo que un equipo ganaba, pero ese equipo perdió por 2 o más goles)
+  const direccionIncorrectaCounts = standings.map((p) => {
+    let count = 0;
+    finishedMatches.forEach((m) => {
+      const pred = p.predictions[m.id];
+      if (pred && pred.homeScore !== null && pred.awayScore !== null) {
+        const predHomeWin = Number(pred.homeScore) > Number(pred.awayScore);
+        const predAwayWin = Number(pred.awayScore) > Number(pred.homeScore);
+        const realHomeWin = m.homeScore > m.awayScore;
+        const realAwayWin = m.awayScore > m.homeScore;
+
+        if (predHomeWin && realAwayWin && (m.awayScore - m.homeScore >= 2)) {
+          count++;
+        } else if (predAwayWin && realHomeWin && (m.homeScore - m.awayScore >= 2)) {
+          count++;
+        }
+      }
+    });
+    return { name: p.name, count };
+  });
+
+  const maxDireccionIncorrecta = Math.max(...direccionIncorrectaCounts.map((x) => x.count));
+  if (maxDireccionIncorrecta > 0) {
+    direccionIncorrectaCounts.forEach((x) => {
+      if (x.count === maxDireccionIncorrecta) {
+        badges[x.name].push({
+          emoji: "📭",
+          title: "Dirección Incorrecta",
+          class: "tag-direccion-incorrecta",
+          desc: `Predijo la victoria de un equipo que terminó siendo goleado (perdió por 2+ goles de diferencia) en ${x.count} ocasiones. ¡Le entregó el paquete a la casa equivocada!`
+        });
+      }
+    });
+  }
+
+  // 19. 🛃 Retraso de Aduana (Tiene predicciones de la fase actual pendientes sin ingresar)
+  const pendingMatches = matchesData.filter((m) => m.status === "pending");
+  if (pendingMatches.length > 0) {
+    // Ordenar partidos pendientes por fecha y hora para encontrar el más próximo
+    const sortedPending = [...pendingMatches].sort((a, b) => {
+      const dateDiff = a.date.localeCompare(b.date);
+      if (dateDiff !== 0) return dateDiff;
+      return a.time.localeCompare(b.time);
+    });
+    const currentPhaseGroup = sortedPending[0].group;
+
+    // Filtrar los partidos pendientes solo para la fase actual
+    const currentPhasePending = pendingMatches.filter((m) => m.group === currentPhaseGroup);
+
+    standings.forEach((p) => {
+      let missingCount = 0;
+      currentPhasePending.forEach((m) => {
+        const pred = p.predictions[m.id];
+        if (!pred || pred.homeScore === null || pred.awayScore === null || pred.homeScore === undefined || pred.awayScore === undefined) {
+          missingCount++;
+        }
+      });
+      if (missingCount > 0) {
+        const phaseName = currentPhaseGroup === "QF" ? "Cuartos de Final" :
+                          currentPhaseGroup === "SF" ? "Semifinales" :
+                          currentPhaseGroup === "FINAL" ? "Final" :
+                          currentPhaseGroup === "R16" ? "Octavos de Final" :
+                          currentPhaseGroup === "R32" ? "Dieciseisavos de Final" : `Grupo ${currentPhaseGroup}`;
+
+        badges[p.name].push({
+          emoji: "🛃",
+          title: "Retraso de Aduana",
+          class: "tag-retraso-aduana",
+          desc: `Tiene ${missingCount} partidos pendientes de ${phaseName} sin pronosticar. ¡Su paquete está retenido en aduana por falta de documentación!`
+        });
+      }
+    });
+  }
+
+
+  // 20. 🪙 Propina Mínima (Muchos aciertos de ganador simple, pero casi ningún marcador exacto)
+  const propinaData = standings
+    .map((p) => {
+      const totalHits = p.exactCount + p.winnerCount;
+      const ratio = totalHits > 0 ? p.exactCount / totalHits : 1;
+      return { name: p.name, exact: p.exactCount, winner: p.winnerCount, ratio, totalHits };
+    })
+    .filter((x) => x.totalHits >= 3);
+
+  if (propinaData.length > 0) {
+    const minRatio = Math.min(...propinaData.map((x) => x.ratio));
+    if (minRatio < 0.20 || minRatio === 0) {
+      propinaData.forEach((x) => {
+        if (x.ratio === minRatio) {
+          badges[x.name].push({
+            emoji: "🪙",
+            title: "Propina Mínima",
+            class: "tag-propina-minima",
+            desc: `Logró ${x.winner} aciertos de ganador simple pero solo ${x.exact} marcadores exactos. ¡Mucho esfuerzo repartiendo para recibir solo propinas!`
+          });
+        }
+      });
+    }
+  }
+
   return badges;
 }
 
