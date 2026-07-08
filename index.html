@@ -31,6 +31,9 @@
         <h1>Polla Mundial 2026</h1>
         <p>UR Deliveries · Cuartos de Final</p>
       </div>
+      <button id="panic-mode-toggle" class="panic-toggle-btn" aria-label="Activar modo pánico de simulación">
+        🚨 Modo Pánico: OFF
+      </button>
       <span class="header-badge">FIFA 2026</span>
     </div>
   </header>
@@ -97,6 +100,12 @@
 
     <!-- TAB: RANKING -->
     <div class="tab-content active" id="tab-ranking" role="tabpanel">
+
+      <!-- WARNING BANNER FOR PANIC MODE -->
+      <div id="panic-warning-banner" class="panic-warning-banner" style="display: none;">
+        <span>⚠️ <strong>MODO PÁNICO ACTIVO:</strong> Estás simulando posiciones y puntos. Los cambios son temporales.</span>
+        <button id="panic-reset-btn" class="panic-reset-btn">Restablecer ↩️</button>
+      </div>
 
       <div class="section-title">🏆 Top 3</div>
       <div class="podium" id="podium-container">

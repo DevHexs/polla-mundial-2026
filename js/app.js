@@ -6,6 +6,11 @@ const POINTS_WINNER = 1;
 let matchesData = [];
 let predictionsData = [];
 let groupDatesData = {};
+let simulatedPoints = {};
+let isPanicMode = false;
+let isPanicEditing = false;
+
+
 
 // ===== BOOT =====
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,6 +52,7 @@ function init() {
   setupTabs();
   setupModal();
   setupBracketPredModal();
+  setupPanicMode();
 }
 
 // ===== PUNTOS =====
@@ -99,6 +105,11 @@ function computeStandings() {
         if (result.type === "exact") exactCount++;
         if (result.type === "winner") winnerCount++;
       });
+
+      // En Modo Pánico, sobreescribir con los puntos simulados si existen
+      if (isPanicMode && simulatedPoints[participant.name] !== undefined) {
+        totalPoints = simulatedPoints[participant.name];
+      }
 
       return {
         name: participant.name,
@@ -872,10 +883,21 @@ function renderRankingTable(standings) {
   standings.forEach((p, i) => {
     const rank = p.rank;
     let rankHtml;
-    if (rank === 1) rankHtml = `<span class="rank-badge r1">🥇</span>`;
-    else if (rank === 2) rankHtml = `<span class="rank-badge r2">🥈</span>`;
-    else if (rank === 3) rankHtml = `<span class="rank-badge r3">🥉</span>`;
-    else rankHtml = `<span class="rank-badge rn">${rank}</span>`;
+    if (isPanicEditing) {
+      const isFirst = i === 0;
+      const isLast = i === standings.length - 1;
+      rankHtml = `
+        <div class="panic-controls">
+          <button class="panic-move-btn up-btn" ${isFirst ? "disabled" : ""} onclick="event.stopPropagation(); moveParticipant(${i}, -1);">🔼</button>
+          <button class="panic-move-btn down-btn" ${isLast ? "disabled" : ""} onclick="event.stopPropagation(); moveParticipant(${i}, 1);">🔽</button>
+        </div>
+      `;
+    } else {
+      if (rank === 1) rankHtml = `<span class="rank-badge r1">🥇</span>`;
+      else if (rank === 2) rankHtml = `<span class="rank-badge r2">🥈</span>`;
+      else if (rank === 3) rankHtml = `<span class="rank-badge r3">🥉</span>`;
+      else rankHtml = `<span class="rank-badge rn">${rank}</span>`;
+    }
 
     // Insert zone headers for a fun experience
     if (i === 0) {
@@ -896,7 +918,7 @@ function renderRankingTable(standings) {
     }
 
     const row = document.createElement("div");
-    row.className = "ranking-row";
+    row.className = `ranking-row${isPanicEditing ? " panic-mode-active-row" : ""}`;
     row.innerHTML = `
       <div class="col-rank">${rankHtml}</div>
       <div class="col-name">
@@ -927,7 +949,11 @@ function renderRankingTable(standings) {
       badgesContainer.appendChild(span);
     });
 
-    row.addEventListener("click", () => openModal(p));
+    row.addEventListener("click", () => {
+      if (!isPanicEditing) {
+        openModal(p);
+      }
+    });
     tbody.appendChild(row);
   });
 }
@@ -2541,3 +2567,94 @@ function closeBracketPredModal() {
   if (overlay) overlay.classList.remove("open");
   document.body.style.overflow = "";
 }
+
+// ===== MODO PÁNICO (SIMULACIÓN DE POSICIONES) =====
+function setupPanicMode() {
+  const toggleBtn = document.getElementById("panic-mode-toggle");
+  const banner = document.getElementById("panic-warning-banner");
+  const resetBtn = document.getElementById("panic-reset-btn");
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      isPanicEditing = !isPanicEditing;
+      if (isPanicEditing) {
+        isPanicMode = true; // La simulación de puntos queda activa
+        toggleBtn.textContent = "🚨 Modo Pánico: ON (Editando)";
+        toggleBtn.classList.add("active");
+        if (banner) banner.style.display = "flex";
+
+        // Inicializar puntos simulados con el estado actual
+        if (Object.keys(simulatedPoints).length === 0) {
+          const currentStandings = computeStandings();
+          currentStandings.forEach((p) => {
+            simulatedPoints[p.name] = p.totalPoints;
+          });
+        }
+      } else {
+        // Apagamos modo edición pero conservamos los puntos simulados
+        toggleBtn.textContent = "🚨 Modo Pánico: ON (Edit OFF)";
+        toggleBtn.classList.remove("active");
+        
+        // Mantenemos el banner visible para advertir que los puntos siguen simulados
+        if (banner) banner.style.display = "flex";
+      }
+
+      // Re-calcular y re-renderizar todo
+      const standings = computeStandings();
+      renderPodium(standings);
+      renderRankingTable(standings);
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      isPanicMode = false;
+      isPanicEditing = false;
+      simulatedPoints = {};
+
+      if (toggleBtn) {
+        toggleBtn.textContent = "🚨 Modo Pánico: OFF";
+        toggleBtn.classList.remove("active");
+      }
+      if (banner) banner.style.display = "none";
+
+      const normalStandings = computeStandings();
+      renderPodium(normalStandings);
+      renderRankingTable(normalStandings);
+    });
+  }
+}
+
+function moveParticipant(fromIndex, direction) {
+  if (!isPanicEditing) return;
+  const toIndex = fromIndex + direction;
+  const standings = computeStandings();
+
+  if (toIndex < 0 || toIndex >= standings.length) return;
+
+  const p1 = standings[fromIndex];
+  const p2 = standings[toIndex];
+
+  // Asegurar que todos tengan un valor en simulatedPoints
+  standings.forEach((p) => {
+    if (simulatedPoints[p.name] === undefined) {
+      simulatedPoints[p.name] = p.totalPoints;
+    }
+  });
+
+  if (direction === 1) {
+    // Moviendo hacia abajo: el participante que baja toma los puntos del de abajo menos 1
+    const p2Pts = simulatedPoints[p2.name];
+    simulatedPoints[p1.name] = p2Pts - 1;
+  } else if (direction === -1) {
+    // Moviendo hacia arriba: el participante que sube toma los puntos del de arriba más 1
+    const p2Pts = simulatedPoints[p2.name];
+    simulatedPoints[p1.name] = p2Pts + 1;
+  }
+
+  // Volver a calcular las posiciones con los nuevos puntos simulados y renderizar
+  const newStandings = computeStandings();
+  renderPodium(newStandings);
+  renderRankingTable(newStandings);
+}
+

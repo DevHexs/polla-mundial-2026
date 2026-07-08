@@ -2271,3 +2271,122 @@ body {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
+
+/* Panic Mode Toggle Button */
+.panic-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 14px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.panic-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.panic-toggle-btn.active {
+  background: #e53935;
+  color: white;
+  border-color: #e53935;
+  box-shadow: 0 0 12px rgba(229, 57, 53, 0.6);
+  animation: pulse-panic 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-panic {
+  0% { transform: scale(1); box-shadow: 0 0 8px rgba(229, 57, 53, 0.5); }
+  100% { transform: scale(1.05); box-shadow: 0 0 16px rgba(229, 57, 53, 0.8); }
+}
+
+@media (max-width: 640px) {
+  .panic-toggle-btn {
+    margin-left: 0;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Panic Warning Banner */
+.panic-warning-banner {
+  background: #ffe5e5;
+  color: #c62828;
+  border: 1px solid rgba(198, 40, 40, 0.2);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-sm);
+  animation: flash-border 2s infinite alternate ease-in-out;
+}
+
+@keyframes flash-border {
+  0% { border-color: rgba(198, 40, 40, 0.2); }
+  100% { border-color: rgba(198, 40, 40, 0.8); }
+}
+
+.panic-reset-btn {
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background var(--transition);
+}
+
+.panic-reset-btn:hover {
+  background: #b71c1c;
+}
+
+/* Panic Move Controls */
+.panic-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.panic-move-btn {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 1px;
+  display: block;
+  line-height: 1;
+  transition: transform 0.1s ease;
+  user-select: none;
+}
+
+.panic-move-btn:hover:not(:disabled) {
+  transform: scale(1.3);
+}
+
+.panic-move-btn:disabled {
+  opacity: 0.15;
+  cursor: not-allowed;
+}
+
+.panic-mode-active-row {
+  border-left: 3px solid #e53935 !important;
+  background-color: rgba(229, 57, 53, 0.02) !important;
+}
+
