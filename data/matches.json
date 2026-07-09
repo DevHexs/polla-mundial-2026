@@ -1355,10 +1355,10 @@
     "id": "QF_1",
     "group": "QF",
     "matchday": 6,
-    "home": "Marruecos",
-    "homeFlag": "🇲🇦",
-    "away": "Francia",
-    "awayFlag": "🇫🇷",
+    "home": "Francia",
+    "homeFlag": "🇫🇷",
+    "away": "Marruecos",
+    "awayFlag": "🇲🇦",
     "date": "2026-07-09",
     "homeScore": null,
     "awayScore": null,
@@ -1373,11 +1373,11 @@
     "homeFlag": "🇳🇴",
     "away": "Inglaterra",
     "awayFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "date": "2026-07-10",
+    "date": "2026-07-11",
     "homeScore": null,
     "awayScore": null,
     "status": "pending",
-    "time": "19:00"
+    "time": "21:00"
   },
   {
     "id": "QF_3",
@@ -1387,11 +1387,11 @@
     "homeFlag": "🇪🇸",
     "away": "Bélgica",
     "awayFlag": "🇧🇪",
-    "date": "2026-07-11",
+    "date": "2026-07-10",
     "homeScore": null,
     "awayScore": null,
     "status": "pending",
-    "time": "21:00"
+    "time": "19:00"
   },
   {
     "id": "QF_4",

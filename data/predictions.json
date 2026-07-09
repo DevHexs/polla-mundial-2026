@@ -388,8 +388,8 @@
             "awayScore":1
          },
          "QF_1":{
-            "homeScore":0,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":0
          },
          "QF_2":{
             "homeScore":1,
@@ -794,8 +794,8 @@
             "awayScore":1
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":3,
@@ -1200,8 +1200,8 @@
             "awayScore":2
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":3
+            "homeScore":3,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":1,
@@ -1606,8 +1606,8 @@
             "awayScore":2
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":3,
@@ -2012,8 +2012,8 @@
             "awayScore":1
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":1,
@@ -2418,8 +2418,8 @@
             "awayScore":2
          },
          "QF_1":{
-            "homeScore":0,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":0
          },
          "QF_2":{
             "homeScore":3,
@@ -2824,8 +2824,8 @@
             "awayScore":1
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":2,
@@ -3230,8 +3230,8 @@
             "awayScore":2
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":1,
@@ -3636,8 +3636,8 @@
             "awayScore":2
          },
          "QF_1":{
-            "homeScore":1,
-            "awayScore":2
+            "homeScore":2,
+            "awayScore":1
          },
          "QF_2":{
             "homeScore":2,

@@ -702,29 +702,29 @@
   "QF": [
     {
       "date": "2026-07-09",
-      "home": "Marruecos",
-      "away": "Francia",
+      "home": "Francia",
+      "away": "Marruecos",
       "stadium": "Por definir",
       "time": "15:00"
     },
     {
-      "date": "2026-07-10",
+      "date": "2026-07-11",
       "home": "Noruega",
       "away": "Inglaterra",
+      "stadium": "Por definir",
+      "time": "16:00"
+    },
+    {
+      "date": "2026-07-10",
+      "home": "España",
+      "away": "Bélgica",
       "stadium": "Por definir",
       "time": "14:00"
     },
     {
       "date": "2026-07-11",
-      "home": "España",
-      "away": "Bélgica",
-      "stadium": "Por definir",
-      "time": "16:00"
-    },
-    {
-      "date": "2026-07-11",
-      "home": "A definir",
-      "away": "A definir",
+      "home": "Argentina",
+      "away": "Suiza",
       "stadium": "Por definir",
       "time": "20:00"
     }
