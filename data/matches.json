@@ -1266,7 +1266,7 @@
     "time": "21:00"
   },
   {
-    "id": "R16_3",
+    "id": "R16_5",
     "group": "R16",
     "matchday": 5,
     "home": "Brasil",
@@ -1280,7 +1280,7 @@
     "time": "20:00"
   },
   {
-    "id": "R16_4",
+    "id": "R16_6",
     "group": "R16",
     "matchday": 5,
     "home": "México",
@@ -1294,7 +1294,7 @@
     "time": "00:00"
   },
   {
-    "id": "R16_5",
+    "id": "R16_3",
     "group": "R16",
     "matchday": 5,
     "home": "Portugal",
@@ -1308,7 +1308,7 @@
     "time": "19:00"
   },
   {
-    "id": "R16_6",
+    "id": "R16_4",
     "group": "R16",
     "matchday": 5,
     "home": "Estados Unidos",
@@ -1366,7 +1366,7 @@
     "time": "20:00"
   },
   {
-    "id": "QF_2",
+    "id": "QF_3",
     "group": "QF",
     "matchday": 6,
     "home": "Noruega",
@@ -1380,7 +1380,7 @@
     "time": "21:00"
   },
   {
-    "id": "QF_3",
+    "id": "QF_2",
     "group": "QF",
     "matchday": 6,
     "home": "España",

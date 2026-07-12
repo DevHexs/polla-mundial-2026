@@ -1,3655 +1,3655 @@
 [
    {
-      "name":"Abner",
-      "avatar":"⛰️",
-      "predictions":{
-         "A1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "B1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "B5":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "B6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "C1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "C2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "C3":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "C4":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "C5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "D2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "D4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "E1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "E3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "E4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "E5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "E6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "F1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "F4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "G1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "G5":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "I1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "I2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "I5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "I6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J4":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "J5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "K3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "K5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "K6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "L4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "L5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "L6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_1":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "R32_2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_5":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_7":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_10":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_11":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_13":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_14":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_15":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_16":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "R16_1":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "R16_2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R16_8":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "QF_2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "QF_4":{
-            "homeScore":1,
-            "awayScore":0
+      "name": "Abner",
+      "avatar": "⛰️",
+      "predictions": {
+         "A1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "B1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "B5": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "B6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "C1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "C2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "C3": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "C4": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "C5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "D2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "D4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "E1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "E3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "E4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "E5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "E6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "F1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "F4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "G1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "G5": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "I1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "I2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "I5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "I6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J4": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "J5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "K3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "K5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "K6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "L4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "L5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "L6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_1": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "R32_2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_5": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_7": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_10": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_11": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_13": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_14": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_15": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_16": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "R16_1": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "R16_2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R16_8": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "QF_3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_4": {
+            "homeScore": 1,
+            "awayScore": 0
          }
       }
    },
    {
-      "name":"Betzy",
-      "avatar":"😊",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "A3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "A5":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "A6":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "B1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "B6":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "C1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "C2":{
-            "homeScore":1,
-            "awayScore":5
-         },
-         "C3":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "C4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "C5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D2":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D5":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "D6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E4":{
-            "homeScore":3,
-            "awayScore":3
-         },
-         "E5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "E6":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "F1":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "F2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "F3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "F4":{
-            "homeScore":1,
-            "awayScore":4
-         },
-         "F5":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "F6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "G1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "G3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "G4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "G5":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "G6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "H1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "H4":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":3,
-            "awayScore":3
-         },
-         "I1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "I2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "I3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "I5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "I6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "J4":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "J5":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "K3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "K5":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "K6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "L3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "L4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "L5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_2":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_3":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_4":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_5":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "R32_7":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_8":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "R32_9":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_10":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_11":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_13":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_14":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_15":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_1":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "R16_3":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_5":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R16_8":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_4":{
-            "homeScore":3,
-            "awayScore":1
+      "name": "Betzy",
+      "avatar": "😊",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "A3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "A5": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "A6": {
+            "homeScore": 2,
+            "awayScore": 3
+         },
+         "B1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "B6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "C1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "C2": {
+            "homeScore": 1,
+            "awayScore": 5
+         },
+         "C3": {
+            "homeScore": 2,
+            "awayScore": 3
+         },
+         "C4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "C5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D2": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D5": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "D6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E4": {
+            "homeScore": 3,
+            "awayScore": 3
+         },
+         "E5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "E6": {
+            "homeScore": 2,
+            "awayScore": 3
+         },
+         "F1": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "F2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "F4": {
+            "homeScore": 1,
+            "awayScore": 4
+         },
+         "F5": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "F6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "G1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "G3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "G4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "G5": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "G6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "H1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "H4": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 3,
+            "awayScore": 3
+         },
+         "I1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "I2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "I3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "I5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "I6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "J4": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "J5": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "K3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "K5": {
+            "homeScore": 2,
+            "awayScore": 3
+         },
+         "K6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "L3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "L4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "L5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_2": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_3": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_4": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_5": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "R32_7": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_8": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "R32_9": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_10": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_11": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_13": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_14": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_15": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_1": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "R16_3": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R16_8": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_3": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "QF_4": {
+            "homeScore": 3,
+            "awayScore": 1
          }
       }
    },
    {
-      "name":"Daniel",
-      "avatar":"🥚",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "B1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "B5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "C1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "C2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "C3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "C4":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "C5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D6":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "E1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "E5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "E6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "F1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "F2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "G1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "G5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "H1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "H3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "I1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "I2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "I5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "J5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "K3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "K5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "K6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "L2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "L3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "L4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "L6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_2":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "R32_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_5":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_7":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_10":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_11":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_13":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_14":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_15":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_8":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_4":{
-            "homeScore":2,
-            "awayScore":1
+      "name": "Daniel",
+      "avatar": "🥚",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "B1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "B5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "C1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "C2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "C3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "C4": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "C5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D6": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "E1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "E5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "E6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "F1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "G1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "G5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "H1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "H3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "I1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "I2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "I5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "J5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "K3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "K5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "K6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "L2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "L3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "L4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "L6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_2": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "R32_3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_5": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_7": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_10": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_11": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_13": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_14": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_15": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_8": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "QF_4": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
    {
-      "name":"Danna",
-      "avatar":"👑",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "A6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "B1":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "C1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "C2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "C4":{
-            "homeScore":4,
-            "awayScore":2
-         },
-         "C5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "D5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "D6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "E2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "E3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "F1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "F2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F4":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "G1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "G5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "H1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "H4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "H6":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "I1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "I2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "I5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "I6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "J6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "K3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "K4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "K6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "L3":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "L4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "L6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_5":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_7":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_10":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_11":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_13":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_14":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "R32_15":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R16_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "R16_3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R16_8":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_4":{
-            "homeScore":2,
-            "awayScore":1
+      "name": "Danna",
+      "avatar": "👑",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "A6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "B1": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "C1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "C2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "C4": {
+            "homeScore": 4,
+            "awayScore": 2
+         },
+         "C5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "D5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "D6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "E2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "E3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F4": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "G1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "G5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "H1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "H4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "H6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "I1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "I2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "I5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "I6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "J6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "K3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "K4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "K6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "L3": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "L4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "L6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_5": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_7": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_10": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_11": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_13": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_14": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "R32_15": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R16_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "R16_3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_5": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R16_8": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_3": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "QF_4": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
    {
-      "name":"Edgardo",
-      "avatar":"🧟",
-      "predictions":{
-         "A1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "B1":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "B4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "B6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "C1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "C2":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "C3":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C4":{
-            "homeScore":4,
-            "awayScore":1
-         },
-         "C5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "D2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "E3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "E6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "E5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "F1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "F2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "F4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "G1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "G2":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "G3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "G5":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H1":{
-            "homeScore":4,
-            "awayScore":1
-         },
-         "H2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "H6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "I2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "I5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "I6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "J5":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "J6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "K3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "K6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "L4":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "L5":{
-            "homeScore":2,
-            "awayScore":4
-         },
-         "L6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_5":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_7":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_10":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_11":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_13":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_14":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_15":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_1":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R16_8":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "QF_4":{
-            "homeScore":2,
-            "awayScore":1
+      "name": "Edgardo",
+      "avatar": "🧟",
+      "predictions": {
+         "A1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "B1": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "B4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "B6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "C1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "C2": {
+            "homeScore": 2,
+            "awayScore": 3
+         },
+         "C3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C4": {
+            "homeScore": 4,
+            "awayScore": 1
+         },
+         "C5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "D2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "E3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "E6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "E5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "F1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "F2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "F4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "G1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "G2": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "G3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "G5": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H1": {
+            "homeScore": 4,
+            "awayScore": 1
+         },
+         "H2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "H6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "I2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "I5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "I6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "J5": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "J6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "K3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "K6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "L4": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "L5": {
+            "homeScore": 2,
+            "awayScore": 4
+         },
+         "L6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_5": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_7": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_10": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_11": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_13": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_14": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_15": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_1": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "R16_3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R16_8": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "QF_3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "QF_4": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
    {
-      "name":"Fernando",
-      "avatar":"👨‍🦲",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "B5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "C2":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "C3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "C4":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "C5":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "D6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "E3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "E4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "E5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "E6":{
-            "homeScore":2,
-            "awayScore":3
-         },
-         "F1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "F2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "F3":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "F4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "G1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "G3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "G4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "G5":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "H1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "H2":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "H3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "I1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "I2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "I4":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "I5":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "I6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "J4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "J5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "K2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "K3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "K4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "K5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "K6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "L2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "L3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "L4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "L5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "L6":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_5":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_7":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_10":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_11":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_13":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_14":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_15":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_5":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_7":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R16_8":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "QF_2":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_4":{
-            "homeScore":2,
-            "awayScore":1
+      "name": "Fernando",
+      "avatar": "👨‍🦲",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "B5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "C2": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "C3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "C4": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "C5": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "D6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "E3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "E4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "E5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "E6": {
+            "homeScore": 2,
+            "awayScore": 3
+         },
+         "F1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "F2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F3": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "F4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "G1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "G3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "G4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "G5": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "H1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "H2": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "H3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "I1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "I2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "I4": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "I5": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "I6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "J4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "J5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "K2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "K3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "K4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "K5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "K6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "L2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "L3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "L4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "L5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "L6": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_5": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_7": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_10": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_11": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_13": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_14": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_15": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R16_3": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_7": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R16_8": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_3": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "QF_4": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
    {
-      "name":"Gilberto",
-      "avatar":"☕",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B1":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "B4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B5":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "B6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "C1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "C2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "C3":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "C4":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "C5":{
-            "homeScore":0,
-            "awayScore":4
-         },
-         "C6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "D2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "E3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "E4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "E5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "E6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "F1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "F2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "F4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "G1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "G5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":4
-         },
-         "H1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "I1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "I2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "I3":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "I5":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "I6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "J5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":4
-         },
-         "K1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "K3":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "K6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "L3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "L4":{
-            "homeScore":0,
-            "awayScore":4
-         },
-         "L5":{
-            "homeScore":1,
-            "awayScore":4
-         },
-         "L6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_5":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "R32_7":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_10":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_11":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_13":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_14":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_15":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_16":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "R16_1":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "R16_2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "R16_7":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R16_8":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_4":{
-            "homeScore":3,
-            "awayScore":0
+      "name": "Gilberto",
+      "avatar": "☕",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B1": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "B4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B5": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "B6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "C1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "C2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "C3": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "C4": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "C5": {
+            "homeScore": 0,
+            "awayScore": 4
+         },
+         "C6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "D2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "E3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "E4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "E5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "E6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "F1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "F4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "G1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "G5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 4
+         },
+         "H1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "I1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "I2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "I3": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "I5": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "I6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "J5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 4
+         },
+         "K1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "K3": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "K6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "L3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "L4": {
+            "homeScore": 0,
+            "awayScore": 4
+         },
+         "L5": {
+            "homeScore": 1,
+            "awayScore": 4
+         },
+         "L6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_5": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "R32_7": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_10": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_11": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_13": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_14": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_15": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_16": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "R16_1": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "R16_2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_7": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R16_8": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_4": {
+            "homeScore": 3,
+            "awayScore": 0
          }
       }
    },
    {
-      "name":"Ingrid",
-      "avatar":"🌸",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B5":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "C1":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "C2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "C3":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C4":{
-            "homeScore":4,
-            "awayScore":1
-         },
-         "C5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "C6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "D6":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "E1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "E3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "E5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "E6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "F1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "F2":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "F3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "F4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "G1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "G3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "G5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "G6":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "H1":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "H5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "I1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "I2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "I6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "J2":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "J3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "J4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "J5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "K1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "K3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K5":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "K6":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "L1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "L3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "L4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "L5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "L6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R32_2":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_3":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_5":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_6":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "R32_7":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_8":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_10":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R32_11":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_12":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_13":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_14":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_15":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R16_8":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_3":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "QF_4":{
-            "homeScore":2,
-            "awayScore":0
+      "name": "Ingrid",
+      "avatar": "🌸",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "C1": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "C2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "C3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C4": {
+            "homeScore": 4,
+            "awayScore": 1
+         },
+         "C5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "C6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "D6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "E1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "E3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "E5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "E6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F2": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "F3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "F4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "G1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "G3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "G5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "G6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "H1": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "H5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "I1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "I2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "I6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "J2": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "J3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "J4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "J5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "K1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "K3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K5": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "K6": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "L1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "L3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "L4": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "L5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "L6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R32_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_5": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_6": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "R32_7": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_8": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_10": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R32_11": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_12": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_13": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_14": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_15": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_3": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R16_8": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "QF_4": {
+            "homeScore": 2,
+            "awayScore": 0
          }
       }
    },
    {
-      "name":"Luci",
-      "avatar":"🏮",
-      "predictions":{
-         "A1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "A2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A3":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "A4":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "A5":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "A6":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "B1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "B2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "B3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "B4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "B5":{
-            "homeScore":3,
-            "awayScore":2
-         },
-         "B6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "C1":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "C2":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "C3":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "C4":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "C5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "C6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "D1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D2":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "D3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "D4":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "D5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "D6":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "E1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "E2":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "E3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "E4":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "E5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "E6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "F1":{
-            "homeScore":3,
-            "awayScore":3
-         },
-         "F2":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "F3":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "F4":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "F5":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "F6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "G1":{
-            "homeScore":4,
-            "awayScore":0
-         },
-         "G2":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "G3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "G4":{
-            "homeScore":0,
-            "awayScore":1
-         },
-         "G5":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "G6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "H1":{
-            "homeScore":6,
-            "awayScore":0
-         },
-         "H2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "H3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "H4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "H5":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "H6":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "I1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "I2":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "I3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "I4":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "I5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "I6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "J1":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "J2":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "J3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "J4":{
-            "homeScore":0,
-            "awayScore":0
-         },
-         "J5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "J6":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "K1":{
-            "homeScore":4,
-            "awayScore":1
-         },
-         "K2":{
-            "homeScore":0,
-            "awayScore":3
-         },
-         "K3":{
-            "homeScore":3,
-            "awayScore":0
-         },
-         "K4":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "K5":{
-            "homeScore":2,
-            "awayScore":4
-         },
-         "K6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "L1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "L2":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "L3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "L4":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "L5":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "L6":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_1":{
-            "homeScore":1,
-            "awayScore":3
-         },
-         "R32_2":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_3":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_4":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R32_5":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_6":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R32_7":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_8":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_9":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_10":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_11":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_12":{
-            "homeScore":3,
-            "awayScore":1
-         },
-         "R32_13":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R32_14":{
-            "homeScore":2,
-            "awayScore":0
-         },
-         "R32_15":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R32_16":{
-            "homeScore":1,
-            "awayScore":0
-         },
-         "R16_1":{
-            "homeScore":1,
-            "awayScore":2
-         },
-         "R16_2":{
-            "homeScore":1,
-            "awayScore":4
-         },
-         "R16_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_4":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "R16_5":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "R16_6":{
-            "homeScore":1,
-            "awayScore":1
-         },
-         "R16_7":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "R16_8":{
-            "homeScore":0,
-            "awayScore":2
-         },
-         "QF_1":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_2":{
-            "homeScore":2,
-            "awayScore":2
-         },
-         "QF_3":{
-            "homeScore":2,
-            "awayScore":1
-         },
-         "QF_4":{
-            "homeScore":3,
-            "awayScore":1
+      "name": "Luci",
+      "avatar": "🏮",
+      "predictions": {
+         "A1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "A2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A3": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "A4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "A5": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "A6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "B1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "B2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "B3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "B4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "B5": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "B6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "C1": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "C2": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "C3": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "C4": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "C5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "C6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "D1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D2": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "D3": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "D4": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "D5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "D6": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "E1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "E2": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "E3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "E4": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "E5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "E6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "F1": {
+            "homeScore": 3,
+            "awayScore": 3
+         },
+         "F2": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "F3": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "F4": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "F5": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "F6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "G1": {
+            "homeScore": 4,
+            "awayScore": 0
+         },
+         "G2": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "G3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "G4": {
+            "homeScore": 0,
+            "awayScore": 1
+         },
+         "G5": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "G6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "H1": {
+            "homeScore": 6,
+            "awayScore": 0
+         },
+         "H2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "H3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "H4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "H5": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "H6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "I1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "I2": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "I3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "I4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "I5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "I6": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "J1": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "J2": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "J3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "J4": {
+            "homeScore": 0,
+            "awayScore": 0
+         },
+         "J5": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "J6": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "K1": {
+            "homeScore": 4,
+            "awayScore": 1
+         },
+         "K2": {
+            "homeScore": 0,
+            "awayScore": 3
+         },
+         "K3": {
+            "homeScore": 3,
+            "awayScore": 0
+         },
+         "K4": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "K5": {
+            "homeScore": 2,
+            "awayScore": 4
+         },
+         "K6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "L1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "L2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "L3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "L4": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "L5": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "L6": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_1": {
+            "homeScore": 1,
+            "awayScore": 3
+         },
+         "R32_2": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_3": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_4": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R32_5": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_6": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R32_7": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_8": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_9": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_10": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_11": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_12": {
+            "homeScore": 3,
+            "awayScore": 1
+         },
+         "R32_13": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R32_14": {
+            "homeScore": 2,
+            "awayScore": 0
+         },
+         "R32_15": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R32_16": {
+            "homeScore": 1,
+            "awayScore": 0
+         },
+         "R16_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "R16_2": {
+            "homeScore": 1,
+            "awayScore": 4
+         },
+         "R16_3": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "R16_4": {
+            "homeScore": 1,
+            "awayScore": 1
+         },
+         "R16_5": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_6": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "R16_7": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "R16_8": {
+            "homeScore": 0,
+            "awayScore": 2
+         },
+         "QF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "QF_3": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "QF_4": {
+            "homeScore": 3,
+            "awayScore": 1
          }
       }
    }
