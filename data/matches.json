@@ -1374,9 +1374,9 @@
     "away": "Inglaterra",
     "awayFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "date": "2026-07-11",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 1,
+    "awayScore": 2,
+    "status": "finished",
     "time": "21:00"
   },
   {
@@ -1402,9 +1402,9 @@
     "away": "Suiza",
     "awayFlag": "🇨🇭",
     "date": "2026-07-11",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "finished",
     "time": "01:00"
   },
   {
