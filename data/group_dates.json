@@ -657,20 +657,6 @@
       "time": "16:00"
     },
     {
-      "date": "2026-07-05",
-      "home": "Brasil",
-      "away": "Noruega",
-      "stadium": "Por definir",
-      "time": "15:00"
-    },
-    {
-      "date": "2026-07-05",
-      "home": "México",
-      "away": "Inglaterra",
-      "stadium": "Por definir",
-      "time": "19:00"
-    },
-    {
       "date": "2026-07-06",
       "home": "Portugal",
       "away": "España",
@@ -681,6 +667,20 @@
       "date": "2026-07-06",
       "home": "Estados Unidos",
       "away": "Bélgica",
+      "stadium": "Por definir",
+      "time": "19:00"
+    },
+    {
+      "date": "2026-07-05",
+      "home": "Brasil",
+      "away": "Noruega",
+      "stadium": "Por definir",
+      "time": "15:00"
+    },
+    {
+      "date": "2026-07-05",
+      "home": "México",
+      "away": "Inglaterra",
       "stadium": "Por definir",
       "time": "19:00"
     },
@@ -708,18 +708,18 @@
       "time": "15:00"
     },
     {
-      "date": "2026-07-11",
-      "home": "Noruega",
-      "away": "Inglaterra",
-      "stadium": "Por definir",
-      "time": "16:00"
-    },
-    {
       "date": "2026-07-10",
       "home": "España",
       "away": "Bélgica",
       "stadium": "Por definir",
       "time": "14:00"
+    },
+    {
+      "date": "2026-07-11",
+      "home": "Noruega",
+      "away": "Inglaterra",
+      "stadium": "Por definir",
+      "time": "16:00"
     },
     {
       "date": "2026-07-11",
@@ -732,15 +732,15 @@
   "SF": [
     {
       "date": "2026-07-14",
-      "home": "A definir",
-      "away": "A definir",
+      "home": "Francia",
+      "away": "España",
       "stadium": "Por definir",
       "time": "14:00"
     },
     {
       "date": "2026-07-15",
-      "home": "A definir",
-      "away": "A definir",
+      "home": "Inglaterra",
+      "away": "Argentina",
       "stadium": "Por definir",
       "time": "14:00"
     }

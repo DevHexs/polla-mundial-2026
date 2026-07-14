@@ -402,6 +402,14 @@
          "QF_4": {
             "homeScore": 1,
             "awayScore": 0
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 1,
+            "awayScore": 1
          }
       }
    },
@@ -808,6 +816,14 @@
          "QF_4": {
             "homeScore": 3,
             "awayScore": 1
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 3,
+            "awayScore": 2
          }
       }
    },
@@ -1214,6 +1230,14 @@
          "QF_4": {
             "homeScore": 2,
             "awayScore": 1
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 1,
+            "awayScore": 2
          }
       }
    },
@@ -1618,6 +1642,14 @@
             "awayScore": 2
          },
          "QF_4": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
             "homeScore": 2,
             "awayScore": 1
          }
@@ -2026,6 +2058,14 @@
          "QF_4": {
             "homeScore": 2,
             "awayScore": 1
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
@@ -2432,6 +2472,14 @@
          "QF_4": {
             "homeScore": 2,
             "awayScore": 1
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 1,
+            "awayScore": 2
          }
       }
    },
@@ -2838,6 +2886,14 @@
          "QF_4": {
             "homeScore": 3,
             "awayScore": 0
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 1,
+            "awayScore": 1
          }
       }
    },
@@ -3244,6 +3300,14 @@
          "QF_4": {
             "homeScore": 2,
             "awayScore": 0
+         },
+         "SF_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "SF_2": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
@@ -3650,6 +3714,14 @@
          "QF_4": {
             "homeScore": 3,
             "awayScore": 1
+         },
+         "SF_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "SF_2": {
+            "homeScore": 1,
+            "awayScore": 2
          }
       }
    }
