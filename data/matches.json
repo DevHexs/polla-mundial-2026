@@ -1444,9 +1444,9 @@
     "away": "Inglaterra",
     "awayFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "date": "2026-07-18",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "pending",
+    "homeScore": 4,
+    "awayScore": 6,
+    "status": "finished",
     "time": "21:00"
   },
   {
