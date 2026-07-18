@@ -410,6 +410,14 @@
          "SF_2": {
             "homeScore": 1,
             "awayScore": 1
+         },
+         "F_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F_2": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
@@ -824,6 +832,14 @@
          "SF_2": {
             "homeScore": 3,
             "awayScore": 2
+         },
+         "F_1": {
+            "homeScore": 3,
+            "awayScore": 2
+         },
+         "F_2": {
+            "homeScore": 0,
+            "awayScore": 2
          }
       }
    },
@@ -1236,6 +1252,14 @@
             "awayScore": 1
          },
          "SF_2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F_2": {
             "homeScore": 1,
             "awayScore": 2
          }
@@ -1652,6 +1676,14 @@
          "SF_2": {
             "homeScore": 2,
             "awayScore": 1
+         },
+         "F_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F_2": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
@@ -2066,6 +2098,14 @@
          "SF_2": {
             "homeScore": 2,
             "awayScore": 1
+         },
+         "F_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F_2": {
+            "homeScore": 1,
+            "awayScore": 1
          }
       }
    },
@@ -2478,6 +2518,14 @@
             "awayScore": 1
          },
          "SF_2": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F_2": {
             "homeScore": 1,
             "awayScore": 2
          }
@@ -2894,6 +2942,14 @@
          "SF_2": {
             "homeScore": 1,
             "awayScore": 1
+         },
+         "F_1": {
+            "homeScore": 2,
+            "awayScore": 2
+         },
+         "F_2": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    },
@@ -3306,6 +3362,14 @@
             "awayScore": 1
          },
          "SF_2": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F_1": {
+            "homeScore": 1,
+            "awayScore": 2
+         },
+         "F_2": {
             "homeScore": 2,
             "awayScore": 1
          }
@@ -3722,6 +3786,14 @@
          "SF_2": {
             "homeScore": 1,
             "awayScore": 2
+         },
+         "F_1": {
+            "homeScore": 2,
+            "awayScore": 1
+         },
+         "F_2": {
+            "homeScore": 2,
+            "awayScore": 1
          }
       }
    }
